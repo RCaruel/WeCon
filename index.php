@@ -21,6 +21,9 @@ if (isset($_GET["action"])){
         case "Inscription":
             Inscription();
             break;
+        case "Connexion":
+            Connexion();
+            break;
         default:
             echo "Error 404.";
             break;

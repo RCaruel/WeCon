@@ -18,4 +18,8 @@ function Inscription(){
     require "Views/Inscription.php";
 }
 
+function Connexion(){
+    require "Views/Connexion.php";
+}
+
 ?>

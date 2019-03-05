@@ -52,7 +52,7 @@ if(isset($_POST['forminscription'])) {
         $erreur = "Tous les champs doivent être complétés !";
     }
 }
-echo "Se connecter ! <a href=\"connexion.php\">Connexion</a>";
+echo "Se connecter ! <a href=\"index.php?action=Connexion\">Connexion</a>";
 ?>
 <html>
 <head>
