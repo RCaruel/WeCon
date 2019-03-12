@@ -24,12 +24,15 @@ if (isset($_GET["action"])){
         case "Connexion":
             Connexion();
             break;
+        case "Accueil":
+            Accueil();
+            break;
         default:
             echo "Error 404.";
             break;
     }
 
 }else{
-    Send_Message();
+    Accueil();
 }
 ?>

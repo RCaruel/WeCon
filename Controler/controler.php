@@ -22,4 +22,8 @@ function Connexion(){
     require "Views/Connexion.php";
 }
 
+function Accueil(){
+    require "Views/Accueil.php";
+}
+
 ?>
