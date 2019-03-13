@@ -27,6 +27,9 @@ if (isset($_GET["action"])){
         case "Accueil":
             Accueil();
             break;
+        case "Espace_Entreprise":
+            Espace_Entreprise();
+            break;
         default:
             echo "Error 404.";
             break;

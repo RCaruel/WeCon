@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf_8" />
         <title>weCon</title>
-        <link rel="stylesheet" type="text/css" href="Views/style.css">
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="Views/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
     </head>
 
     <body>

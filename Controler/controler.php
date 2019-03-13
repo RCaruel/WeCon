@@ -7,23 +7,27 @@
  */
 
 function Send_Message(){
-    require "Views/SendMsg.html";
+    require "Views/html/SendMsg.html";
 }
 
 function Send_Message_Check(){
-    require "Views/SendMsgVerif.php";
+    require "Views/php/SendMsgVerif.php";
 }
 
 function Inscription(){
-    require "Views/Inscription.php";
+    require "Views/php/Inscription.php";
 }
 
 function Connexion(){
-    require "Views/Connexion.php";
+    require "Views/php/Connexion.php";
 }
 
 function Accueil(){
-    require "Views/Accueil.php";
+    require "Views/php/Accueil.php";
+}
+
+function Espace_Entreprise(){
+    require "Views/html/EspaceEntreprise.html";
 }
 
 ?>
