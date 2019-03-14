@@ -42,7 +42,7 @@ body{
 .elementHeader{
     position: absolute;
     top: 20px;
-    left: 25%;
+    right: -800px;
     width: 100%;
 }
 
