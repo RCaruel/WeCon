@@ -8,6 +8,7 @@
 
 function Send_Message(){
     require "Views/html/SendMsg.html";
+    include "Views/html/footer.html";
 }
 
 function Send_Message_Check(){

@@ -52,9 +52,8 @@ body{
     top: 0%;
     width: 100%;
     height: 100%;
-    background-image: url('ressources/photoaccueil.jpg');
+    background: url('../../Model/ressources/photoaccueil.jpg') no-repeat;
     background-size: 100% 80%;
-    background-repeat: no-repeat;
 
 }
 

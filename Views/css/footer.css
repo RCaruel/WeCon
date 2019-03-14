@@ -1,0 +1,50 @@
+.footer{
+    background: gray;
+    width: 100%;
+    margin-top: 50px;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
+    padding: 15px;
+}
+
+#logos{
+    width: 100%;
+    text-align: center;
+}
+
+p{
+    width: 100%;
+    text-align: center;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.line{
+    background: dimgray;
+    width: 80%;
+    height: 2px;
+    transform: translate(10%,0);
+}
+
+#left{
+    position: relative;
+    top: 10px;
+    left: 20px;
+}
+
+#right{
+    position: relative;
+    top: 10px;
+    left: 80%;
+}
+
+.logo:hover{
+    transform: scale(1.2);
+}

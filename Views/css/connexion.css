@@ -16,6 +16,10 @@ input[type="submit"]{
     background: blue;
 }
 
+input[type="submit"]:hover{
+    background: black;
+}
+
 h2{
     position: absolute;
     right: 100px;
