@@ -1,15 +1,16 @@
+
 body{
     font-family: Helvetica;
 }
 .textl{
     display: inline-block;
     margin-left: 10%;
-    margin-bottom: 10%;
+    margin-bottom: 15%;
     font-family: Helvetica;
 }
 .textr{
     display: inline-block;
-    margin-bottom: 10%;
+    margin-bottom: 15%;
     font-family: Helvetica;
 }
 .gauche{
@@ -20,6 +21,7 @@ body{
 }
 
 .droite{
+    position: center;
     width: 50%;
     height: 100%;
     float: right;
@@ -29,18 +31,18 @@ body{
 
 .droite .pic{
     margin-left: 30%;
-    margin-bottom: 10%;
+    margin-bottom: 15%;
 }
 
 .gauche .pic{
     margin-left: 10%;
-    margin-bottom: 10%;
+    margin-bottom: 15%;
 }
 
 .elementHeader{
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 20px;
+    left: 25%;
     width: 100%;
 }
 
@@ -58,7 +60,7 @@ body{
 
 .background > h1{
     position: absolute;
-    top: 20%;
+    top: 25%;
     left: 30%;
     color: #2E4057;
     text-align: center;
@@ -80,15 +82,14 @@ body{
 }
 .element
 {
+    left:1px;
     font-size: 18px;
     float: left;
     display: inline;
     list-style: none; /* nécessaire pour IE7 */
 }
 
-ul{
 
-}
 .element a {
     font-family: 'Helvetica';
     text-align: center;
@@ -124,11 +125,14 @@ ul{
 .header li
 {
     list-style-type: none;
-    padding: 15px;
-    margin: 0px;
+    padding-left: 100px;
     color: rgba(0, 0, 0, 0);
     overflow: hidden;
     position: sticky;
 }
-
-
+.image{
+    position:relative;
+    width:20%;
+    top:10px;
+    left:10px;
+}
