@@ -15,8 +15,8 @@
                 <li class="element"><a href="accueil.php">Accueil</a></li>
                 <li class="element"><a href="boucles.php">Produits</a></li>
                 <li class="element"><a href="APropos.html">À propos</a></li>
-                <li class="element"><a href="test.php">Contact</a></li>
-                <li class="element"><a href="test.php">Connexion</a></li>
+                <li class="element"><a href="SendMsgVerif.php">Contact</a></li>
+                <li class="element"><a href="connexion.php">Connexion</a></li>
             </ul>
         </div>
     </nav>
@@ -25,13 +25,13 @@
 </div>
 
 <div class="gauche">
-    <img class="pic" src="Model/ressources/first.jpg" alt="" width="360" height="260" />
+    <img class="pic" src="Model/ressources/first.jpg" alt="" width="380" height="280" />
     <div class="textl">
         <p align="justify"><strong>Un accès à vos données simplifié et fluide</strong>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         </p>
     </div>
-    <img class="pic" src="Model/ressources/third.jpg" alt="" width="360" height="260" />
+    <img class="pic" src="Model/ressources/third.jpg" alt="" width="380" height="280" />
     <div class="textl">
         <p align="justify"><strong>Des techniciens à votre service</strong>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in</p>
@@ -43,13 +43,13 @@
         <p align="justify"><strong>Une connexion sécurisée à votre maison à n'importe quel moment</strong>
             <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.</p>
     </div>
-    <img class="pic" src="Model/ressources/second.jpg" alt="" width="360" height="260" />
+    <img class="pic" src="Model/ressources/second.jpg" alt="" width="380" height="280" />
     <div class="textr">
         <p align="justify"><strong>Une consommation d’électricité réduite grâce à
                 une gestion responsable de vos ressources</strong>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in</p>
     </div>
-    <img class="pic" src="Model/ressources/fourth.jpg" alt="" width="360" height="260" />
+    <img class="pic" src="Model/ressources/fourth.jpg" alt="" width="380" height="280" />
 </div>
 
 </body>
