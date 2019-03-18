@@ -12,11 +12,11 @@
         <img class="image" href="accueil.php" src="Model/ressources/weCon.png">
         <div class="elementHeader">
             <ul class="header">
-                <li class="element"><a href="accueil.php">Accueil</a></li>
+                <li class="element"><a href="index.php?action=Accueil">Accueil</a></li>
                 <li class="element"><a href="boucles.php">Produits</a></li>
                 <li class="element"><a href="APropos.html">À propos</a></li>
-                <li class="element"><a href="SendMsgVerif.php">Contact</a></li>
-                <li class="element"><a href="connexion.php">Connexion</a></li>
+                <li class="element"><a href="index.php?action=Send_Message">Contact</a></li>
+                <li class="element"><a href="index.php?action=Connexion">Connexion</a></li>
             </ul>
         </div>
     </nav>
