@@ -7,11 +7,14 @@ body{
     margin-left: 10%;
     margin-bottom: 15%;
     font-family: Helvetica, 'sans-serif';
+    line-height: 1.5;
 }
 .textr{
     display: inline-block;
+    margin-right: 10%;
     margin-bottom: 15%;
     font-family: Helvetica, 'sans-serif';
+    line-height: 1.5;
 }
 .gauche{
     transform: translate(0, 85%);

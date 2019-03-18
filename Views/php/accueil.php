@@ -27,9 +27,7 @@
 <div class="gauche">
     <img class="pic" src="Model/ressources/first.jpg" alt="" width="380" height="280" />
     <div class="textl">
-        <p align="justify"><strong>Un accès à vos données simplifié et fluide</strong>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        </p>
+        <p align="justify"><strong>Un accès à vos données simplifié et fluide.Parler du réseau télécom</strong></p>
     </div>
     <img class="pic" src="Model/ressources/third.jpg" alt="" width="380" height="280" />
     <div class="textl">
@@ -40,8 +38,8 @@
 
 <div class="droite">
     <div class="textr">
-        <p align="justify"><strong>Une connexion sécurisée à votre maison à n'importe quel moment</strong>
-            <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.</p>
+        <p align="justify"><strong>Une connexion sécurisée à votre maison à n'importe quel moment o&ugrave; vous le souhaitez. Gr&acirc;ce &agrave; notre site internet et votre espace de connexion vous ne perdez pas vos données. Tout est mis en place pour que vous n'ayez aucune difficulté &agrave; avoir acc&egrave;s &agrave; celle-ci gr&acirc;ce &agrave; notre version mobile.</strong>
+        </p>
     </div>
     <img class="pic" src="Model/ressources/second.jpg" alt="" width="380" height="280" />
     <div class="textr">
