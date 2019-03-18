@@ -60,8 +60,8 @@ echo ">Connexion</a>";
 <head>
     <meta charset="UTF-8">
     <title>weCon Inscription</title>
-    <link rel="stylesheet" href="inscription.css">
-    <link rel="stylesheet" type="text/css" href="styleHeader.css">
+    <link rel="stylesheet" href=".../css/inscription.css">
+    <link rel="stylesheet" type="text/css" href=".../css/styleHeader.css">
 
 </head>
    <body>
