@@ -56,15 +56,32 @@ if(isset($_POST['forminscription'])) {
 }
 echo ">Connexion</a>";
 ?>
-<html>
-   <head>
-      <title>weCon Inscription</title>
-      <meta charset="utf-8">
-   </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>weCon Inscription</title>
+    <link rel="stylesheet" href="inscription.css">
+    <link rel="stylesheet" type="text/css" href="styleHeader.css">
+
+</head>
    <body>
-      <div align="center">
-         <h2>Inscription</h2>
+   <div class="background">
+        <header>
+          <span class="titre"><a href=""><img src="Logo.PNG" width="130"/></a></span>
+        <ul>
+            <li class="element"><a href="tableaux.php">Accueil</a></li>
+            <li class="element"><a href="boucles.php">Produits</a></li>
+            <li class="element active"><a href="APropos.html">À propos</a></li>
+            <li class="element"><a href="test.php">Contact</a></li>
+            <li class="element"><a href="test.php">Connexion</a></li>
+        </ul>
+
+    </header>
+          </div>
+         <br>
+          <br>
          <br /><br />
+         <div class="formulaire">
          <form method="POST" action="">
             <table>
                <tr>
@@ -108,8 +125,19 @@ echo ">Connexion</a>";
                   </td>
                </tr>
                <tr>
+                <td align="right">
+                <label for="utilise">Selectionner le type : </label>
+                </td>
+                <td>
+                  <select name="utilise" id="utilise" >
+                  <option value="Technicien"> technicien</option>
+                  <option value="Entreprise"> entreprise</option>
+                  <option value="Client"> client</option>
+                  </select>
+                 </td>
+     </tr>
                   <td></td>
-                  <td align="center">
+                  <td>
                      <br />
                      <input type="submit" name="forminscription" value="Je m'inscris" />
                   </td>
@@ -121,6 +149,6 @@ echo ">Connexion</a>";
             echo '<font color="red">'.$erreur."</font>";
          }
          ?>
-      </div>
+       </div>
    </body>
 </html>
