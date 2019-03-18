@@ -1,5 +1,5 @@
 body {
-    font-family:"trebuchet ms",sans-serif;
+    font-family:"helvetica",sans-serif;
     font-size:90%;
     background-image:url(image.jpg);
 }
@@ -26,8 +26,8 @@ label {
 
 .formulaire {
  	position:absolute;
-	top:200px;
-	left:750px;
+	top:20vw;
+	left:10vw;
 }
 
 input{
