@@ -9,7 +9,7 @@
 <body>
 <div class="background">
     <nav id="header">
-        <img class="image" href="accueil.php" src="Model/ressources/weCon.png">
+        <a href="index.php?action=Accueil"><img class="image" href="accueil.php" src="Model/ressources/weCon.png"></a>
         <div class="elementHeader">
             <ul class="header">
                 <li class="element"><a href="index.php?action=Accueil">Accueil</a></li>
