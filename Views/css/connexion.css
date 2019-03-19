@@ -28,7 +28,7 @@ h2{
     transform: translate(0,-100px);
 }
 
-img{
+.background{
     position: absolute;
     top: 0;
     left: 0;

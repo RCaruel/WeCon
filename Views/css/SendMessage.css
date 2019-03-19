@@ -1,6 +1,17 @@
-div#gen{
-    display: flex;
-    flex-direction: column;
+body{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 10em;
+    width: 100%;
+    top: -8px;
+    left: -8px;
+    position: absolute;
+}
+
+#gen{
+    position: absolute;
+    grid-column: 1/-1;
+    grid-row: 2/7;
     justify-content: center;
     border: 2px solid #2E4057;
     border-radius: 10px;
@@ -99,4 +110,9 @@ input.button{
     border: none;
     margin: 0 5% 3% 5%;
 
+}
+
+.footer{
+    grid-row: 8/10;
+    grid-column: 1/ -1;
 }

@@ -50,9 +50,7 @@
     <img class="pic" src="Model/ressources/fourth.jpg" alt="" width="380" height="280" />
 </div>
 
+<?php include "Views/html/footer.html"; ?>
+
 </body>
-
-<footer>
-
-</footer>
 </html>

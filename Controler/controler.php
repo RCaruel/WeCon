@@ -7,8 +7,7 @@
  */
 
 function Send_Message(){
-    require "Views/html/SendMsg.html";
-    include "Views/html/footer.html";
+    require "Views/php/SendMsg.php";
 }
 
 function Send_Message_Check(){
@@ -21,6 +20,7 @@ function Inscription(){
 
 function Connexion(){
     require "Views/php/Connexion.php";
+    include "Views/html/footer.html";
 }
 
 function Accueil(){
