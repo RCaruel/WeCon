@@ -1,7 +1,19 @@
-
 body{
     font-family: Helvetica, 'sans-serif';
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 10em;
+    width: 100%;
+    top: -8px;
+    left: -8px;
+    position: absolute;
 }
+
+.content{
+    grid-column: 1/-1;
+    grid-row: 1/13;
+}
+
 .textl{
     display: inline-block;
     margin-left: 10%;
@@ -17,7 +29,7 @@ body{
     line-height: 1.5;
 }
 .gauche{
-    transform: translate(0, 85%);
+    transform: translate(0, 60%);
     position: center;
     width: 50%;
     height: 100%;
@@ -25,7 +37,7 @@ body{
 }
 
 .droite{
-    transform: translate(0, 85%);
+    transform: translate(0, 60%);
     position: center;
     width: 50%;
     height: 100%;
@@ -47,8 +59,7 @@ body{
 .elementHeader{
     position: absolute;
     top: 20px;
-    left: 25%;
-    width: 100%;
+    right: 5%;
 }
 
 
@@ -57,10 +68,12 @@ body{
     position: absolute;
     top: 0;
     left: 0;
+    grid-column: 1/-1;
+    grid-row: 1/5;
     width: 100%;
     height: 100%;
     background: url('../../Model/ressources/photoaccueil.jpg') no-repeat;
-    background-size: 100% 80%;
+    background-size: 100% 100%;
 
 }
 
@@ -88,7 +101,6 @@ body{
 }
 .element
 {
-    left:1px;
     font-size: 18px;
     float: left;
     display: inline;
@@ -141,4 +153,9 @@ body{
     width:20%;
     top:10px;
     left:10px;
+}
+
+.footer{
+    grid-row: 13/16;
+    grid-column: 1/-1;
 }
