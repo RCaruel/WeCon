@@ -11,6 +11,7 @@ if(isset($_POST['forminscription'])) {
    $mail2 = htmlspecialchars($_POST['mail2']);
    $mdp = sha1($_POST['mdp']);
    $mdp2 = sha1($_POST['mdp2']);
+   $utilise = htmlspecialchars($_POST['utilise']);
    if(!empty($_POST['pseudo']) AND !empty($_POST['mail']) AND !empty($_POST['mail2']) AND !empty($_POST['mdp']) AND !empty($_POST['mdp2'])) {
       $pseudolength = strlen($pseudo);
       if($pseudolength <= 20) {
@@ -26,8 +27,8 @@ if(isset($_POST['forminscription'])) {
             	   $mailexist = $reqmail->rowCount();
             	   if($mailexist == 0) {
              	     if($mdp == $mdp2) {    	     	
-             	        $insertmbr = $bdd->prepare("INSERT INTO membres(pseudo, mail, motdepasse) VALUES(?, ?, ?)");
-            	         $insertmbr->execute(array($pseudo, $mail, $mdp));
+             	        $insertmbr = $bdd->prepare("INSERT INTO membres(pseudo, mail, motdepasse, type) VALUES(?, ?, ?, ?)");
+            	         $insertmbr->execute(array($pseudo, $mail, $mdp, $utilise));
            	          $erreur = ">Me connecter</a>";
            	      
                   } else {
@@ -54,20 +55,20 @@ if(isset($_POST['forminscription'])) {
       $erreur = "Tous les champs doivent être complétés !";
    }
 }
-echo ">Connexion</a>";
+
 ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>weCon Inscription</title>
-    <link rel="stylesheet" href=".../css/inscription.css">
-    <link rel="stylesheet" type="text/css" href=".../css/styleHeader.css">
+    <link rel="stylesheet" href="../css/inscription.css">
+    <link rel="stylesheet" type="text/css" href="../css/styleHeader.css">
 
 </head>
    <body>
    <div class="background">
-        <header>
-          <span class="titre"><a href=""><img src="Logo.PNG" width="130"/></a></span>
+<header>
+          <span class="titre"><a href=""><img src="/WeCon/Model/LogoBlueBg.PNG" width="130"/></a></span>
         <ul>
             <li class="element"><a href="tableaux.php">Accueil</a></li>
             <li class="element"><a href="boucles.php">Produits</a></li>
