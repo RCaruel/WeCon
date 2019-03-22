@@ -35,6 +35,5 @@ if(isset($_POST['forminscription'])) {
       $erreur = "Tous les champs doivent être complétés !";
    }
 }
-echo "S'inscrire ! <a href=\"index.php?action=Inscription\">Inscription</a>";
 require "Views/html/connexiontech.html";
 ?>

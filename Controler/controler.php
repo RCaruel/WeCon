@@ -20,6 +20,7 @@ function Inscription(){
 
 function Connexiontech(){
     require "Views/php/connexiontech.php";
+    include "Views/php/Header.php";
     include "Views/html/footer.html";
 }
 

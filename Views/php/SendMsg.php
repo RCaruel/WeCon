@@ -5,10 +5,8 @@
     <title>WeCon</title>
 </head>
 <body>
-    <?php include "Views/html/header.html"; ?>
-
+<?php include "Views/php/header.php"; ?>
     <div id = "gen">
-
         <h1>Nous contacter</h1>
 
 
@@ -67,5 +65,5 @@
     <?php include "Views/html/footer.html"; ?>
 
 </body>
-<link rel="stylesheet" href="Views/css/SendMessage.css">
+<link rel="stylesheet" href="Views/css/SendMsg.css">
 </html>
