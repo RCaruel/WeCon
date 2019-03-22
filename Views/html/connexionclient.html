@@ -1,10 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>weCon Connexion</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/connexionclient.css">
+    <link rel="stylesheet" href="Views/css/connexionentclient.css">
 </head>
 <body>
+<img class = "background" src="Model/ressources/connexion-client.jpg">
+<div>
+    <h2 class = "titre"></h2>
+    <br /><br />
+    <form method="POST" action="">
+        <table>
+            <tr>
+                <td>
+                    <label for="mail">Mail :</label>
+                </td>
+                <td>
+                    <input type="email" placeholder="Votre mail" id="mail" name="mail" value="<?php if(isset($mail)) { echo $mail; } ?>" />
+                </td>
+            </tr>
 
+            <tr>
+                <td>
+                    <label for="mdp">Mot de passe :</label>
+                </td>
+                <td>
+                    <input type="password" placeholder="Votre mot de passe" id="mdp" name="mdp" />
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <br />
+                    <input type="submit" name="forminscription" value="Connexion" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
 </body>
 </html>

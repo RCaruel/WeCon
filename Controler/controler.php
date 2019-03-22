@@ -23,6 +23,16 @@ function Connexiontech(){
     include "Views/html/footer.html";
 }
 
+function Connexionentreprise(){
+    require "Views/php/connexionentreprise.php";
+    include "Views/html/footer.html";
+}
+
+function Connexionclient(){
+    require "Views/php/connexionclient.php";
+    include "Views/html/footer.html";
+}
+
 function Accueil(){
     require "Views/php/Accueil.php";
 }
