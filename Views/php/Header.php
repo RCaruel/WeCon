@@ -5,11 +5,11 @@
 <header>
           <span class="titre"><a href=""><img src="/WeCon/Model/LogoBlueBg.PNG" width="130"/></a></span>
         <ul>
-            <li class="element"><a href="tableaux.php">Accueil</a></li>
-            <li class="element"><a href="boucles.php">Produits</a></li>
-            <li class="element active"><a href="APropos.html">À propos</a></li>
-            <li class="element"><a href="test.php">Contact</a></li>
-            <li class="element"><a href="test.php">Connexion</a></li>
+            <li class="element"><a href="index.php?action=Accueil">Accueil</a></li>
+            <li class="element"><a href="index.php?action=Produit">Produits</a></li>
+            <li class="element active"><a href="index.php?action=about">À propos</a></li>
+            <li class="element"><a href="index.php?action=Contact">Contact</a></li>
+            <li class="element"><a href="index.php?action=Connexiontech">Connexion</a></li>
         </ul>
 
     </header>
