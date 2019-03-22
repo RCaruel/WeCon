@@ -26,11 +26,13 @@ function Connexiontech(){
 
 function Connexionentreprise(){
     require "Views/php/connexionentreprise.php";
+    include "Views/php/Header.php";
     include "Views/html/footer.html";
 }
 
 function Connexionclient(){
     require "Views/php/connexionclient.php";
+    include "Views/php/Header.php";
     include "Views/html/footer.html";
 }
 

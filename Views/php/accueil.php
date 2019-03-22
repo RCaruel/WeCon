@@ -18,6 +18,11 @@
                     <li class="element"><a href="APropos.html">À propos</a></li>
                     <li class="element"><a href="index.php?action=Send_Message">Contact</a></li>
                     <li class="element"><a href="index.php?action=Connexion">Connexion</a></li>
+                        <ul class="submenu">
+                            <li><a href="#">Connexion Client</a></li>
+                            <li><a href="#">Connexion Entreprise</a></li>
+                            <li><a href="#">Connexion Technicien</a></li>
+                        </ul>
                 </ul>
             </div>
         </nav>
