@@ -19,7 +19,26 @@ body{
         width: 100%;
         padding:10px 0px 10px 0px;
     }
-
+        .submenu{
+        display:none;
+    }
+    .submunu li{
+        border-bottom:1px solid #CCC;
+    }
+    .submenu li a{
+        padding:15px 30px;
+        font-size:13px;
+        color:blue;
+        width:270px;
+    }
+    .connect:hover .subemenu{
+        display:inline-block;
+        position: absolute;
+        top:100%;
+        left:0%;
+        padding:0px;
+        z-index:100000;
+    }
 
     ul{
         display:inline-flex; /* Aligne la liste horizontalement */
@@ -56,6 +75,9 @@ body{
         height: 2px;
         background: white;
         transition: width .3s;
+    }
+    .co{
+
     }
 
     .hide-line a::after {
