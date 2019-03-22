@@ -18,8 +18,8 @@ function Inscription(){
     require "Views/php/Inscription.php";
 }
 
-function Connexion(){
-    require "Views/php/Connexion.php";
+function Connexiontech(){
+    require "Views/php/connexiontech.php";
     include "Views/html/footer.html";
 }
 

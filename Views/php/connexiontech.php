@@ -36,5 +36,5 @@ if(isset($_POST['forminscription'])) {
    }
 }
 echo "S'inscrire ! <a href=\"index.php?action=Inscription\">Inscription</a>";
-require "Views/html/connexion.html";
+require "Views/html/connexiontech.html";
 ?>

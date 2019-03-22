@@ -21,8 +21,8 @@ if (isset($_GET["action"])){
         case "Inscription":
             Inscription();
             break;
-        case "Connexion":
-            Connexion();
+        case "Connexiontech":
+            Connexiontech();
             break;
         case "Accueil":
             Accueil();
