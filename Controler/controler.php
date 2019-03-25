@@ -44,4 +44,15 @@ function Espace_Entreprise(){
     require "Views/html/EspaceEntreprise.html";
 }
 
+function About(){
+    require "Views/php/apropos.php";
+    include "Views/html/footer.html";
+}
+
+function Produit(){
+    require "Views/html/Produit.html";
+    include "Views/php/Header.php";
+    include "Views/html/footer.html";
+}
+
 ?>

@@ -14,10 +14,10 @@
             <div class="elementHeader">
                 <ul class="header">
                     <li class="element"><a href="index.php?action=Accueil">Accueil</a></li>
-                    <li class="element"><a href="boucles.php">Produits</a></li>
-                    <li class="element"><a href="APropos.html">À propos</a></li>
-                    <li class="element"><a href="index.php?action=Send_Message">Contact</a></li>
-                    <li class="element"><a href="index.php?action=Connexion">Connexion</a></li>
+                    <li class="element"><a href="index.php?action=Produit">Produits</a></li>
+                    <li class="element"><a href="index.php?action=Apropos">À propos</a></li>
+                    <li class="element"><a href="index.php?action=Contact">Contact</a></li>
+                    <li class="element"><a href="index.php?action=Connexiontech">Connexion</a></li>
                         <ul class="submenu">
                             <li><a href="#">Connexion Client</a></li>
                             <li><a href="#">Connexion Entreprise</a></li>
