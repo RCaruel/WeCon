@@ -33,12 +33,19 @@
     <div class="gauche">
         <img class="pic" src="Model/ressources/first.jpg" alt="" width="380" height="280" />
         <div class="textl">
-            <p align="justify"><strong>Un accès à vos données simplifié et fluide.Parler du réseau télécom</strong></p>
+            <p align="justify"><strong>Un accès à vos données simplifié et fluide.</strong>
+                Grâce à ce site, vous pouvez accéder aux données de votre maison de n'importe où avec une connexion internet.
+                De plus, il vous est possible d'ajouter des personnes tel que d'autres personnes pouvant avoir un accès à vos données.
+                Cela vous permet de gérer vos données à distances. Vos données sont bien sûr protégées et seulement accessible par vous et votre entourage.
+            </p>
         </div>
         <img class="pic" src="Model/ressources/third.jpg" alt="" width="380" height="280" />
         <div class="textl">
             <p align="justify"><strong>Des techniciens à votre service</strong>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in</p>
+                Les techniciens de WeCon sont à votre service.
+                Si vous avez le moindre soucis, la moindre question, nous vous invitons à nous contacter via l'onglet contact.
+                On vous répondra dans les plus brefs délais.
+            </p>
         </div>
     </div>
 

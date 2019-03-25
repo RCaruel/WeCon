@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="apropos.css">
+    <link rel="stylesheet" href="Views/css/apropos.css">
     <title>À propos</title>
 </head>
 <body>
