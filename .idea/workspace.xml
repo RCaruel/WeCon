@@ -12,15 +12,15 @@
     <session id="-1603529804">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="1649" />
-          <entry key="html" value="899" />
+          <entry key="css" value="1745" />
+          <entry key="html" value="901" />
           <entry key="php" value="1105" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="1649" />
-          <entry key="HTML" value="899" />
+          <entry key="CSS" value="1745" />
+          <entry key="HTML" value="901" />
           <entry key="PHP" value="1105" />
         </counts>
       </usages-collector>
@@ -55,20 +55,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tests/testGraphique.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="935">
-                  <caret line="70" column="11" selection-start-line="70" selection-start-column="11" selection-end-line="70" selection-end-column="11" />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tests/test.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="547">
-                  <caret line="51" column="25" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
+                <state relative-caret-position="289">
+                  <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
                 </state>
               </provider>
             </entry>
@@ -85,8 +76,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tests/testGraphique.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="632">
-                  <caret line="152" column="17" selection-start-line="152" selection-start-column="17" selection-end-line="152" selection-end-column="17" />
+                <state relative-caret-position="544">
+                  <caret line="61" column="15" selection-start-line="61" selection-start-column="15" selection-end-line="61" selection-end-column="15" />
                 </state>
               </provider>
             </entry>
@@ -168,8 +159,8 @@
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/tests/Graph.js" />
         <option value="$PROJECT_DIR$/Views/css/style.css" />
-        <option value="$PROJECT_DIR$/tests/test.html" />
         <option value="$PROJECT_DIR$/tests/testGraphique.css" />
+        <option value="$PROJECT_DIR$/tests/test.html" />
       </list>
     </option>
   </component>
@@ -182,7 +173,7 @@
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-7" />
     <option name="width" value="814" />
     <option name="height" value="907" />
@@ -282,15 +273,16 @@
       <workItem from="1552905410319" duration="1001000" />
       <workItem from="1553157418794" duration="7078000" />
       <workItem from="1553521776562" duration="3106000" />
-      <workItem from="1553525023636" duration="9148000" />
+      <workItem from="1553525023636" duration="11787000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107646000" />
+    <option name="totallyTimeSpent" value="110285000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="916" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17287917" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -531,23 +523,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Graph.js">
+    <entry file="file://$PROJECT_DIR$/Views/php/connexionclient.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/php/connexionclient.php">
+    <entry file="file://$PROJECT_DIR$/tests/testGraphique.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="61" column="15" selection-start-line="61" selection-start-column="15" selection-end-line="61" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Graph.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="51" column="25" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/testGraphique.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="152" column="17" selection-start-line="152" selection-start-column="17" selection-end-line="152" selection-end-column="17" />
+        <state relative-caret-position="289">
+          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
         </state>
       </provider>
     </entry>
