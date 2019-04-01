@@ -40,8 +40,6 @@ if (isset($nom) AND isset($prenom) AND isset($mail) AND isset($message)) {
 
     $sendRequest = $bdd -> prepare("INSERT INTO sendrequest(id, nom, prenom, mail, message) VALUES (?, ?, ?, ?, ?)");
     $sendRequest->execute(array(NULL, $nom, $prenom, $mail, $message));
-    mail($mail, "Confirmation d'envoi de message", "Bonjour, \nVotre Message a bien été envoyé et est en train d'être analysé par nos experts");
-    echo "Le message a bien été envoyé";
 
 }
 

@@ -43,10 +43,10 @@ function scroll(){
     if (getScrollPosition()[1] >= 100 && position === 1){
         position = 2;
         button2.click();
-    }
-
-    if (getScrollPosition()[1] <= 700 && position === 2){
+        setTimeout(1000);
+    }else if (getScrollPosition()[1] <= 800 && position === 2){
         position = 1;
         button1.click();
+        setTimeout(1000);
     }
 }
