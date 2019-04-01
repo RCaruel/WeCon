@@ -1,0 +1,154 @@
+.graphique{
+    position: absolute;
+    margin: 15% 30%;
+    width: 40%;
+    height: 40%;
+    border: 5px solid black;
+    border-radius: 5px;
+}
+
+.titre{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 5%;
+}
+
+.Axe_1{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 3%;
+}
+
+.Axe_2{
+    position: absolute;
+    transform: rotate(-90deg);
+    left: -5%;
+    top: 50%;
+}
+
+#Axe_1{
+    position: absolute;
+    width: 80%;
+    height: 20px;
+    bottom: 9%;
+    left: 15%;
+}
+
+#Axe_1 > .TraitMid{
+    position: absolute;
+    top: -5px;
+    height: 2px;
+    background: black;
+    width: 100%;
+}
+
+#Axe_1 > .TraitBottom{
+    position: absolute;
+    top: -2px;
+    right: -1px;
+    height: 2px;
+    transform: rotate(-30deg);
+    background: black;
+    width: 11px;
+}
+
+#Axe_1 > .TraitTop{
+    position: absolute;
+    top: -7px;
+    right: -1px;
+    height: 2px;
+    transform: rotate(30deg);
+    background: black;
+    width: 11px;
+}
+
+#Axe_2 > .TraitMid{
+    position: absolute;
+    left: 16%;
+    height: 80%;
+    top: 5%;
+    background: black;
+    width: 2px;
+}
+
+#Axe_2 > .TraitBottom{
+    position: absolute;
+    top: 21px;
+    left: 16%;
+    height: 2px;
+    transform: translate(-2px,0) rotate(-120deg);
+    background: black;
+    width: 11px;
+}
+
+#Axe_2 > .TraitTop{
+    position: absolute;
+    top: 21px;
+    left: 16%;
+    height: 2px;
+    transform: translate(-7px,0) rotate(120deg);
+    background: black;
+    width: 11px;
+}
+
+#Axe_1 > .Echelle{
+    padding-left: 7px ;
+    display: flex;
+}
+
+#Axe_1 > .Echelle > p{
+    width: 14%;
+    margin: 0px;
+    text-align: center;
+}
+
+#Axe_2 > .Echelle > p{
+    margin: 150%;
+    text-align: right;
+    width: 20px;
+}
+
+#Axe_2 > .Echelle{
+    position: absolute;
+    width: 20px;
+    top: 5%;
+    left: 4%;
+}
+
+.j-6, .j-5, .j-4, .j-3, .j-2, .j-1, .j{
+    position: absolute;
+    width: 11%;
+    background: #2E40FF;
+    bottom: 16%;
+}
+
+.j-6{
+    left: 16%;
+    height: 15px;
+}
+.j-5{
+    left: 27%;
+    height: 20px;
+}
+.j-4{
+    left: 38%;
+    height: 35px;
+}
+.j-3{
+    left: 49%;
+    height: 5px;
+}
+.j-2{
+    left: 60%;
+    height: 55px;
+}
+.j-1{
+    left: 71%;
+    height: 27px;
+}
+.j{
+    left: 82%;
+    height: 15px;
+}

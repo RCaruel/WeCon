@@ -1,0 +1,160 @@
+body
+{
+    font-family: Helvetica;
+}
+
+
+.image {
+    width: 100%;
+    text-align: center;
+}
+
+.slogan {
+    top: 20px;
+    left: 0;
+    width: 100%;
+}
+
+#logo {
+    position: absolute;
+    top: 320px;
+    right: 40%;
+}
+
+.logo{
+    height: auto;
+    width: 20vw;
+    max-width: 300px;
+    max-height: 300px;
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+}
+
+
+.NotreVision{
+    color: #2E4057;
+    width: 100%;
+    position: absolute;
+    font-size: 180%;
+}
+
+.NotreMission{
+    color: #2E4057;
+    width: 100%;
+    position: absolute;
+    font-size: 200%;
+    top: 82vw;
+}
+
+.NotreEquipe{
+    color: #2E4057;
+    width: 100%;
+    position: absolute;
+    font-size: 200%;
+    top: 130vw;
+}
+
+.NosValeurs{
+    color: #2E4057;
+    width: 100%;
+    position: absolute;
+    font-size: 200%;
+    top: 108vw;
+}
+
+.slogan
+{
+    color: #2E4057;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    text-align: center;
+    font-size: 2vw;
+}
+
+.premierparagraphe{
+    position : absolute;
+    color: #2E4057;
+    width: 40%;
+    margin-left: 43%;
+    font-size: 120%;
+    top : 125%;
+}
+
+
+.Vision{
+    width: 300px;
+    position : absolute;
+    margin-left: 18%;
+    top : 125%;
+
+}
+
+.deuxiemeparagraphe{
+    color: #2E4057;
+    width: 90%;
+    left: 5%;
+    position: absolute;
+    top: 87vw;
+    font-size: 1.25vw;
+}
+
+.Icones{
+    width: 55vw;
+    position : absolute;
+    top : 95vw;
+    margin-left: 23%;
+}
+
+.troisiemeparagraphe{
+    width: 30%;
+    color: #2E4057;
+    margin-left: 18%;
+    position: absolute;
+    top: 113vw;
+    font-size: 1.25vw;
+}
+
+.Valeurs{
+    width: 22vw;
+    position : absolute;
+    top : 113vw;
+    margin-left: 56%;
+}
+
+.Gabriel{
+    position : absolute;
+    top : 137vw;
+    margin-left: 23%;
+}
+
+.Antoine{
+    position : absolute;
+    top : 137vw;
+    margin-left: 42%;
+}
+
+.Remi{
+    position : absolute;
+    top : 137vw;
+    margin-left: 63%;
+}
+
+.Robin{
+    position : absolute;
+    top : 170vw;
+    margin-left: 23%;
+}
+
+.Hicham{
+    position : absolute;
+    top : 170vw;
+    margin-left: 42%;
+}
+
+.Jean{
+    position : absolute;
+    top : 170vw;
+    margin-left: 63%;
+}

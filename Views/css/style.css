@@ -159,3 +159,16 @@ body{
     grid-row: 13/16;
     grid-column: 1/-1;
 }
+
+.submenu{
+    display: none;
+}
+
+nav li:hover .submenu {
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    padding: 0px;
+    z-index: 100000;
+}

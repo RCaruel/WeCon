@@ -15,20 +15,32 @@ if (isset($_GET["action"])){
         case "Send_Message_Check":
             Send_Message_Check();
             break;
-        case "Send_Message":
+        case "Contact":
             Send_Message();
             break;
         case "Inscription":
             Inscription();
             break;
-        case "Connexion":
-            Connexion();
+        case "Connexiontech":
+            Connexiontech();
+            break;
+        case "Connexionentreprise":
+            Connexionentreprise();
+            break;
+        case "Connexionclient":
+            Connexionclient();
             break;
         case "Accueil":
             Accueil();
             break;
         case "Espace_Entreprise":
             Espace_Entreprise();
+            break;
+        case "Apropos":
+            About();
+            break;
+        case "Produit":
+            Produit();
             break;
         default:
             echo "Error 404.";

@@ -18,8 +18,21 @@ function Inscription(){
     require "Views/php/Inscription.php";
 }
 
-function Connexion(){
-    require "Views/php/Connexion.php";
+function Connexiontech(){
+    require "Views/php/connexiontech.php";
+    include "Views/php/Header.php";
+    include "Views/html/footer.html";
+}
+
+function Connexionentreprise(){
+    require "Views/php/connexionentreprise.php";
+    include "Views/php/Header.php";
+    include "Views/html/footer.html";
+}
+
+function Connexionclient(){
+    require "Views/php/connexionclient.php";
+    include "Views/php/Header.php";
     include "Views/html/footer.html";
 }
 
@@ -29,6 +42,17 @@ function Accueil(){
 
 function Espace_Entreprise(){
     require "Views/html/EspaceEntreprise.html";
+}
+
+function About(){
+    require "Views/php/apropos.php";
+    include "Views/html/footer.html";
+}
+
+function Produit(){
+    require "Views/html/Produit.html";
+    include "Views/php/Header.php";
+    include "Views/html/footer.html";
 }
 
 ?>
