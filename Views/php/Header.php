@@ -5,7 +5,7 @@
 <html>
 <body>
 <header>
-          <span class="titre"><a href=""><img src="Logo.PNG" width="130"/></a></span>
+          <span class="titre"><a href=""><img src="/wecon/Model/LogoBlueBg.PNG" width="130"/></a></span>
         <ul>
             <li class="element"><a href="tableaux.php">Accueil</a></li>
             <li class="element"><a href="boucles.php">Produits</a></li>
