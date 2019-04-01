@@ -15,6 +15,7 @@ body
     width: 100%;
 }
 
+
 #logo {
     position: absolute;
     top: 320px;
@@ -77,9 +78,9 @@ body
     position : absolute;
     color: #2E4057;
     width: 40%;
-    margin-left: 43%;
     font-size: 120%;
     top : 125%;
+    left: 45%;
 }
 
 
@@ -93,11 +94,12 @@ body
 
 .deuxiemeparagraphe{
     color: #2E4057;
-    width: 90%;
-    left: 5%;
-    position: absolute;
-    top: 87vw;
-    font-size: 1.25vw;
+    width: 60%;
+    font-size: 120%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 27%;
 }
 
 .Icones{
