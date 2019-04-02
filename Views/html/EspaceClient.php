@@ -10,7 +10,7 @@
 
 <nav>
     <img src="Ressources/logoBluebg.PNG">
-    <div class = "anc"><a href="#Tableaudebord"><button id = "StatsGen">Tableau de bord</button></a></div>
+    <div class = "anc"><a href="#Tableaudebord"><button id = "TabBord">Tableau de bord</button></a></div>
     <div class = "line"></div>
     <div class = "anc"><a href="#Gestiondescapteurs"><button id = "GestCapt">Gestion des capteurs</button></a></div>
     <div class = "line"></div>
@@ -21,6 +21,6 @@
 
 </nav>
 
-
+<script src="Views/js/EspaceClient.js"></script>
 </body>
 </html>

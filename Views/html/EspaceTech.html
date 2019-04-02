@@ -9,14 +9,74 @@
 <body>
 
 <nav>
-    <img src="Ressources/logoBluebg.PNG">
-    <div class = "anc"><a href="#Gestionusers"><button id = "Gestionusers">Gestion des utilisateurs</button></a></div>
+    <img src="Ressources/LogoBlueBg.PNG">
+    <div class = "anc"><a href="#Gestionusers"><button id = "Gestionutilisateur">Gestion des utilisateurs</button></a></div>
     <div class = "line"></div>
     <div class = "anc"><a href="#Logs"><button id = "Logs">Logs</button></a></div>
     <div class = "line"></div>
 
 </nav>
 
+<a id="Gestionusers" ></a>
+<div class="navigation"><h4>Gestion des utilisateurs</h4>
+
+    <button id="Ajouter">Ajouter un utilisateur</button>
+    <button id="Gestionacces">Gestion acc&egrave;s</button>
+
+    <div id="line"></div>
+
+    <div class="utilisateur"><p style="margin-left: 10px; margin-right: 15px; display: inline-block;">Nom utilisateur</p>
+        <p style="display: inline-block;">Rechercher:</p>
+        <input id="search" type="text" autocomplete="off" style="width: 20%">
+        <div id="results"></div>
+
+        <button id="Afficher">Afficher page</button>
+        <button id="Editer">Editer</button>
+
+        <div class="tablusers">
+            <table>
+            <tr>
+                <td>Jean Jacques</td>
+                <td>Utilisateur père</td>
+                <td>Accès total</td>
+            </tr>
+            <tr>
+                <td>Paul</td>
+                <td>Utilisateur</td>
+                <td>Accès limité</td>
+            </tr>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="Views/js/EspaceTech.js"></script>
+
 
 </body>
 </html>
+
+<!
+
+	$data = unserialize(file_get_contents('towns.txt')); // Récupération de la liste complète des villes
+	$dataLen = count($data);
+
+	sort($data); // On trie les villes dans l'ordre alphabétique
+
+	$results = array(); // Le tableau où seront stockés les résultats de la recherche
+
+	// La boucle ci-dessous parcourt tout le tableau $data, jusqu'à un maximum de 10 résultats
+
+	for ($i = 0 ; $i < $dataLen && count($results) < 10 ; $i++) {
+	    if (stripos($data[$i], $_GET['s']) === 0) { // Si la valeur commence par les mêmes caractères que la recherche
+
+	        array_push($results, $data[$i]); // On ajoute alors le résultat à la liste à retourner
+
+	    }
+	}
+
+	echo implode('|', $results); // Et on affiche les résultats séparés par une barre verticale |
+
+	>
