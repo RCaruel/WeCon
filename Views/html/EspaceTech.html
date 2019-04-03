@@ -4,6 +4,9 @@
     <title>WeCon</title>
     <link rel="stylesheet"  href="../css/EspaceTech.css">
     <link rel="stylesheet"  href="Views/css/EspaceTech.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="tests/w3.css">
+
 </head>
 
 <body>
@@ -20,8 +23,35 @@
 <a id="Gestionusers" ></a>
 <div class="navigation"><h4>Gestion des utilisateurs</h4>
 
-    <button id="Ajouter">Ajouter un utilisateur</button>
-    <button id="Gestionacces">Gestion acc&egrave;s</button>
+    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button" id="Ajouter">Ajouter un utilisateur</button>
+    <div id="id01" class="w3-modal">
+        <div class="w3-modal-content">
+            <div class="w3-container">
+                        <span onclick="document.getElementById('id01').style.display='none'"
+                              class="w3-button w3-display-topright">&times;
+                        </span>
+                <div id="head">
+                Ajouter client
+                    <div id="line"></div>
+                </div>
+                <br>
+                <p>Nom de l'utilisateur:<input id="newnom" type="text"></p>
+                <p style="float: right;">Identifiant:<input id="newid" type="text"></p>
+                <p>Adresse e-mail:<input id="nexmail" type="text"></p>
+            </div>
+        </div>
+    </div>
+    <button onclick="document.getElementById('id02').style.display='block'" class="w3-button" id="Gestionacces">Gestion acc&egrave;s</button>
+    <div id="id02" class="w3-modal">
+        <div class="w3-modal-content">
+            <div class="w3-container">
+                        <span onclick="document.getElementById('id02').style.display='none'"
+                              class="w3-button w3-display-topright">&times;
+                        </span>
+                <p>Gestion acc&egrave;s</p>
+            </div>
+        </div>
+    </div>
 
     <div id="line"></div>
 
