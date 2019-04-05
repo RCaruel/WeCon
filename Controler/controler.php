@@ -7,7 +7,7 @@
  */
 
 function Send_Message(){
-    require "Views/php/SendMsg.php";
+    require "Views/html/SendMsg.html";
     include "Views/html/footer.html";
     include "Views/html/header.html";
 }
@@ -50,8 +50,7 @@ function Accueil(){
 }
 
 function Espace_Entreprise(){
-    require "Views/html/EspaceEntreprise.html";
-    include "tests/TestGraph.php";
+    require "Views/php/EspaceEntreprise.php";
 }
 
 function About(){

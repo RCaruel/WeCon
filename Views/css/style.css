@@ -140,7 +140,7 @@ body{
     width: 100%;
 }
 
-.header li
+.header > li
 {
     list-style-type: none;
     padding-left: 100px;
@@ -162,13 +162,28 @@ body{
 
 .submenu{
     display: none;
-}
-
-nav li:hover .submenu {
-    display: inline-block;
     position: absolute;
     top: 100%;
-    left: 0px;
-    padding: 0px;
-    z-index: 100000;
+    right: -10px;
+    background: lightgray;
+    float: left;
+    padding-left: 0px;
+    transition: 1s;
+}
+
+.SubMenu{
+    list-style-type: none;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+#Connexion:hover ~ ul{
+    display: block;
+    transform: translate(0,0);
+    transition: 1s;
+}
+
+.submenu:hover{
+    display: block;
+    transform: translate(0,0);
 }
