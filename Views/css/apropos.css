@@ -21,11 +21,6 @@ body
     text-align: center;
 }
 
-.slogan {
-    top: 20px;
-    left: 0;
-    width: 100%;
-}
 
 
 #logo {
@@ -57,7 +52,7 @@ body
     width: 100%;
     position: absolute;
     font-size: 200%;
-    top: 82vw;
+    top: 80vw;
 }
 
 .NotreEquipe{
@@ -65,7 +60,7 @@ body
     width: 100%;
     position: absolute;
     font-size: 200%;
-    top: 130vw;
+    top: 135vw;
 }
 
 .NosValeurs{
@@ -73,7 +68,7 @@ body
     width: 100%;
     position: absolute;
     font-size: 200%;
-    top: 108vw;
+    top: 110vw;
 }
 
 .slogan
@@ -81,7 +76,7 @@ body
     color: #2E4057;
     position: absolute;
     width: 100%;
-    top: 50%;
+    top: 16%;
     text-align: center;
     font-size: 2vw;
 }
@@ -91,16 +86,48 @@ body
     color: #2E4057;
     width: 40%;
     font-size: 120%;
-    top : 125%;
+    top : 43%;
     left: 45%;
 }
 
+.ligne1{
+    position: absolute;
+    background: black;
+    top:54%;
+    width: 80%;
+    height: 2px;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.ligne2{
+    position: absolute;
+    background: black;
+    top:75%;
+    width: 80%;
+    height: 2px;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
 
+}
+.ligne3{
+    position: absolute;
+    background: black;
+    top:91%;
+    width: 80%;
+    height: 2px;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+
+
+}
 .Vision{
     width: 300px;
     position : absolute;
     margin-left: 18%;
-    top : 125%;
+    top : 43%;
 
 }
 
@@ -111,13 +138,14 @@ body
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 27%;
+    margin-top: 33%;
+    padding-bottom: 1650px
 }
 
 .Icones{
     width: 55vw;
     position : absolute;
-    top : 95vw;
+    top : 100vw;
     margin-left: 23%;
 }
 
@@ -126,49 +154,49 @@ body
     color: #2E4057;
     margin-left: 18%;
     position: absolute;
-    top: 113vw;
+    top: 116vw;
     font-size: 1.25vw;
 }
 
 .Valeurs{
     width: 22vw;
     position : absolute;
-    top : 113vw;
+    top : 116vw;
     margin-left: 56%;
 }
 
 .Gabriel{
     position : absolute;
-    top : 137vw;
+    top : 140vw;
     margin-left: 23%;
 }
 
 .Antoine{
     position : absolute;
-    top : 137vw;
+    top : 140vw;
     margin-left: 42%;
 }
 
 .Remi{
     position : absolute;
-    top : 137vw;
+    top : 140vw;
     margin-left: 63%;
 }
 
 .Robin{
     position : absolute;
-    top : 170vw;
+    top : 175vw;
     margin-left: 23%;
 }
 
 .Hicham{
     position : absolute;
-    top : 170vw;
+    top : 175vw;
     margin-left: 42%;
 }
 
 .Jean{
     position : absolute;
-    top : 170vw;
+    top : 175vw;
     margin-left: 63%;
 }

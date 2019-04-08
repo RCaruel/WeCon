@@ -23,29 +23,29 @@ body{
     ul{
         display:inline-flex; /* Aligne la liste horizontalement */
         list-style-type:none; /* Retire les puces devant les éléments de liste */
-        margin:0px;
-        padding:0px;
+        margin-left:180px;
+        padding-left:0%;
     }
     .element a {
         text-align: center;
-        font-size: 180%;
-        padding: 10px 10px;
-        text-decoration: none;
-        color: white;
-        display:block;
-        margin: 0 40px;
-    }
-    .connect a {
-        text-align: center;
-        font-size: 180%;
+        font-size: 130%;
         padding: 10px 10px;
         text-decoration: none;
         color: white;
         display:block;
         margin: 0 50px;
     }
+    .connect a {
+        text-align: center;
+        font-size: 130%;
+        padding: 10px 10px;
+        text-decoration: none;
+        color: white;
+        display:block;
+        margin: 0 70px;
+    }
     .submenu a{
-        font-size: 100%;
+        font-size: 80%;
     }
     .element a:hover::after
     {
