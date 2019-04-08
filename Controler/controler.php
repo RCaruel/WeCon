@@ -7,9 +7,9 @@
  */
 
 function Send_Message(){
-    require "Views/html/SendMsg.html";
     include "Views/html/footer.html";
     include "Views/html/header.html";
+    require "Views/html/SendMsg.html";
 }
 
 function Send_Message_Check(){
@@ -24,17 +24,19 @@ function Inscription(){
 }
 
 function Connexiontech(){
-    require "Views/php/connexiontech.html";
+    require "Views/html/connexiontech.html";
     include "Views/html/header.html";
     include "Views/html/footer.html";
     include "Model/php/Connexion.php";
+    include "Views/css/Connexion.html";
 }
 
 function Connexionentreprise(){
-    require "Views/php/connexionentreprise.html";
+    require "Views/html/connexionentreprise.html";
     include "Views/html/header.html";
     include "Views/html/footer.html";
     include "Model/php/Connexion.php";
+    include "Views/css/Connexion.html";
 }
 
 function Connexionclient(){
@@ -42,6 +44,7 @@ function Connexionclient(){
     include "Views/html/header.html";
     include "Views/html/footer.html";
     include "Model/php/Connexion.php";
+    include "Views/css/Connexion.html";
 }
 
 function Accueil(){
