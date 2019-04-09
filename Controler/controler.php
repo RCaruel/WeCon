@@ -28,7 +28,6 @@ function Connexiontech(){
     include "Views/html/header.html";
     include "Views/html/footer.html";
     include "Model/php/Connexion.php";
-    include "Views/css/Connexion.html";
 }
 
 function Connexionentreprise(){
@@ -36,7 +35,6 @@ function Connexionentreprise(){
     include "Views/html/header.html";
     include "Views/html/footer.html";
     include "Model/php/Connexion.php";
-    include "Views/css/Connexion.html";
 }
 
 function Connexionclient(){
@@ -44,7 +42,6 @@ function Connexionclient(){
     include "Views/html/header.html";
     include "Views/html/footer.html";
     include "Model/php/Connexion.php";
-    include "Views/css/Connexion.html";
 }
 
 function Accueil(){
