@@ -137,6 +137,17 @@ h3{
 
 }
 
+.left{
+    position: relative;
+    float: left;
+}
+
+.right{
+    position: relative;
+    float: right;
+
+}
+
 #recherche{
     position: relative;
     margin-left: 5px;
@@ -156,3 +167,4 @@ td{
     border: 1px solid rgb(190,190,190);
     padding: 10px 20px;
 }
+
