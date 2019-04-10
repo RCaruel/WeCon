@@ -1,5 +1,18 @@
 body
 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 10em;
+    width: 100%;
+    top: -8px;
+    left: -8px;
+    position: absolute;
+    font-family: Helvetica, 'sans-serif';
+}
+
+.content{
+    grid-column: 1/-1;
+    grid-row: 1/10;
     font-family: Helvetica;
 }
 
@@ -13,7 +26,7 @@ body
 
 #logo {
     position: absolute;
-    top: 320px;
+    top: 27vw;
     right: 40%;
 }
 
@@ -32,31 +45,31 @@ body
     color: #2E4057;
     width: 100%;
     position: absolute;
-    font-size: 180%;
+    font-size: 3vw;
 }
 
 .NotreMission{
     color: #2E4057;
     width: 100%;
     position: absolute;
-    font-size: 200%;
-    top: 80vw;
+    font-size: 3vw;
+    top: 87vw;
 }
 
 .NotreEquipe{
     color: #2E4057;
     width: 100%;
     position: absolute;
-    font-size: 200%;
-    top: 135vw;
+    font-size: 3vw;
+    top: 159vw;
 }
 
 .NosValeurs{
     color: #2E4057;
     width: 100%;
     position: absolute;
-    font-size: 200%;
-    top: 110vw;
+    font-size: 3vw;
+    top: 123vw;
 }
 
 .slogan
@@ -64,7 +77,7 @@ body
     color: #2E4057;
     position: absolute;
     width: 100%;
-    top: 16%;
+    top: 30vw;
     text-align: center;
     font-size: 2vw;
 }
@@ -72,27 +85,36 @@ body
 .premierparagraphe{
     position : absolute;
     color: #2E4057;
-    width: 40%;
-    font-size: 120%;
-    top : 43%;
+    width: 50%;
+    font-size: 1.7vw;
+    top : 65vw;
     left: 45%;
+}
+
+.Vision{
+    width: 25vw;
+    position : absolute;
+    margin-left: 13%;
+    top : 65vw;
+
 }
 
 .ligne1{
     position: absolute;
     background: black;
-    top:54%;
-    width: 80%;
+    top:86vw;
+    width: 80vw;
     height: 2px;
     text-align: center;
     margin-left: 10%;
     margin-right: 10%;
 }
+
 .ligne2{
     position: absolute;
     background: black;
-    top:75%;
-    width: 80%;
+    top:122vw;
+    width: 80vw;
     height: 2px;
     text-align: center;
     margin-left: 10%;
@@ -102,8 +124,8 @@ body
 .ligne3{
     position: absolute;
     background: black;
-    top:91%;
-    width: 80%;
+    top:158vw;
+    width: 80vw;
     height: 2px;
     text-align: center;
     margin-left: 10%;
@@ -111,80 +133,87 @@ body
 
 
 }
-.Vision{
-    width: 300px;
-    position : absolute;
-    margin-left: 18%;
-    top : 43%;
 
-}
 
 .deuxiemeparagraphe{
     color: #2E4057;
     width: 60%;
-    font-size: 120%;
+    font-size: 1.7vw;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 33%;
-    padding-bottom: 1650px
+    margin-top: 40%;
+    padding-bottom: 160vw;
 }
 
 .Icones{
-    width: 55vw;
+    max-width: 40vw;
     position : absolute;
-    top : 100vw;
-    margin-left: 23%;
+    top : 111vw;
+    margin-left: 31%;
 }
 
 .troisiemeparagraphe{
-    width: 30%;
+    width: 40%;
     color: #2E4057;
-    margin-left: 18%;
+    margin-left: 12%;
     position: absolute;
-    top: 116vw;
-    font-size: 1.25vw;
+    top: 133vw;
+    font-size: 1.7vw;
 }
 
 .Valeurs{
-    width: 22vw;
+    width: 30vw;
     position : absolute;
-    top : 116vw;
+    top : 134vw;
     margin-left: 56%;
 }
 
 .Gabriel{
     position : absolute;
-    top : 140vw;
-    margin-left: 23%;
+    top : 170vw;
+    height: auto;
+    max-width: 30vw;
+    margin-left: 15vw;
 }
 
 .Antoine{
     position : absolute;
-    top : 140vw;
-    margin-left: 42%;
+    height: auto;
+    max-width: 30vw;
+    top : 170vw;
+    margin-left: 41.5vw;
 }
 
 .Remi{
     position : absolute;
-    top : 140vw;
-    margin-left: 63%;
+    height: auto;
+    max-width: 30vw;
+    top : 170vw;
+    margin-left: 68vw;
 }
 
 .Robin{
     position : absolute;
-    top : 175vw;
-    margin-left: 23%;
+    height: auto;
+    max-width: 30vw;
+    margin-left: 15vw;
+    top:208vw;
 }
 
 .Hicham{
     position : absolute;
-    top : 175vw;
-    margin-left: 42%;
+    height: auto;
+    max-width: 30vw;
+    top : 208vw;
+    margin-left: 41.5vw;
 }
 
 .Jean{
     position : absolute;
-    top : 175vw;
-    margin-left: 63%;
+    height: auto;
+    max-width: 30vw;
+    top : 208vw;
+    margin-left: 68vw;
+
 }
