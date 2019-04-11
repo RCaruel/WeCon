@@ -17,8 +17,8 @@ function getScrollPosition()
 
 button1.addEventListener("click", functionbutton1);
 button2.addEventListener("click", functionbutton2);
-button2.addEventListener("click", functionbutton3);
-button2.addEventListener("click", functionbutton4);
+button3.addEventListener("click", functionbutton3);
+button4.addEventListener("click", functionbutton4);
 
 function functionbutton1() {
     console.log(this);
@@ -26,6 +26,10 @@ function functionbutton1() {
     button1.style.borderLeft = "3px solid #FD9C17";
     button2.style.background = "#2E4057";
     button2.style.borderLeft = "none";
+    button3.style.background = "#2E4057";
+    button3.style.borderLeft = "none";
+    button4.style.background = "#2E4057";
+    button4.style.borderLeft = "none";
 }
 
 function functionbutton2(){
@@ -34,26 +38,38 @@ function functionbutton2(){
     button2.style.borderLeft = "3px solid #FD9C17";
     button1.style.background = "#2E4057";
     button1.style.borderLeft = "none";
+    button3.style.background = "#2E4057";
+    button3.style.borderLeft = "none";
+    button4.style.background = "#2E4057";
+    button4.style.borderLeft = "none";
 }
 
 function functionbutton3() {
     console.log(this);
-    button1.style.background = "#0D1F34";
-    button1.style.borderLeft = "3px solid #FD9C17";
+    button3.style.background = "#0D1F34";
+    button3.style.borderLeft = "3px solid #FD9C17";
+    button1.style.background = "#2E4057";
+    button1.style.borderLeft = "none";
     button2.style.background = "#2E4057";
     button2.style.borderLeft = "none";
+    button4.style.background = "#2E4057";
+    button4.style.borderLeft = "none";
 }
 
 function functionbutton4(){
     console.log(this);
-    button2.style.background = "#0D1F34";
-    button2.style.borderLeft = "3px solid #FD9C17";
+    button4.style.background = "#0D1F34";
+    button4.style.borderLeft = "3px solid #FD9C17";
     button1.style.background = "#2E4057";
     button1.style.borderLeft = "none";
+    button2.style.background = "#2E4057";
+    button2.style.borderLeft = "none";
+    button3.style.background = "#2E4057";
+    button3.style.borderLeft = "none";
 }
 
 
-setInterval(scroll, 100);
+
 
 function scroll(){
     console.log(getScrollPosition());

@@ -47,12 +47,43 @@ button{
     padding: 5% 0 5% 0;
 }
 
-.navigation{
+#Tableaudebord{
     position: relative;
     border: 2px solid black;
     border-radius: 5px;
     margin : 1%;
-    width: 78%;
+    height: 100%;
+    width: 76.5%;
 }
 
+#DesignMaison{
+    position: absolute;
+    width: 45%;
+    height: 45%;
+    top: 3%;
+    left: 3%;
+}
 
+#DesignMaison > img{
+    position: absolute;
+    width: 98%;
+    height: auto;
+    left: 1%;
+    top: 10%;
+}
+
+#luminosité{
+    position: absolute;
+    width: 45%;
+    height: 45%;
+    top: 51%;
+    left: 3%;
+}
+
+#Temperature{
+    position: absolute;
+    width: 45%;
+    height: 45%;
+    top: 3%;
+    left: 51%;
+}

@@ -11,7 +11,7 @@
 </head>
 <body>
 <nav>
-    <img src="Ressources/LogoBlueBg.PNG">
+    <a href="index.php?action=Accueil"><img src="Ressources/logoBluebg.PNG"></a>
     <div class = "anc"><a href="#Statistiques générales"><button id = "StatsGen">Statistiques générales</button></a></div>
     <div class = "line"></div>
     <div class = "anc"><a href="#Statistiques de panne"><button id = "StatsPanne">Statistiques de panne</button></a></div>
