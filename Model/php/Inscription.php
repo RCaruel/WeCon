@@ -1,6 +1,6 @@
 <?php 
 try { 
-	$bdd = new PDO('mysql:host=localhost;dbname=espace_membre', 'root', ''); 
+	$bdd = new PDO('mysql:host=localhost;dbname=wecon', 'root', '');
 } 
 catch(Exception $e) { 
 	die('Erreur : '.$e->getMessage()); 
@@ -27,7 +27,7 @@ if(isset($_POST['forminscription'])) {
             	   $mailexist = $reqmail->rowCount();
             	   if($mailexist == 0) {
              	     if($mdp == $mdp2) {    	     	
-             	        $insertmbr = $bdd->prepare("INSERT INTO membres(pseudo, mail, motdepasse, type) VALUES(?, ?, ?, ?)");
+             	        $insertmbr = $bdd->prepare("INSERT INTO membres(pseudo, mail, motdepasse, TypeCompte) VALUES(?, ?, ?, ?)");
             	         $insertmbr->execute(array($pseudo, $mail, $mdp, $utilise));
            	          $erreur = ">Me connecter</a>";
            	      
@@ -54,6 +54,7 @@ if(isset($_POST['forminscription'])) {
    } else {
       $erreur = "Tous les champs doivent être complétés !";
    }
+   echo $erreur;
 }
 
 ?>

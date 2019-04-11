@@ -1,28 +1,31 @@
 <?php
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=espace_membre', 'root', '');
+    $bdd = new PDO('mysql:host=localhost;dbname=wecon', 'root', '');
 }
 catch(Exception $e) {
     die('Erreur : '.$e->getMessage());
 }
 
+$type = $_GET["type"];
+
 if(isset($_POST['forminscription'])) {
     $mail = htmlspecialchars($_POST['mail']);
     $mdp = sha1($_POST['mdp']);
+    $typeCompte=$_GET["type"];
     if(!empty($_POST['mail'])AND !empty($_POST['mdp'])) {
         $reqmail= $bdd->prepare("SELECT * FROM membres WHERE mail = ?");
         $reqmail->execute(array($mail));
         $mailexist = $reqmail->rowCount();
         if($mailexist != 0) {
-            $requser = $bdd->prepare("SELECT * FROM membres WHERE mail = ? AND motdepasse = ?");
-            $requser->execute(array($mail, $mdp));
+            $requser = $bdd->prepare("SELECT * FROM membres WHERE mail = ? AND motdepasse = ? AND TypeCompte = ?");
+            $requser->execute(array($mail, $mdp, $typeCompte));
             $userexist = $requser->rowCount();
             if ($userexist != 0) {
                 $userinfo = $requser->fetch();
                 $_SESSION['id'] = $userinfo['id'];
                 $_SESSION['pseudo'] = $userinfo['pseudo'];
                 $_SESSION['mail'] = $userinfo['mail'];
-                header("Location: profil.php?id=" . $_SESSION['id']);
+                header("Location: index.php?action=Espace_" . $type);
             } else {
                 $erreur = "Mot de passe incorrect";
             }
@@ -35,5 +38,5 @@ if(isset($_POST['forminscription'])) {
         $erreur = "Tous les champs doivent être complétés !";
     }
 }
-echo "S'inscrire ! <a href=\"index.php?action=Inscription\">Inscription</a>";
+echo $erreur;
 ?>

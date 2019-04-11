@@ -18,30 +18,29 @@ function Send_Message_Check(){
 
 function Inscription(){
     require "Views/html/Inscription.html";
-    include "Views/html/header.html";
-    include "Model/php/Inscription.php";
-    include "Views/html/footer.html";
 }
 
 function Connexiontech(){
-    require "Views/html/connexiontech.html";
     include "Views/html/header.html";
-    include "Model/php/Connexion.php";
     include "Views/html/footer.html";
+    require "Views/html/connexiontech.html";
+
 }
 
 function Connexionentreprise(){
-    require "Views/html/connexionentreprise.html";
     include "Views/html/header.html";
-    include "Model/php/Connexion.php";
     include "Views/html/footer.html";
+    require "Views/html/connexionentreprise.html";
 }
 
 function Connexionclient(){
-    require "Views/html/connexionclient.html";
     include "Views/html/header.html";
-    include "Model/php/Connexion.php";
     include "Views/html/footer.html";
+    require "Views/html/connexionclient.html";
+}
+
+function VerifConnexion(){
+    include "Model/php/Connexion.php";
 }
 
 function Accueil(){
@@ -54,6 +53,10 @@ function Espace_Entreprise(){
     include "Views/html/footer.html";
 }
 
+function Espace_Client(){
+    require "Views/php/EspaceClient.php";
+}
+
 function About(){
     include "Views/html/header.html";
     require "Views/html/apropos.html";
@@ -64,6 +67,11 @@ function Produit(){
     require "Views/html/Produit.html";
     include "Views/html/header.html";
     include "Views/html/footer.html";
+}
+
+function Send_Inscription(){
+    require "Model/php/Inscription.php";
+    require "Views/html/Inscription.html";
 }
 
 ?>

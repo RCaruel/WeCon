@@ -42,6 +42,18 @@ if (isset($_GET["action"])){
         case "Produit":
             Produit();
             break;
+        case "Espace_Client":
+            Espace_Client();
+            break;
+        case "SendInscription":
+            Send_Inscription();
+            break;
+        case "VerifConnexion":
+            VerifConnexion();
+            break;
+        case "Espace_Technicien":
+            Espace_Technicien();
+            break;
         default:
             echo "Error 404.";
             break;
