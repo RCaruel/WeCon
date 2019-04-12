@@ -13,7 +13,7 @@ function Send_Message(){
 }
 
 function Send_Message_Check(){
-    require "Views/php/SendMsgVerif.php";
+    require "Model/php/SendMsgVerif.php";
 }
 
 function Inscription(){
