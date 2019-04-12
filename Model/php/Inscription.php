@@ -15,15 +15,15 @@ if(isset($_POST['forminscription'])) {
    if(!empty($_POST['pseudo']) AND !empty($_POST['mail']) AND !empty($_POST['mail2']) AND !empty($_POST['mdp']) AND !empty($_POST['mdp2'])) {
       $pseudolength = strlen($pseudo);
       if($pseudolength <= 20) {
-		$reqpseudo= $bdd->prepare("SELECT * FROM membres WHERE pseudo = ?");
-               $reqpseudo->execute(array($pseudo));
+		$reqpseudo= $bdd->prepare("SELECT * FROM membres WHERE (pseudo = ? AND TypeCompte = ?)");
+               $reqpseudo->execute(array($pseudo,$utilise));
                $pseudoexist = $reqpseudo->rowCount();
                if($pseudoexist == 0) {
 
         		 if($mail == $mail2) {
           		  if(filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-            	   $reqmail = $bdd->prepare("SELECT * FROM membres WHERE mail = ?");
-            	   $reqmail->execute(array($mail));
+            	   $reqmail = $bdd->prepare("SELECT * FROM membres WHERE(mail = ? AND TypeCompte = ?)");
+            	   $reqmail->execute(array($mail,$utilise));
             	   $mailexist = $reqmail->rowCount();
             	   if($mailexist == 0) {
              	     if($mdp == $mdp2) {    	     	

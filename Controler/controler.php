@@ -56,7 +56,7 @@ function Espace_Client(){
     require "Views/php/EspaceClient.php";
 }
 
-function Espace_Tech(){
+function Espace_Technicien(){
     require "Views/php/EspaceTech.php";
 }
 
