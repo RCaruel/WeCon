@@ -76,5 +76,10 @@ function Send_Inscription(){
     require "Model/php/Inscription.php";
     require "Views/html/Inscription.html";
 }
-
+function ML(){
+    require "Views/html/ml.html";
+}
+function CU(){
+    require "Views/html/CGU.html";
+}
 ?>
