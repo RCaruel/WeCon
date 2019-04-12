@@ -11,15 +11,69 @@ body{
 
 .header{
     grid-column: 1/-1;
-    grid-row: 1/11;
+    grid-row: 1/10;
 }
 
 .footer{
     grid-column: 1/-1;
-    grid-row: 11/13;
+    grid-row: 10/10;
 }
 
 .content{
     grid-column: 1/-1;
-    grid-row: 2/11;
+    grid-row: 2/10;
+}
+
+.Photo{
+    position: absolute;
+    width: 50%;
+    height: 29%;
+    top: 105px;
+    left: 27px;
+}
+
+.Photo > img{
+    position: absolute;
+    width: 100%;
+    height: auto;
+}
+
+.DescriptionGenerale{
+    position: absolute;
+    left: 55%;
+    top: 105px;
+    text-align: justify;
+}
+
+.DescriptionSpécifique{
+    position: absolute;
+    left: 55%;
+    top: 265px;
+    width: 42%;
+}
+
+.DescriptionSpécifique > .left > p, .DescriptionSpécifique > .right > p{
+    border: 1px solid black;
+    margin: 0;
+    padding: 5px;
+}
+
+.left{
+    position: absolute;
+    left: 0;
+    width: 50%;
+}
+
+.right{
+    position: absolute;
+    right: 0;
+    width: 50%;
+}
+
+.Video{
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    left: 18%;
+
 }

@@ -50,11 +50,14 @@ function Accueil(){
 
 function Espace_Entreprise(){
     require "Views/php/EspaceEntreprise.php";
-    include "Views/html/footer.html";
 }
 
 function Espace_Client(){
     require "Views/php/EspaceClient.php";
+}
+
+function Espace_Tech(){
+    require "Views/php/EspaceTech.php";
 }
 
 function About(){
