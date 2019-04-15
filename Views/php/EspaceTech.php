@@ -1,7 +1,7 @@
-<?php
-require('_connexionbdd.php');
-?>
 
+<?php
+include ('Model/php/tableusertech.php');
+?>
 <html>
 <head>
     <meta charset="utf-8">
@@ -25,12 +25,12 @@ require('_connexionbdd.php');
 </nav>
 
 <a id="Gestionusers" ></a>
-<div class="navigation"><h4>Gestion des utilisateurs</h4>
+<div class="navigation" style="font-family: Helvetica"><h4 style="margin-left: 3%; margin-top: 5px;">Gestion des utilisateurs</h4>
 
-    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button" id="Ajouter">Ajouter un utilisateur</button>
+    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button" id="Ajouter"><a>Ajouter un utilisateur</a></button>
     <div id="id01" class="w3-modal">
-        <div class="w3-modal-content">
-            <form action="EspaceTech_post.php" method="post">
+        <div class="w3-modal-content" style="width: 50%;">
+            <form action="index.php?action=Send_User" method="post">
             <div class="w3-container">
                         <span onclick="document.getElementById('id01').style.display='none'"
                               class="w3-button w3-display-topright">&times;
@@ -40,91 +40,51 @@ require('_connexionbdd.php');
                     <div id="line"></div>
                 </div>
                 <br>
-                <form action="EspaceTech_post.php" method="post">
+                <form action="../../Model/php/EspaceTech_post.php" method="post">
                 <div class="left">
-                    <label for="nom">Nom</label>:<input id="newnom" type="text" name="nom"/>
-                    <label for="prenom">Prenom</label>:<input id="newprenom" type="text" name="prenom"/>
-                    <label for="identifiant">Identifiant</label>:<input id="newid" type="text" name="identifiant"/>
+                    <label for="nom">Nom:<input id="newnom" type="text" name="nom"/></label><br>
+                    <label for="prenom">Prenom:<input id="newprenom" type="text" name="prenom"/></label><br>
                 </div>
                 <div class="right">
-                    <label for="mail">Adresse e-mail</label>:<input id="newmail" type="text" name="mail"/>
-                    <label for="acces">Type d'accès</label>:<input id="newacces" type="text" name="acces"/>
-                    <label for="type_utilisateur">Type d'utilisateur</label>:<input id="newtype" type="text" name="type_utilisateur"/>
+                    <label for="identifiant">Identifiant:<input id="newid" type="text" name="identifiant"/></label>
+                    <label for="mail">Adresse e-mail:<input id="newmail" type="email" name="mail"/></label><br>
                 </div>
             </div>
 
-            <input type="submit" value="Enregistrer"/>
-
+            <input type="submit" value="Enregistrer" style="margin: 10px;"/>
             </form>
         </div>
 
     </div>
-    <button onclick="document.getElementById('id02').style.display='block'" class="w3-button" id="Gestionacces">Gestion acc&egrave;s</button>
-    <div id="id02" class="w3-modal">
-        <div class="w3-modal-content">
-            <div class="w3-container">
+    <div id="line"></div>
+
+    <div class="utilisateur">
+        <p style="display: inline-block; margin-left: 20px; margin-top: 10px;">Rechercher:</p>
+        <input id="search" type="text" autocomplete="off" style="width: 20%;">
+        <div id="results"></div>
+
+
+        <button onclick="document.getElementById('id02').style.display='block'" class="w3-button" id="Editer"><a>Editer</a></button>
+        <div id="id02" class="w3-modal">
+            <div class="w3-modal-content">
+                <div class="w3-container">
                         <span onclick="document.getElementById('id02').style.display='none'"
                               class="w3-button w3-display-topright">&times;
                         </span>
-                <p>Gestion acc&egrave;s</p>
+                    <p>Editer</p>
+                    <div id="lineedit"></div>
+                    <?php
+                    afftableau(TRUE);
+                    ?>
+
+                </div>
             </div>
         </div>
-    </div>
-
-    <div id="line"></div>
-
-    <div class="utilisateur"><p style="margin-left: 10px; margin-right: 15px; display: inline-block;">Nom utilisateur</p>
-        <p style="display: inline-block;">Rechercher:</p>
-        <input id="search" type="text" autocomplete="off" style="width: 20%">
-        <div id="results"></div>
-
-        <button id="Afficher">Afficher page</button>
-        <button id="Editer">Editer</button>
+        <div class="tableuser">
         <?php
-        $query = "SELECT * FROM membres ORDER BY id ASC";
-
-        try {
-        $bdd_select = $bdd->prepare($query);
-        $bdd_select->execute();
-        $NbreData = $bdd_select->rowCount();	// nombre d'enregistrements (lignes)
-        $rowAll = $bdd_select->fetchAll();
-        } catch (PDOException $e){ echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
-        // --------------------------------
-        // affichage
-        if ($NbreData != 0)
-        {
+        afftableau(FALSE);
         ?>
-        <table border="1">
-            <thead>
-            <tr>
-                <th>Identifiant</th>
-                <th>Type d'utilisateur</th>
-                <th>Type d'accès</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php
-            // pour chaque ligne (chaque enregistrement)
-            foreach ( $rowAll as $row )
-            {
-                // DONNEES A AFFICHER dans chaque cellule de la ligne
-                ?>
-                <tr>
-                    <td><?php echo $row['identifiant']; ?></td>
-                    <td><?php echo $row['type_utilisateur']; ?></td>
-                    <td><?php echo $row['acces']; ?></td>
-                </tr>
-                <?php
-            } // fin foreach
-            ?>
-            </tbody>
-        </table>
-        <?php
-        } else { ?>
-        pas de données à afficher
-        <?php
-        }
-        ?>
+        </div>
     </div>
 
 <script src="Views/js/EspaceTech.js"></script>
@@ -132,7 +92,6 @@ require('_connexionbdd.php');
 
 </body>
 </html>
-
 
 
 <?php

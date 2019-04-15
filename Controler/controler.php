@@ -60,6 +60,12 @@ function Espace_Technicien(){
     require "Views/php/EspaceTech.php";
 }
 
+function Send_User(){
+    require "Model/php/EspaceTech_post.php";
+    include "Views/php/EspaceTech.php";
+}
+
+
 function About(){
     include "Views/html/header.html";
     require "Views/html/apropos.html";
@@ -82,4 +88,11 @@ function ML(){
 function CU(){
     require "Views/html/CGU.html";
 }
+function delete()
+{
+    require "Model/php/suppmodif.php";
+    supprimer($_GET['ID']);
+    include "Views/php/EspaceTech.php";
+}
+
 ?>

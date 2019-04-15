@@ -54,11 +54,17 @@ if (isset($_GET["action"])){
         case "Espace_Technicien":
             Espace_Technicien();
             break;
+        case "Send_User":
+            Send_User();
+            break;
         case "ML":
             ML();
             break;
         case "CU":
             CU();
+            break;
+        case "supprimer":
+            delete();
             break;
         default:
             echo "Error 404.";
