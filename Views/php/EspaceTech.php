@@ -36,11 +36,11 @@ include ('Model/php/tableusertech.php');
                               class="w3-button w3-display-topright">&times;
                         </span>
                 <div id="head">
-                    Ajouter client
+                    <p style="margin-left: 3%;">Ajouter client</p>
                     <div id="line"></div>
                 </div>
                 <br>
-                <form action="../../Model/php/EspaceTech_post.php" method="post">
+                <form action="Model/php/EspaceTech_post.php" method="post">
                 <div class="left">
                     <label for="nom">Nom:<input id="newnom" type="text" name="nom"/></label><br>
                     <label for="prenom">Prenom:<input id="newprenom" type="text" name="prenom"/></label><br>
@@ -50,7 +50,6 @@ include ('Model/php/tableusertech.php');
                     <label for="mail">Adresse e-mail:<input id="newmail" type="email" name="mail"/></label><br>
                 </div>
             </div>
-
             <input type="submit" value="Enregistrer" style="margin: 10px;"/>
             </form>
         </div>
@@ -71,7 +70,7 @@ include ('Model/php/tableusertech.php');
                         <span onclick="document.getElementById('id02').style.display='none'"
                               class="w3-button w3-display-topright">&times;
                         </span>
-                    <p>Editer</p>
+                    <p style="margin-left: 3%; margin-bottom: 0px;">Editer</p>
                     <div id="lineedit"></div>
                     <?php
                     afftableau(TRUE);
