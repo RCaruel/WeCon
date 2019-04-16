@@ -29,10 +29,8 @@
             "Nombre_de_Messages", "Valeur");?></div>
 </div>
 <a id="Statistiques de panne" ></a>
-<div class = "navigation" id = "statsPanne">Satistiques de panne :
-    <p>Nombre de Clients : </p>
-    <p>Lancer une promotion : </p>
-    <p>Capteurs ayant le plus de succès : </p>
+<div class = "navigation" id = "statsPanne">
+    <?php include "Views/html/Inscription.html"?>
 </div>
 
 

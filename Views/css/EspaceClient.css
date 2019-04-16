@@ -47,6 +47,22 @@ button{
     padding: 5% 0 5% 0;
 }
 
+.bouton{
+    position: absolute;
+    top: 45px;
+    right: 20%;
+    background-color: #fff;
+    border: 2px solid black;
+    color: black;
+    width: auto;
+    height: auto;
+    padding: 0;
+}
+
+#AddPiece{
+    right: 20%;
+}
+
 #Tableaudebord{
     position: relative;
     border: 2px solid black;
@@ -74,6 +90,7 @@ button{
 
 #luminosité{
     position: absolute;
+    background: #ffffff;
     width: 45%;
     height: 45%;
     top: 51%;

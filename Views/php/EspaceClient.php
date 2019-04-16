@@ -32,13 +32,16 @@
     </div>
 
     <div id = "Temperature">
-        <?php showGraphique(123,165,5,61,65,12,132,1,
+        <?php showGraphique(123,165,5,61,65,12,132,2,
             "Température","Valeur");?>
     </div>
 
 </div>
 
 <div id = "Gestiondescapteurs">
+    <h3>Gestion des utilisateurs</h3>
+    <button class = "bouton" id = "AddPiece">Ajouter une pièce</button>
+    <button class = "bouton" id = "AddCapteur">Ajouter un capteur</button>
 
 </div>
 
