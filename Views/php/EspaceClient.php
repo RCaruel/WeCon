@@ -60,31 +60,31 @@
   <label for="horns">Synchronisation auto</label>
 </div>
 <div>
-  <input type="checkbox" id="horns" name="horns">
-  <label for="horns">Envoyer relev&eacute; par email</label>
+  <input type="checkbox" id="horn" name="horn">
+  <label for="horn">Envoyer relev&eacute; par email</label>
 </div>
 <div>
-  <input type="checkbox" id="horns" name="horns">
-  <label for="horns">Acc&egrave;s restreint utilisateurs</label>
+  <input type="checkbox" id="hor" name="hor">
+  <label for="hor">Acc&egrave;s restreint utilisateurs</label>
 </div>
 </div>
     <div id = "BoiteParametres2">
         <h2>S&eacute;curit&eacute;</h2>
 <div>
-  <input type="checkbox" id="horns" name="horns">
-  <label for="horns">Retenir mot de passe pour futurs connexions</label>
+  <input type="checkbox" id="ho" name="ho">
+  <label for="ho">Retenir mot de passe pour futurs connexions</label>
 </div>
 <div>
-  <input type="checkbox" id="horns" name="horns">
-  <label for="horns">Retenir historique</label>
+  <input type="checkbox" id="hors" name="hors">
+  <label for="hors">Retenir historique</label>
 </div>
 <div>
-  <input type="checkbox" id="horns" name="horns">
-  <label for="horns">Nettoyer historique &agrave; chaque connexion</label>
+  <input type="checkbox" id="hornss" name="hornss">
+  <label for="hornss">Nettoyer historique &agrave; chaque connexion</label>
 </div>
 <div>
-  <input type="checkbox" id="horns" name="horns">
-  <label for="horns">Autoriser le partage des données</label>
+  <input type="checkbox" id="hosrns" name="hosrns">
+  <label for="hosrns">Autoriser le partage des données</label>
 </div>
 </div>
 </div>
