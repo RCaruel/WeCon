@@ -62,9 +62,18 @@ function Espace_Technicien(){
 
 function Send_User(){
     require "Model/php/EspaceTech_post.php";
-    include "Views/php/EspaceTech.php";
+    include "Views/php/Espace" . $_GET['page'] .".php";
 }
 
+function Send_Capteur(){
+    require "Model/php/Capteur_post.php";
+    include "Views/php/EspaceClient.php";
+}
+
+function Send_Piece(){
+    require "Model/php/Piece_post.php";
+    include "Views/php/EspaceClient.php";
+}
 
 function About(){
     include "Views/html/header.html";
@@ -88,11 +97,28 @@ function ML(){
 function CU(){
     require "Views/html/CGU.html";
 }
-function delete()
-{
+
+function delete(){
     require "Model/php/suppmodif.php";
     supprimer($_GET['ID']);
-    include "Views/php/EspaceTech.php";
+    include "Views/php/Espace". $_GET['page'] .".php";
 }
 
+function editCompte(){
+    require "Views/php/Espace" . $_GET['page'] . ".php";
+    include "Model/php/suppmodif.php";
+    modifier($_GET['ID']);
+}
+
+function deleteCapteur(){
+    require "Model/php/supprModifCapteur.php";
+    supprimer($_GET['ID']);
+    include "Views/php/EspaceClient.php";
+}
+
+function editCapteur(){
+    require "Views/php/EspaceClient.php";
+    include "Model/php/supprModifCapteur.php";
+    modifier($_GET['ID']);
+}
 ?>

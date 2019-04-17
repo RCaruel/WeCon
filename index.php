@@ -57,6 +57,12 @@ if (isset($_GET["action"])){
         case "Send_User":
             Send_User();
             break;
+        case "Send_Capteur":
+            Send_Capteur();
+            break;
+        case "Send_Piece":
+            Send_Piece();
+            break;
         case "ML":
             ML();
             break;
@@ -65,6 +71,15 @@ if (isset($_GET["action"])){
             break;
         case "supprimer":
             delete();
+            break;
+        case "modifierCompte":
+            editCompte();
+            break;
+        case "supprimerCapteur":
+            deleteCapteur();
+            break;
+        case "modifierCapteur":
+            editCapteur();
             break;
         default:
             echo "Error 404.";
