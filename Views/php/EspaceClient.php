@@ -1,6 +1,7 @@
 <?php include "Model/php/Graph.php"; ?>
 <html>
 <head>
+    <link rel="icon" href="Ressources/wC.png" />
     <meta charset="utf-8">
     <title>WeCon</title>
     <link rel="stylesheet"  href="Views/css/EspaceClient.css">
@@ -16,7 +17,7 @@
     <div class = "line"></div>
     <div class = "anc"><a href="#Gestiondescomptes"><button id = "GestComptes">Gestion des comptes</button></a></div>
     <div class = "line"></div>
-    <div class = "anc"><a href="#Parametre"><button id = "Parametre">Param&egrave;tre</button></a></div>
+    <div class = "anc"><a href="#Parametres"><button id = "Parametre">Param&egrave;tre</button></a></div>
     <div class = "line"></div>
 
 </nav>
@@ -39,18 +40,53 @@
 </div>
 
 <div id = "Gestiondescapteurs">
-    <h3>Gestion des utilisateurs</h3>
-    <button class = "bouton" id = "AddPiece">Ajouter une pièce</button>
+    <h3>Gestion des capteurs</h3>
     <button class = "bouton" id = "AddCapteur">Ajouter un capteur</button>
+    <button class = "bouton" id = "AddPiece">Ajouter une piece</button>
 
 </div>
 
 <div id = "Gestiondescomptes">
-
+    <h3>Gestion des comptes</h3>
+    <button class = "bouton" id = "AddPiece">Ajouter un utilisateur</button>
 </div>
 
 <div id = "Parametres">
-
+    <h3>Param&egrave;tres</h3>
+    <div id = "BoiteParametres">
+        <h2>Param&egrave;tres generaux</h2>
+<div>
+  <input type="checkbox" id="horns" name="horns">
+  <label for="horns">Synchronisation auto</label>
+</div>
+<div>
+  <input type="checkbox" id="horns" name="horns">
+  <label for="horns">Envoyer relev&eacute; par email</label>
+</div>
+<div>
+  <input type="checkbox" id="horns" name="horns">
+  <label for="horns">Acc&egrave;s restreint utilisateurs</label>
+</div>
+</div>
+    <div id = "BoiteParametres2">
+        <h2>S&eacute;curit&eacute;</h2>
+<div>
+  <input type="checkbox" id="horns" name="horns">
+  <label for="horns">Retenir mot de passe pour futurs connexions</label>
+</div>
+<div>
+  <input type="checkbox" id="horns" name="horns">
+  <label for="horns">Retenir historique</label>
+</div>
+<div>
+  <input type="checkbox" id="horns" name="horns">
+  <label for="horns">Nettoyer historique &agrave; chaque connexion</label>
+</div>
+<div>
+  <input type="checkbox" id="horns" name="horns">
+  <label for="horns">Autoriser le partage des données</label>
+</div>
+</div>
 </div>
 
 <script src="Views/js/EspaceClient.js"></script>

@@ -35,8 +35,8 @@ img{
 h3{
     position: absolute;
     border: 1px solid black;
-    width: 80%;
-    height: 100%;
+    width: 98%;
+    height: 97%;
 }
 
 button{
@@ -62,6 +62,9 @@ button{
 #AddPiece{
     right: 20%;
 }
+#AddCapteur{
+    right: 8%;
+}
 
 #Tableaudebord{
     position: relative;
@@ -71,6 +74,46 @@ button{
     height: 100%;
     width: 76.5%;
 }
+
+#Gestiondescapteurs{
+    position: relative;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin : 1%;
+    height: 100%;
+    width: 76.5%;
+}
+
+#Gestiondescomptes{
+    position: relative;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin : 1%;
+    height: 100%;
+    width: 76.5%;
+}
+
+#BoiteParametres{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-size:20px;
+}
+#BoiteParametres2{
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    font-size:20px;
+}
+#Parametres{
+    position: relative;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin : 1%;
+    height: 100%;
+    width: 76.5%;
+}
+
 
 #DesignMaison{
     position: absolute;
@@ -85,7 +128,7 @@ button{
     width: 98%;
     height: auto;
     left: 1%;
-    top: 10%;
+    top: -5%;
 }
 
 #luminosité{
