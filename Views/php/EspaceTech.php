@@ -14,7 +14,6 @@ include ('Model/php/tableusertech.php');
 </head>
 
 <body>
-
 <nav>
     <img src="Ressources/LogoBlueBg.PNG">
     <div class = "anc"><a href="#Gestionusers"><button id = "Gestionutilisateur">Gestion des utilisateurs</button></a></div>
@@ -30,7 +29,7 @@ include ('Model/php/tableusertech.php');
     <button onclick="document.getElementById('id01').style.display='block'" class="w3-button" id="Ajouter"><a>Ajouter un utilisateur</a></button>
     <div id="id01" class="w3-modal">
         <div class="w3-modal-content" style="width: 50%;">
-            <form action="index.php?action=Send_User" method="post">
+            <form action="index.php?action=Send_User&page=Tech" method="post">
             <div class="w3-container">
                         <span onclick="document.getElementById('id01').style.display='none'"
                               class="w3-button w3-display-topright">&times;
@@ -73,7 +72,7 @@ include ('Model/php/tableusertech.php');
                     <p style="margin-left: 3%; margin-bottom: 0px;">Editer</p>
                     <div id="lineedit"></div>
                     <?php
-                    afftableau(TRUE);
+                    afftableau(TRUE,'Tech');
                     ?>
 
                 </div>
@@ -81,7 +80,7 @@ include ('Model/php/tableusertech.php');
         </div>
         <div class="tableuser">
         <?php
-        afftableau(FALSE);
+        afftableau(FALSE,'Tech');
         ?>
         </div>
     </div>

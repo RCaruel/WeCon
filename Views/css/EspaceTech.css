@@ -17,6 +17,10 @@ nav{
     width: 20%;
 }
 
+.w3-button{
+    padding: 2px 16px;
+}
+
 body{
     background: #EAFBFC;
 }
@@ -152,7 +156,7 @@ h3{
 }
 
 #newnom, #newprenom, #newacces, #newid, #newmail, #newtype{
-    width: 40%;
+    width: 35%;
 }
 
 #recherche{

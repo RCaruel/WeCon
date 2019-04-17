@@ -5,23 +5,23 @@ include ('Model/php/_connexionbdd.php');
 function verif()
 {
     try {
-        if (!empty(($_POST['identifiant'] AND $_POST['nom'] AND $_POST['prenom'] AND $_POST['mail']))) {
+        if (!empty($_POST['Nom'] AND $_POST['Id_Piece'])) {
             function existeIdentifiant($identifiant)
             {
-                $bdd = my_pdo_connexxion();
-                $reqpseudo = $bdd->prepare("SELECT * FROM membres WHERE identifiant = ?");
+                $bdd = my_pdo_connexxionWeCon();
+                $reqpseudo = $bdd->prepare("SELECT * FROM capteur WHERE Nom = ?");
                 $reqpseudo->execute(array($identifiant));
                 $pseudoexist = $reqpseudo->rowCount();
                 return ($pseudoexist > 0);
             }
 
-            if (existeIdentifiant($_POST['identifiant'])) {
+            if (existeIdentifiant($_POST['Nom'])) {
                 echo 'Identifiant déjà utilisé';
                 return (FALSE);
             } else {
-                $bdd = my_pdo_connexxion();
-                $req = $bdd->prepare('INSERT INTO membres(identifiant, nom, prenom, mail, type_utilisateur)VALUES(?,?,?,?,?)');
-                $req->execute(array($_POST['identifiant'], $_POST['nom'], $_POST['prenom'], $_POST['mail'], 'Client'));
+                $bdd = my_pdo_connexxionWeCon();
+                $req = $bdd->prepare('INSERT INTO capteur(Nom, Valeur, Id_Piece)VALUES(?,?,?)');
+                $req->execute(array($_POST['Nom'], 0, $_POST['Id_Piece']));
                 return (TRUE);
             }
         } else {

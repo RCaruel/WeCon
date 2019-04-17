@@ -1,18 +1,18 @@
 <?php
 
-function afftableau ($edit, $page)
+function afftableauCapteur ($edit)
 {
 
 
     require('_connexionbdd.php');
-    $query = "SELECT * FROM membres ORDER BY identifiant ASC";
+    $query = "SELECT * FROM Capteur ORDER BY Id ASC";
 
     try {
-        $bdd = my_pdo_connexxion();
+        $bdd = my_pdo_connexxionWeCon();
         $bdd_select = $bdd->prepare($query);
         $bdd_select->execute();
         $NbreData = $bdd_select->rowCount();    // nombre d'enregistrements (lignes)
-        $rowAll = $bdd_select->fetchAll();
+        $rowall = $bdd_select->fetchAll();
     } catch (PDOException $e) {
         echo 'Erreur SQL : ' . $e->getMessage() . '<br/>';
         die();
@@ -24,23 +24,23 @@ function afftableau ($edit, $page)
     <table border="1">
         <thead>
         <tr>
-            <th>Identifiant</th>
-            <th>Type d\'utilisateur</th>
-            <th>Détail compte</th>
+            <th>Id</th>
+            <th>Nom du Capteur</th>
+            <th>Valeur</th>
         </tr>
         </thead>
         <tbody>';
         // pour chaque ligne (chaque enregistrement)
-        foreach ($rowAll as $row) {
+        foreach ($rowall as $row) {
             // DONNEES A AFFICHER dans chaque cellule de la ligne
             echo '
             <tr>
-                <td>' . $row["identifiant"] . ' </td>
-                <td>' . $row["type_utilisateur"] . '</td>   
-                <td></td>
+                <td>' . $row["Id"] . ' </td>
+                <td>' . $row["Nom"] . '</td>
+                <td>' . $row["Valeur"] . '</td>
                 ';
             if ($edit){
-                echo ' <td style="border: 0px;"><a href="index.php?action=supprimer&ID='.$row["identifiant"].'&page='. $page.'">Supprimer</a>    <a href="index.php?action=modifierCompte&ID='.$row["identifiant"].'&page='. $page.'">Modifier</a>';
+                echo ' <td style="border: 0px;"><a href="index.php?action=supprimerCapteur&ID='.$row["Id"].'">Supprimer</a>    <a href="index.php?action=modifierCapteur&ID='.$row["Id"].'">Modifier</a>';
             }
             echo'</tr>';
 
