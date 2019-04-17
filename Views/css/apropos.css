@@ -143,7 +143,7 @@ body
     margin-left: auto;
     margin-right: auto;
     margin-top: 42%;
-    padding-bottom: 160vw;
+    padding-bottom: 133vw;
 }
 
 .Icones{
@@ -216,4 +216,9 @@ body
     top : 208vw;
     margin-left: 68vw;
 
+}
+@media screen and (max-width: 1250px){
+    #quatrieme{
+        display: none;
+    }
 }
