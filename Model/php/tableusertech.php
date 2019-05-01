@@ -5,10 +5,10 @@ function afftableau ($edit, $page)
 
 
     require('_connexionbdd.php');
-    $query = "SELECT * FROM membres ORDER BY identifiant ASC";
+    $query = "SELECT * FROM sousmembres ORDER BY identifiant ASC";
 
     try {
-        $bdd = my_pdo_connexxion();
+        $bdd = my_pdo_connexxionWeCon();
         $bdd_select = $bdd->prepare($query);
         $bdd_select->execute();
         $NbreData = $bdd_select->rowCount();    // nombre d'enregistrements (lignes)
@@ -36,7 +36,7 @@ function afftableau ($edit, $page)
             echo '
             <tr>
                 <td>' . $row["identifiant"] . ' </td>
-                <td>' . $row["type_utilisateur"] . '</td>   
+                <td>' . $row["nom"] . '</td>   
                 <td></td>
                 ';
             if ($edit){
