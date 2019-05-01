@@ -11,8 +11,10 @@ $prenom = htmlspecialchars($_POST["prenom"]);
 $mail = htmlspecialchars($_POST["mail"]);
 $message = htmlspecialchars($_POST["message"]);
 
+include ("Model/php/_connexionbdd.php");
+
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=request', 'root', '');
+    $bdd = my_pdo_connexxionWeCon();
 }
 catch(Exception $e) {
     die('Erreur : '.$e->getMessage());
@@ -38,8 +40,8 @@ if (isset($nom) AND isset($prenom) AND isset($mail) AND isset($message)) {
 
     }
 
-    $sendRequest = $bdd -> prepare("INSERT INTO sendrequest(id, nom, prenom, mail, message) VALUES (?, ?, ?, ?, ?)");
-    $sendRequest->execute(array(NULL, $nom, $prenom, $mail, $message));
+    $sendRequest = $bdd -> prepare("INSERT INTO rapport(nom, prenom, mail, message) VALUES (?, ?, ?, ?)");
+    $sendRequest->execute(array($nom, $prenom, $mail, $message));
 
 }
 
