@@ -15,7 +15,9 @@ include ('Model/php/tableusertech.php');
 
 <body>
 <nav>
-    <img src="Ressources/LogoBlueBg.PNG">
+    <a href="index.php?action=Accueil"><img src="Ressources/logoBluebg.PNG"></a>
+    <?php session_start();
+    echo $_SESSION['pseudo']; ?>
     <div class = "anc"><a href="#Gestionusers"><button id = "Gestionutilisateur">Gestion des utilisateurs</button></a></div>
     <div class = "line"></div>
     <div class = "anc"><a href="#Logs"><button id = "Logs">Logs</button></a></div>

@@ -12,9 +12,12 @@
 <body>
 <nav>
     <a href="index.php?action=Accueil"><img src="Ressources/logoBluebg.PNG"></a>
+    <?php
+    session_start();
+    echo $_SESSION['pseudo']; ?>
     <div class = "anc"><a href="#Statistiques générales"><button id = "StatsGen">Statistiques générales</button></a></div>
     <div class = "line"></div>
-    <div class = "anc"><a href="#Statistiques de panne"><button id = "StatsPanne">Statistiques de panne</button></a></div>
+    <div class = "anc"><a href="#Statistiques de panne"><button id = "StatsPanne">Inscription</button></a></div>
     <div class = "line"></div>
 </nav>
 <a id="Statistiques générales" ></a>

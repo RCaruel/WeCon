@@ -14,6 +14,7 @@ function Send_Message(){
 
 function Send_Message_Check(){
     require "Model/php/SendMsgVerif.php";
+    header("Location: index.php?action=Contact");
 }
 
 function Inscription(){
@@ -21,25 +22,37 @@ function Inscription(){
 }
 
 function Connexiontech(){
-    include "Views/html/header.html";
-    include "Views/html/footer.html";
-    require "Views/html/connexiontech.html";
-
+    if (session_status() != PHP_SESSION_ACTIVE) {
+        include "Views/html/header.html";
+        include "Views/html/footer.html";
+        require "Views/html/connexiontech.html";
+    }else{
+        header("Location: index.php?action=Espace_" . $_SESSION['Type']);
+    }
 }
 
 function Connexionentreprise(){
-    include "Views/html/header.html";
-    include "Views/html/footer.html";
-    require "Views/html/connexionentreprise.html";
+    if (session_status() != PHP_SESSION_ACTIVE) {
+        include "Views/html/header.html";
+        include "Views/html/footer.html";
+        require "Views/html/connexionentreprise.html";
+    }else{
+        header("Location: index.php?action=Espace_" . $_SESSION['Type']);
+    }
 }
 
 function Connexionclient(){
-    include "Views/html/header.html";
-    include "Views/html/footer.html";
-    require "Views/html/connexionclient.html";
+    if (session_status() != PHP_SESSION_ACTIVE) {
+        include "Views/html/header.html";
+        include "Views/html/footer.html";
+        require "Views/html/connexionclient.html";
+    }else{
+        header("Location: index.php?action=Espace_" . $_SESSION['Type']);
+    }
 }
 
 function VerifConnexion(){
+    session_start();
     include "Model/php/Connexion.php";
 }
 
@@ -61,7 +74,7 @@ function Espace_Technicien(){
 }
 
 function Send_User(){
-    require "Model/php/EspaceTech_post.php";
+    require "Model/php/Espace" . $_GET['page'] . "_post.php";
     include "Views/php/Espace" . $_GET['page'] .".php";
 }
 
@@ -121,4 +134,11 @@ function editCapteur(){
     include "Model/php/supprModifCapteur.php";
     modifier($_GET['ID']);
 }
+
+function deco(){
+    session_unset();
+    session_destroy();
+    header("Location: index.php");
+}
+
 ?>

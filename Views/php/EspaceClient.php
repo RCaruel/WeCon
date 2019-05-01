@@ -19,6 +19,8 @@ include "Model/php/tableCapteur.php";
 
 <nav>
     <a href="index.php?action=Accueil"><img src="Ressources/logoBluebg.PNG"></a>
+    <?php session_start();
+    echo $_SESSION['pseudo']; ?>
     <div class = "anc"><a href="#Tableaudebord"><button class = "bouton" id = "TabBord">Tableau de bord</button></a></div>
     <div class = "line"></div>
     <div class = "anc"><a href="#Gestiondescomptes"><button class = "bouton" id = "GestComptes">Gestion des comptes</button></a></div>
@@ -122,6 +124,10 @@ include "Model/php/tableCapteur.php";
                     <br>
                     <form action="Model/php/EspaceTech_post.php" method="post">
                         <label for="nom">Nom:<input id="newnomCapteur" type="text" name="Nom"/></label><br>
+                        <select name="type" id="type">
+                            <option value="Luminosité">Luminosité</option>
+                            <option value="Température">Température</option>
+                        </select>
                         <label for="prenom">Id_Piece:<input id="newId_Piece" type="text" name="Id_Piece"/></label><br>
                 </div>
                 <input type="submit" value="Enregistrer" style="margin: 10px;"/>
