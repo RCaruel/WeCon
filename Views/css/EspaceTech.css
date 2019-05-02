@@ -60,6 +60,14 @@ h3{
     padding: 5% 0 5% 0;
 }
 
+#Deco{
+    background: #2E4057;
+    border: none;
+    color: white;
+    width: 100%;
+    padding: 5% 0 5% 0;
+}
+
 .navigation{
     position: relative;
     background-color: white;
