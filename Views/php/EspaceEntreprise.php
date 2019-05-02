@@ -17,11 +17,10 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
     <body>
         <nav>
             <a href="index.php?action=Accueil"><img src="Ressources/logoBluebg.PNG"></a>
-            <?php
-            echo $_SESSION['pseudo']; ?>
+            <?php echo $_SESSION['pseudo']; ?>
             <div class="anc"><a href="#Statistiques générales"><button id="StatsGen">Statistiques générales</button></a></div>
             <div class="line"></div>
-            <div class="anc"><a href="#Statistiques de panne"><button id="StatsPanne">Statistiques de panne</button></a></div>
+            <div class="anc"><a href="#Statistiques de panne"><button id="StatsPanne">Inscription</button></a></div>
             <div class="line"></div>
         </nav>
         <a id="Statistiques générales"></a>
@@ -79,9 +78,6 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
         <div class="navigation" id="statsPanne">
             <?php include "Views/html/Inscription.html" ?>
         </div>
-
-
-
     </body>
 
     </html>

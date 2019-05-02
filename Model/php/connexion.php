@@ -26,6 +26,7 @@ if(isset($_POST['forminscription'])) {
                 $_SESSION['id'] = $userinfo['id'];
                 $_SESSION['pseudo'] = $userinfo['pseudo'];
                 $_SESSION['mail'] = $userinfo['mail'];
+                $_SESSION['type'] = $type;
                 header("Location: index.php?action=Espace_" . $type);
             } else {
                 $erreur = "Mot de passe incorrect";
