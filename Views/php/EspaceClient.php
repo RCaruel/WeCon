@@ -32,6 +32,8 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
             <div class="line"></div>
             <div class="anc"><a href="#Parametres"><button class="bouton" id="Parametre">Param&egrave;tre</button></a></div>
             <div class="line"></div>
+            <div class="anc"><a href="/wecon/views/php/deconnexion.php"><button class="bouton" id="Parametre">Deconnexion</button></a></div>
+            <div class="line"></div>
 
         </nav>
 
