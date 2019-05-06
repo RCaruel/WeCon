@@ -1,7 +1,7 @@
 <?php
-
+session_start();
 include('Model/php/tableusertech.php');
-//if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
+if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
     ?>
     <html>
 
@@ -124,7 +124,7 @@ include('Model/php/tableusertech.php');
     //	echo implode('|', $results); // Et on affiche les résultats séparés par une barre verticale |
     ?>
 <?php
-//} else {
-  //  header("Location: index.php?action=Accueil");
-//}
+} else {
+    header("Location: index.php?action=Accueil");
+}
 ?>
