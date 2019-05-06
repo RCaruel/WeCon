@@ -29,7 +29,6 @@ include('Model/php/tableusertech.php');
 
         </nav>
 
-        <a id="Gestionusers"></a>
         <div class="navigation" style="font-family: Helvetica">
             <h4 style="margin-left: 3%; margin-top: 5px;">Gestion des utilisateurs</h4>
 
@@ -58,7 +57,6 @@ include('Model/php/tableusertech.php');
                         <input type="submit" value="Enregistrer" style="margin: 10px;" />
                     </form>
                 </div>
-
             </div>
             <div id="line"></div>
 
@@ -91,13 +89,15 @@ include('Model/php/tableusertech.php');
             </div>
         </div>
 
-        <a id="Messagerie">Messagerie</a>
-        <div class="navigation">
+
+        <div class="message">
+            <h4 id="Messagerie">Messagerie</h4>
             <?php
             affmessage();
             ?>
-
         </div>
+
+
         <script src="Views/js/EspaceTech.js"></script>
     </body>
 
