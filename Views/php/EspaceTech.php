@@ -1,8 +1,7 @@
 <?php
-session_start();
 
 include('Model/php/tableusertech.php');
-if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
+//if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
     ?>
     <html>
 
@@ -90,16 +89,16 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
                     ?>
                 </div>
             </div>
+        </div>
 
+        <a id="Messagerie">Messagerie</a>
+        <div class="navigation">
+            <?php
+            affmessage();
+            ?>
 
-            <div class="messagerie">
-                <?php
-                affmessage();
-                ?>
-            </div>
-
-            <script src="Views/js/EspaceTech.js"></script>
-
+        </div>
+        <script src="Views/js/EspaceTech.js"></script>
     </body>
 
     </html>
@@ -126,7 +125,7 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
     //	echo implode('|', $results); // Et on affiche les résultats séparés par une barre verticale |
     ?>
 <?php
-} else {
-    header("Location: index.php?action=Accueil");
-}
+//} else {
+  //  header("Location: index.php?action=Accueil");
+//}
 ?>
