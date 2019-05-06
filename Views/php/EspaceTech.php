@@ -1,8 +1,7 @@
 <?php
-session_start();
 
 include('Model/php/tableusertech.php');
-if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
+//if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
     ?>
     <html>
 
@@ -29,7 +28,6 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
 
         </nav>
 
-        <a id="Gestionusers"></a>
         <div class="navigation" style="font-family: Helvetica">
             <h4 style="margin-left: 3%; margin-top: 5px;">Gestion des utilisateurs</h4>
 
@@ -58,7 +56,6 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
                         <input type="submit" value="Enregistrer" style="margin: 10px;" />
                     </form>
                 </div>
-
             </div>
             <div id="line"></div>
 
@@ -89,10 +86,18 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
                     ?>
                 </div>
             </div>
+        </div>
 
-            <script src="Views/js/EspaceTech.js"></script>
+
+        <div class="message">
+            <h4 id="Messagerie">Messagerie</h4>
+            <?php
+            affmessage();
+            ?>
+        </div>
 
 
+        <script src="Views/js/EspaceTech.js"></script>
     </body>
 
     </html>
@@ -119,7 +124,7 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
     //	echo implode('|', $results); // Et on affiche les résultats séparés par une barre verticale |
     ?>
 <?php
-} else {
-    header("Location: index.php?action=Accueil");
-}
+//} else {
+  //  header("Location: index.php?action=Accueil");
+//}
 ?>

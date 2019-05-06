@@ -81,6 +81,7 @@ if (isset($_GET["action"])){
         case "modifierCapteur":
             editCapteur();
             break;
+
         default:
             echo "Error 404.";
             break;
