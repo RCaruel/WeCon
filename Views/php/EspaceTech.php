@@ -91,8 +91,14 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
                 </div>
             </div>
 
-            <script src="Views/js/EspaceTech.js"></script>
 
+            <div class="messagerie">
+                <?php
+                affmessage();
+                ?>
+            </div>
+
+            <script src="Views/js/EspaceTech.js"></script>
 
     </body>
 

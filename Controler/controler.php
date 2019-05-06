@@ -141,4 +141,8 @@ function deco(){
     header("Location: index.php");
 }
 
+function test(){
+    test();
+}
+
 ?>
