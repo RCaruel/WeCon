@@ -188,3 +188,18 @@ td{
     padding: 10px 20px;
 }
 
+.message{
+    position: relative;
+    background-color: white;
+    border: 0.8px solid grey;
+    border-radius: 5px;
+    margin : 1%;
+    width: 78%;
+    height: 100vh;
+}
+
+.message > h4 {
+    display: inline-block;
+    margin: 0px;
+    top: 98%;
+}
