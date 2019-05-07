@@ -1,5 +1,4 @@
 <?php
-session_start();
 try {
     $bdd = new PDO('mysql:host=localhost;dbname=wecon', 'root', '');
 }
