@@ -11,8 +11,8 @@ function supprimer($userID)
     require('_connexionbdd.php');
 
     if ($userID != null) {
-        $bdd = my_pdo_connexxion();
-        $req = $bdd->prepare("DELETE FROM membres WHERE identifiant = ?");
+        $bdd = my_pdo_connexxionWeCon();
+        $req = $bdd->prepare("DELETE FROM sousmembres WHERE identifiant = ?");
         $req -> execute(array($userID));
     }
 }
@@ -21,8 +21,8 @@ function modifier($userID){
     require('_connexionbdd.php');
 
     if ($userID != null) {
-        $bdd = my_pdo_connexxion();
-        $req = $bdd -> prepare("SELECT * FROM membres WHERE identifiant = ?");
+        $bdd = my_pdo_connexxionWeCon();
+        $req = $bdd -> prepare("SELECT * FROM sousmembres WHERE identifiant = ?");
         $req -> execute(array($userID));
         $req = $req -> fetch();
         echo '<html><input type = "hidden" id="nom" value = ' . $req['nom'] . '>

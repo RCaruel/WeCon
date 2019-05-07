@@ -8,8 +8,8 @@ function verif()
         if (!empty(($_POST['identifiant'] AND $_POST['nom'] AND $_POST['prenom'] AND $_POST['mail']))) {
             function existeIdentifiant($identifiant)
             {
-                $bdd = my_pdo_connexxion();
-                $reqpseudo = $bdd->prepare("SELECT * FROM membres WHERE identifiant = ?");
+                $bdd = my_pdo_connexxionWeCon();
+                $reqpseudo = $bdd->prepare("SELECT * FROM sousmembres WHERE identifiant = ?");
                 $reqpseudo->execute(array($identifiant));
                 $pseudoexist = $reqpseudo->rowCount();
                 return ($pseudoexist > 0);
@@ -19,9 +19,9 @@ function verif()
                 echo 'Identifiant déjà utilisé';
                 return (FALSE);
             } else {
-                $bdd = my_pdo_connexxion();
-                $req = $bdd->prepare('INSERT INTO membres(identifiant, nom, prenom, mail, type_utilisateur)VALUES(?,?,?,?,?)');
-                $req->execute(array($_POST['identifiant'], $_POST['nom'], $_POST['prenom'], $_POST['mail'], 'Client'));
+                $bdd = my_pdo_connexxionWeCon();
+                $req = $bdd->prepare('INSERT INTO sousmembres(identifiant, nom, prenom, mail, id_Compte) VALUES(?,?,?,?, ?)');
+                $req->execute(array($_POST['identifiant'], $_POST['nom'], $_POST['prenom'], $_POST['mail'],0));
                 return (TRUE);
             }
         } else {
