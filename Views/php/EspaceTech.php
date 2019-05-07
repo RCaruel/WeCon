@@ -91,6 +91,10 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
             </div>
         </div>
 
+        <div class = "log">
+            
+        </div>
+
 
         <div class="message">
             <h4 id="Messagerie">Messagerie</h4>

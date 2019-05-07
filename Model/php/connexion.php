@@ -1,5 +1,9 @@
 <?php
+
 session_start();
+
+include "Model/php/log.php";
+
 try {
     $bdd = new PDO('mysql:host=localhost;dbname=wecon', 'root', '');
 }
@@ -28,12 +32,15 @@ if(isset($_POST['forminscription'])) {
                 $_SESSION['mail'] = $userinfo['mail'];
                 $_SESSION['type'] = $type;
                 header("Location: index.php?action=Espace_" . $type);
+                sendLog("Pseudo : " . $_SESSION['pseudo'] . ", mail : " . $_SESSION['mail'] . ", type : " . $_SESSION['type'] . " s'est bien connecté à son compte");
             } else {
                 $erreur = "Mot de passe incorrect";
+                sendLog("mail : " . $mail . ", mdp : " . $mdp . " s'est trompé dans son mot de passe");
             }
         }
         else{
             $erreur = "Compte inexistant";
+            sendLog("mail : " . $mail . "n'existe pas dans la bdd");
         }
     }
     else {
