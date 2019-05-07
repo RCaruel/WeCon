@@ -23,7 +23,10 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
 
         <nav>
             <a href="index.php?action=Accueil"><img src="Ressources/logoBluebg.PNG"></a>
-            <?php echo $_SESSION['pseudo']; ?>
+            <br>
+            <div class = pseudo>
+                <?php echo $_SESSION['pseudo']; ?>
+            </div>
             <div class="anc"><a href="#Tableaudebord"><button class="bouton" id="TabBord">Tableau de bord</button></a></div>
             <div class="line"></div>
             <div class="anc"><a href="#Gestiondescomptes"><button class="bouton" id="GestComptes">Gestion des comptes</button></a></div>
@@ -92,7 +95,6 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
                                     <label for="prenom">Prenom:<input id="newprenom" type="text" name="prenom" /></label><br>
                                 </div>
                                 <div class="right">
-                                    <label for="identifiant">Identifiant:<input id="newid" type="text" name="identifiant" /></label>
                                     <label for="mail">Adresse e-mail:<input id="newmail" type="email" name="mail" /></label><br>
                                 </div>
                         </div>

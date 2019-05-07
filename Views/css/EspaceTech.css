@@ -95,6 +95,11 @@ h3{
     height: 25px;
 }
 
+.pseudo{
+    font-size: 1.5em;
+    color: white;
+}
+
 #Ajouter{
     top: 90%;
     float: right;

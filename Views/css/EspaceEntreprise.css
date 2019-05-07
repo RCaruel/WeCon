@@ -25,6 +25,12 @@ img{
     margin: 15% 0 15% 0;
 }
 
+.pseudo{
+    font-size: 1.5em;
+    color: white;
+}
+
+
 .line{
     position: relative;
     left: 5%;

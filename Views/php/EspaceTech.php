@@ -18,7 +18,10 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
     <body>
         <nav>
             <a href="index.php?action=Accueil"><img src="Ressources/logoBluebg.PNG"></a>
-            <?php echo $_SESSION['pseudo']; ?>
+            <br>
+            <div class = pseudo>
+                <?php echo $_SESSION['pseudo']; ?>
+            </div>
             <div class="anc"><a href="#Gestionusers"><button id="Gestionutilisateur">Gestion des utilisateurs</button></a></div>
             <div class="line"></div>
             <div class="anc"><a href="#Logs"><button id="Logs">Logs</button></a></div>
