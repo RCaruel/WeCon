@@ -252,6 +252,8 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] =='C
 
     </html>
 <?php
+}if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] !='Client')) {
+    header("Location: index.php?action=Espace_" . $_SESSION['type']);
 } else {
     header("Location: index.php?action=Accueil");
 }
