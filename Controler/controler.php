@@ -62,7 +62,7 @@ function Connexion(){
 }
 
 function VerifConnexion(){
-    session_start();
+    
     include "Model/php/Connexion.php";
 }
 
