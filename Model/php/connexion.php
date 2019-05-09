@@ -1,7 +1,4 @@
 <?php
-
-session_start();
-
 include "Model/php/log.php";
 
 try {
@@ -40,6 +37,7 @@ if(isset($_POST['forminscription'])) {
         }
         else{
             $erreur = "Compte inexistant";
+            header('Location: index.php?action=Connexion'. $type);
             sendLog("mail : " . $mail . "n'existe pas dans la bdd");
         }
     }
@@ -47,5 +45,4 @@ if(isset($_POST['forminscription'])) {
         $erreur = "Tous les champs doivent être complétés !";
     }
 }
-echo $erreur;
 ?>

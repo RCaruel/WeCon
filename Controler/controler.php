@@ -21,31 +21,31 @@ function Inscription(){
     require "Views/html/Inscription.html";
 }
 
-function Connexiontech(){
+function ConnexionTechnicien(){
     if (session_status() != PHP_SESSION_ACTIVE) {
         include "Views/html/header.html";
         include "Views/html/footer.html";
-        require "Views/html/connexiontech.html";
+        require "Views/html/connexionTechnicien.html";
     }else{
         header("Location: index.php?action=Espace_" . $_SESSION['Type']);
     }
 }
 
-function Connexionentreprise(){
+function ConnexionEntreprise(){
     if (session_status() != PHP_SESSION_ACTIVE) {
         include "Views/html/header.html";
         include "Views/html/footer.html";
-        require "Views/html/connexionentreprise.html";
+        require "Views/html/connexionEntreprise.html";
     }else{
         header("Location: index.php?action=Espace_" . $_SESSION['Type']);
     }
 }
 
-function Connexionclient(){
+function ConnexionClient(){
     if (session_status() != PHP_SESSION_ACTIVE) {
         include "Views/html/header.html";
         include "Views/html/footer.html";
-        require "Views/html/connexionclient.html";
+        require "Views/html/connexionClient.html";
     }else{
         header("Location: index.php?action=Espace_" . $_SESSION['Type']);
     }

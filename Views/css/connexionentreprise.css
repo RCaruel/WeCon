@@ -85,7 +85,7 @@ input#connexion{
     border: none;
     padding: 8px 10px;
     position: relative;
-    right: 100px;
+    left: 100px;
 }
 
 input#connexion:hover{

@@ -21,14 +21,14 @@ if (isset($_GET["action"])){
         case "Inscription":
             Inscription();
             break;
-        case "Connexiontech":
-            Connexiontech();
+        case "ConnexionTechnicien":
+            ConnexionTechnicien();
             break;
-        case "Connexionentreprise":
-            Connexionentreprise();
+        case "ConnexionEntreprise":
+            ConnexionEntreprise();
             break;
-        case "Connexionclient":
-            Connexionclient();
+        case "ConnexionClient":
+            ConnexionClient();
             break;
         case "Accueil":
             Accueil();

@@ -19,7 +19,7 @@
                         <label for="mail">Mail :</label>
                     </td>
                     <td>
-                        <input type="email" placeholder="Votre mail" id="mail" name="mail" value="<?php if(isset($mail)) { echo $mail; } ?>" />
+                        <input type="email" placeholder="Votre mail" id="mail" name="mail" onkeyup="verifymail()" required/>
                     </td>
                 </tr>
 
@@ -28,7 +28,7 @@
                         <label for="mdp">Mot de passe :</label>
                     </td>
                     <td>
-                        <input type="password" placeholder="Votre mot de passe" id="mdp" name="mdp" />
+                        <input type="password" placeholder="Votre mot de passe" id="mdp" name="mdp" onkeyup="verifyPassword()" required/>
                     </td>
                 </tr>
 
@@ -43,5 +43,6 @@
         </form>
     </div>
 </div>
+<script src="Verifyconnexion.js"></script>
 </body>
 </html>
