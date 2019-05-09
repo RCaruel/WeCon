@@ -1,6 +1,6 @@
 <?php
-echo "<p style='color:red;'>".$_SESSION["type"]."</p>";
-if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] =='Client')) {
+echo "<p style='color:red;'>" . $_SESSION["type"] . "</p>";
+if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == 'Client')) {
     include "Model/php/Graph.php";
     include "Model/php/tableusertech.php";
     include "Model/php/tableCapteur.php";
@@ -23,7 +23,7 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] =='C
         <nav>
             <a href="index.php?action=Accueil"><img src="Ressources/logoBluebg.PNG"></a>
             <br>
-            <div class = pseudo>
+            <div class=pseudo>
                 <?php echo $_SESSION['pseudo']; ?>
             </div>
             <div class="anc"><a href="#Tableaudebord"><button class="bouton" id="TabBord">Tableau de bord</button></a></div>
@@ -208,52 +208,54 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] =='C
                 </div>
             </div>
         </div>
-        <form method="POST" action="index.php?action=VerifConnexion&type=Client">
-        <div id="Parametres">
-            <h3>Param&egrave;tres</h3>
-            <div id="BoiteParametres">
-                <h2>Param&egrave;tres generaux</h2>
-                <div>
-                    <input type="checkbox" id="horns" name="horns">
-                    <label for="horns">Synchronisation auto</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="horn" name="horn">
-                    <label for="horn">Envoyer relev&eacute; par email</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="hor" name="hor">
-                    <label for="hor">Acc&egrave;s restreint utilisateurs</label>
-                </div>
-            </div>
-            <div id="BoiteParametres2">
-                <h2>S&eacute;curit&eacute;</h2>
-                <div>
-                    <input type="checkbox" id="ho" name="ho">
-                    <label for="ho">Retenir mot de passe pour futurs connexions</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="hors" name="hors">
-                    <label for="hors">Retenir historique</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="hornss" name="hornss">
-                    <label for="hornss">Nettoyer historique &agrave; chaque connexion</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="hosrns" name="hosrns">
-                    <label for="hosrns">Autoriser le partage des données</label>
-                </div>
-            </div>
-            <input type="submit" id="Valider" name="validation" value="Valider" />
-        </div>
+        <form method="POST" action="index.php?action=Espace_Client#Parametres">
+            <div id="Parametres">
+                <h3>Param&egrave;tres</h3>
+                <div id="BoiteParametres">
+                    <h2>Param&egrave;tres generaux</h2>
 
-        <script src="Views/js/EspaceClient.js"></script>
+                        <input type="checkbox" value="synchro" id="releve"name="parametres[]"/>Synchronisation auto<br>
+         
+                  
+                        <input type="checkbox" value="releve" id="releve" name="parametres[]"/>Envoyer relev&eacute; par email<br>
+                         
+                    
+                        <input type="checkbox" value="acces" id="acces" name="parametres[]"/>Acc&egrave;s restreint utilisateurs<br>
+                   
+                </div>
+                <div id="BoiteParametres2">
+                    <h2>S&eacute;curit&eacute;</h2>
+                  
+                        <input type="checkbox" value="mdp" id="mdp" name="parametres[]"/>Retenir mot de passe pour futurs connexions<br>
+                    
+                  
+                        <input type="checkbox" value="historique" id="historique" name="parametres[]"/>Retenir historique<br>
+                   
+                   
+                        <input type="checkbox" value="clean" id="clean" name="parametres[]"/>Nettoyer historique &agrave; chaque connexion<br>
+                    
+                    
+                        <input type="checkbox" value="partage" id="partage" name="parametres[]"/>Autoriser le partage des données<br>
+                    
+                </div>
+                <input type="submit" id="Valider" name="validation" value="Valider" class="submit" />
+                <?php
+                foreach ($_POST['parametres'] as $valeur) {
+                    echo "La checkbox $valeur a été cochée<br>";
+                }
+                if(!$_POST['parametres']){
+                    echo "Aucune checkbox n'a été cochée";
+                 }
+                ?>
+            </div>
+        </form>
+            <script src="Views/js/EspaceClient.js"></script>
     </body>
 
     </html>
 <?php
-}if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] !='Client')) {
+}
+if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] != 'Client')) {
     header("Location: index.php?action=Espace_" . $_SESSION['type']);
 } else {
     header("Location: index.php?action=Accueil");

@@ -7,6 +7,12 @@
     top: 0;
 }
 
+.submit{
+    position: absolute;
+    top:550px;
+    left:400px;
+    color:blue;
+}
 nav{
     background: #2E4057;
     text-align: center;
