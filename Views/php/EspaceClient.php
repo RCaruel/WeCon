@@ -1,7 +1,6 @@
 <?php
-session_start();
-
-if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
+echo "<p style='color:red;'>".$_SESSION["type"]."</p>";
+if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] =='Client')) {
     include "Model/php/Graph.php";
     include "Model/php/tableusertech.php";
     include "Model/php/tableCapteur.php";

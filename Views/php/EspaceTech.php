@@ -1,7 +1,7 @@
 <?php
-session_start();
+echo "<p style='color:red;'>".$_SESSION["type"]."</p>";
 include('Model/php/tableusertech.php');
-if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
+if (isset($_SESSION["id"]) and $_SESSION["id"] > 0 and ($_SESSION["type"] =='Technicien')) {
     ?>
     <html>
 
@@ -92,7 +92,7 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
         </div>
 
         <div class = "log">
-            
+            <?php affLog();?>
         </div>
 
 

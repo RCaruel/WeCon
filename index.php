@@ -21,14 +21,14 @@ if (isset($_GET["action"])){
         case "Inscription":
             Inscription();
             break;
-        case "Connexiontech":
-            Connexiontech();
+        case "ConnexionTechnicien":
+        ConnexionTechnicien();
             break;
-        case "Connexionentreprise":
-            Connexionentreprise();
+        case "ConnexionEntreprise":
+            ConnexionEntreprise();
             break;
-        case "Connexionclient":
-            Connexionclient();
+        case "ConnexionClient":
+            ConnexionClient();
             break;
         case "Accueil":
             Accueil();
@@ -81,6 +81,9 @@ if (isset($_GET["action"])){
         case "modifierCapteur":
             editCapteur();
             break;
+        case "Connexion":
+            connexion();
+            break;
 
         default:
             echo "Error 404.";
@@ -90,4 +93,3 @@ if (isset($_GET["action"])){
 }else{
     Accueil();
 }
-?>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * Created by PhpStorm.
  * User: Rémi
@@ -21,33 +22,42 @@ function Inscription(){
     require "Views/html/Inscription.html";
 }
 
-function Connexiontech(){
-    if (session_status() != PHP_SESSION_ACTIVE) {
+function ConnexionTechnicien(){
+    if (!isset($_SESSION["id"])) {
         include "Views/html/header.html";
         include "Views/html/footer.html";
         require "Views/html/connexiontech.html";
     }else{
-        header("Location: index.php?action=Espace_" . $_SESSION['Type']);
+        header("Location: index.php?action=Espace_" . $_SESSION['type']);
     }
 }
 
-function Connexionentreprise(){
-    if (session_status() != PHP_SESSION_ACTIVE) {
+function ConnexionEntreprise(){
+    if (!isset($_SESSION["id"])) {
         include "Views/html/header.html";
         include "Views/html/footer.html";
         require "Views/html/connexionentreprise.html";
     }else{
-        header("Location: index.php?action=Espace_" . $_SESSION['Type']);
+        header("Location: index.php?action=Espace_" . $_SESSION['type']);
     }
 }
 
-function Connexionclient(){
-    if (session_status() != PHP_SESSION_ACTIVE) {
+function ConnexionClient(){
+    if (!isset($_SESSION["id"])) {
         include "Views/html/header.html";
         include "Views/html/footer.html";
         require "Views/html/connexionclient.html";
     }else{
-        header("Location: index.php?action=Espace_" . $_SESSION['Type']);
+        header("Location: index.php?action=Espace_" . $_SESSION['type']);
+    }
+}
+function Connexion(){
+    if (!isset($_SESSION["id"])) {
+        include "Views/html/header.html";
+        include "Views/html/footer.html";
+        require "Views/html/connexionclient.html";
+    }else{
+        header("Location: index.php?action=Espace_" . $_SESSION['type']);
     }
 }
 
