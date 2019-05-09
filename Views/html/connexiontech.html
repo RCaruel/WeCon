@@ -11,35 +11,37 @@
         <img class = "background" src="Ressources/connexion-technicien.jpg">
         <h2 class = "titre"></h2>
         <br /><br />
-        <form method="POST" action="index.php?action=VerifConnexion&type=Technicien">
-            <table>
-                <tr>
-                    <td>
-                        <label for="mail">Mail :</label>
-                    </td>
-                    <td>
-                        <input type="email" placeholder="Votre mail" id="mail" name="mail" value="<?php if(isset($mail)) { echo $mail; } ?>" />
-                    </td>
-                </tr>
+        <div class="content">
+            <form method="POST" class="formconnexion" action="index.php?action=VerifConnexion&type=Technicien">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="mail">Mail :</label>
+                        </td>
+                        <td>
+                            <input type="email" placeholder="Votre mail" id="mail" name="mail" value="<?php if(isset($mail)) { echo $mail; } ?>" />
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>
-                        <label for="mdp">Mot de passe :</label>
-                    </td>
-                    <td>
-                        <input type="password" placeholder="Votre mot de passe" id="mdp" name="mdp" />
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <label for="mdp">Mot de passe :</label>
+                        </td>
+                        <td>
+                            <input type="password" placeholder="Votre mot de passe" id="mdp" name="mdp" />
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td></td>
-                    <td>
-                        <br />
-                        <input type="submit" id="connexion" name="forminscription" value="Connexion" />
-                    </td>
-                </tr>
-            </table>
-        </form>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <br />
+                            <input type="submit" id="connexion" name="forminscription" value="Connexion" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
     </div>
 </body>
 </html>
