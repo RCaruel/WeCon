@@ -1,7 +1,7 @@
 body{
     font-family: Helvetica;
 }
-@media screen and (min-width: 1250px){
+@media screen and (min-width: 1380px){
 
     header
     {
@@ -99,7 +99,7 @@ body{
     
 
 }
-@media screen and (max-width: 1250px)
+@media screen and (max-width: 1380px)
 {
     header{
         grid-row: 1/3;
@@ -117,7 +117,7 @@ body{
     }
 
     header ul{
-        margin:27px auto;
+        margin:22px auto;
         padding:0px;
         display:block;
         list-style-type:none;
