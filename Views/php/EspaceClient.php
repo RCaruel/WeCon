@@ -208,7 +208,6 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
             </div>
         </div>
     </div>
-    <form method="post" action="index.php?action=VerifConnexion&type=Client">
         <div id="Parametres">
             <h3>Param&egrave;tres</h3>
             <div id="BoiteParametres">
@@ -235,14 +234,10 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
                                 <p style="margin-left: 3%; margin-bottom: 0px;">Modifier votre mot de passe</p>
                                 <div id="lineedit"></div>
 
-                                <form method="post" action="<?php
-                                if($_POST('newpassword') == $_POST('newpassword1')){
-                                    echo modifmdp();
-                                }
-                                 ?>">
+                                <form method="post">
                                     <label >Nouveau mot de passe</label><input type="password" id="newpassword" name="newpassword"/>
                                     <label>Confirmation mot de passe</label><input type="password" id="newpassword1" name="newpassword1"/>
-                                    <input type="submit" value="Enregistrer" style="background: #2E4057; color: white; border: solid grey 1px;"/>
+                                    <input type="submit" value="Enregistrer" onclick="<?php modifmdp();?>" style="background: #2E4057; color: white; border: solid grey 1px;"/>
                                 </form>
                             </div>
                         </div>
@@ -258,12 +253,10 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
                             </span>
                                 <p style="margin-left: 3%; margin-bottom: 0px;">Modifier votre e-mail</p>
                                 <div id="lineedit"></div>
-                                <form method="post" action="<?php
-                                if( $_POST("newmail") == $_POST("newmail1")){
-                                   modifmail();}?>">
+                                <form method="post">
                                     <label>Modifier votre e-mail</label><input type="email" name="newmail" id="newmail"/>
                                     <label>Confirmer votre e-mail</label><input type="email" name="newmail1" id="newmail1"/>
-                                    <input value="Enregistrer" type="submit" style="background: #2E4057; color: white; border: solid grey 1px; "/>
+                                    <input value="Enregistrer" type="submit" onclick="<?php modifmail();?>" style="background: #2E4057; color: white; border: solid grey 1px; "/>
                                 </form>
                             </div>
                         </div>
@@ -291,7 +284,6 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
             </div>
             <input type="submit" id="Valider" name="validation" value="Valider" />
         </div>
-    </form>
 
     <script src="Views/js/EspaceClient.js"></script>
     </body>
@@ -308,15 +300,12 @@ function modifmdp(){
 
     $usermail = $_SESSION['mail'];
     $bdd = my_pdo_connexxionWeCon();
-    $req = $bdd->prepare("SELECT * FROM membres WHERE 'mail' = ?");
+    $req = $bdd->prepare("SELECT * FROM membres WHERE mail = ?");
     $req -> execute(array($usermail));
     $req = $req -> fetch();
 
-    $request = $bdd->prepare("UPDATE 'membres' SET 'motdepasse' WHERE 'membres'.'mail' = $usermail");
-    $request -> execute(array('newpassword'));
-
-
-
+    $request = $bdd->prepare("UPDATE membres SET motdepasse WHERE membres.mail = $usermail");
+    $request -> execute(array($_POST['newpassword']));
 
 
 }
@@ -324,12 +313,12 @@ function modifmdp(){
 function modifmail(){
     $usermail = $_SESSION['mail'];
     $bdd = my_pdo_connexxionWeCon();
-    $req = $bdd -> prepare("SELECT * FROM membres WHERE 'mail' = ?");
+    $req = $bdd -> prepare("SELECT * FROM membres WHERE mail = ?");
     $req -> execute(array($usermail));
     $req = $req -> fetch();
 
-    $request = $bdd->prepare("UPDATE 'membres' SET 'mail' WHERE 'membres'.'mail' = $usermail");
-    $request -> execute(array('newmail'));
+    $request = $bdd->prepare("UPDATE membres SET mail WHERE membres.mail = $usermail");
+    $request -> execute(array($_POST('newmail')));
 
 
 }
