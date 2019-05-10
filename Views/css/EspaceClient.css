@@ -38,11 +38,8 @@ img{
     border-bottom: 1px solid white ;
 }
 
-h3{
+h3 {
     position: absolute;
-    border: 1px solid black;
-    width: 98%;
-    height: 97%;
 }
 
 .w3-button > a{
@@ -107,7 +104,7 @@ h3{
 }
 #BoiteParametres2{
     position: absolute;
-    top: 40%;
+    top: 53%;
     left: 10%;
     font-size:20px;
 }
@@ -158,3 +155,14 @@ h3{
     font-size: 1.5em;
     color: white;
 }
+
+#modifmail, #modifmdp {
+    padding: 3px;
+    font-size: 16px;
+    margin: 5px;
+    background: #2E4057;
+    color: white;
+    border: solid 1px grey;
+
+}
+
