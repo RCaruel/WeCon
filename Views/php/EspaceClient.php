@@ -208,7 +208,7 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] =='C
                 </div>
             </div>
         </div>
-        <form method="POST" action="index.php?action=VerifConnexion&type=Client">
+
         <div id="Parametres">
             <h3>Param&egrave;tres</h3>
             <div id="BoiteParametres">
@@ -245,7 +245,6 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] =='C
                     <label for="hosrns">Autoriser le partage des données</label>
                 </div>
             </div>
-            <input type="submit" id="Valider" name="validation" value="Valider" />
         </div>
 
         <script src="Views/js/EspaceClient.js"></script>
