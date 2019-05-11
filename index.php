@@ -84,6 +84,9 @@ if (isset($_GET["action"])){
         case "Connexion":
             connexion();
             break;
+        case "deco":
+            deco();
+            break;
 
         default:
             echo "Error 404.";

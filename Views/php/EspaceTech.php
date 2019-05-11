@@ -1,3 +1,4 @@
+<meta http-equiv="refresh" content="300;URL=index.php?action=deco"> 
 <?php
 echo "<p style='color:red;'>".$_SESSION["type"]."</p>";
 include('Model/php/tableusertech.php');

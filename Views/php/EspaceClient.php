@@ -1,3 +1,4 @@
+<meta http-equiv="refresh" content="300;URL=index.php?action=deco"> 
 <?php
 echo "<p style='color:red;'>" . $_SESSION["type"] . "</p>";
 if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == 'Client')) {
