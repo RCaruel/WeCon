@@ -87,7 +87,7 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0 and ($_SESSION["type"] =='Ent
 
     </html>
 <?php
-}if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] !='Entreprise')) {
+}elseif (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] !='Entreprise')) {
     header("Location: index.php?action=Espace_" . $_SESSION['type']);
 }
  else {

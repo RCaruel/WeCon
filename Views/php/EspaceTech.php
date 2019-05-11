@@ -131,7 +131,7 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0 and ($_SESSION["type"] =='Tec
     //	echo implode('|', $results); // Et on affiche les résultats séparés par une barre verticale |
     ?>
 <?php
-}if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] !='Technicien')) {
+}elseif (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] !='Technicien')) {
     header("Location: index.php?action=Espace_" . $_SESSION['type']);
 }
  else {
