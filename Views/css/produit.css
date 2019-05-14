@@ -26,10 +26,10 @@ body{
 
 .Photo{
     position: absolute;
-    width: 100%;
+    width: 68%;
     height: auto;
-    top: 72px;
-    left: 0px;
+    top: 81px;
+    left: -240px;
     padding: 0 20%;
 
 }
@@ -42,8 +42,9 @@ body{
 
 .DescriptionGenerale{
     position: absolute;
-    left: 55%;
-    top: 105px;
+    left: 54%;
+    right:2%;
+    top: 137px;
     text-align: justify;
 }
 
