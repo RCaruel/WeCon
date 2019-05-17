@@ -1,8 +1,7 @@
+<meta http-equiv="refresh" content="300;URL=index.php?action=deco"> 
 <?php
-session_start();
-
-echo $_SESSION["id"];
-if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
+echo "<p style='color:red;'>" . $_SESSION["type"] . "</p>";
+if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == 'Client')) {
     include "Model/php/Graph.php";
     include "Model/php/tableusertech.php";
     include "Model/php/tableCapteur.php";
@@ -17,13 +16,16 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
         <link rel="stylesheet" href="Views/css/EspaceClient.css">
         <link rel="stylesheet" href="Views/css/EspaceTech.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="tests/w3.css">
     </head>
 
     <body>
 
         <nav>
             <a href="index.php?action=Accueil"><img src="Ressources/logoBluebg.PNG"></a>
+            <br>
+            <div class=pseudo>
+                <?php echo $_SESSION['pseudo']; ?>
+            </div>
             <div class="anc"><a href="#Tableaudebord"><button class="bouton" id="TabBord">Tableau de bord</button></a></div>
             <div class="line"></div>
             <div class="anc"><a href="#Gestiondescomptes"><button class="bouton" id="GestComptes">Gestion des comptes</button></a></div>
@@ -34,6 +36,7 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
             <div class="line"></div>
             <div class="anc"><a href="/wecon/views/php/deconnexion.php"><button class="bouton" id="Parametre">Deconnexion</button></a></div>
             <div class="line"></div>
+
         </nav>
 
         <div id="Tableaudebord">
@@ -91,7 +94,6 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
                                     <label for="prenom">Prenom:<input id="newprenom" type="text" name="prenom" /></label><br>
                                 </div>
                                 <div class="right">
-                                    <label for="identifiant">Identifiant:<input id="newid" type="text" name="identifiant" /></label>
                                     <label for="mail">Adresse e-mail:<input id="newmail" type="email" name="mail" /></label><br>
                                 </div>
                         </div>
@@ -145,6 +147,10 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
                             <br>
                             <form action="Model/php/EspaceTech_post.php" method="post">
                                 <label for="nom">Nom:<input id="newnomCapteur" type="text" name="Nom" /></label><br>
+                                <select name="type" id="type">
+                                    <option value="Luminosité">Luminosité</option>
+                                    <option value="Température">Température</option>
+                                </select>
                                 <label for="prenom">Id_Piece:<input id="newId_Piece" type="text" name="Id_Piece" /></label><br>
                         </div>
                         <input type="submit" value="Enregistrer" style="margin: 10px;" />
@@ -202,42 +208,121 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
                 </div>
             </div>
         </div>
-
         <div id="Parametres">
-            <h3>Param&egrave;tres</h3>
-            <div id="BoiteParametres">
-                <h2>Param&egrave;tres generaux</h2>
-                <div>
-                    <input type="checkbox" id="horns" name="horns">
-                    <label for="horns">Synchronisation auto</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="horn" name="horn">
-                    <label for="horn">Envoyer relev&eacute; par email</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="hor" name="hor">
-                    <label for="hor">Acc&egrave;s restreint utilisateurs</label>
-                </div>
-            </div>
-            <div id="BoiteParametres2">
-                <h2>S&eacute;curit&eacute;</h2>
-                <div>
-                    <input type="checkbox" id="ho" name="ho">
-                    <label for="ho">Retenir mot de passe pour futurs connexions</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="hors" name="hors">
-                    <label for="hors">Retenir historique</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="hornss" name="hornss">
-                    <label for="hornss">Nettoyer historique &agrave; chaque connexion</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="hosrns" name="hosrns">
-                    <label for="hosrns">Autoriser le partage des données</label>
-                </div>
+            <div>
+                <?php
+                $bdd = my_pdo_connexxionWeCon();
+                
+                ?>
+                <form method="POST" action="index.php?action=Espace_Client#Parametres">
+                    <h3>Param&egrave;tres</h3>
+                    <div id="BoiteParametres">
+                        <h2>Param&egrave;tres generaux</h2>
+                        <input type="checkbox" value="synchro" name="synchro" <?php
+                                                                                $reqs = $bdd->prepare("SELECT * FROM parametres WHERE iduser =? AND synchro='oui' ");
+                                                                                $reqs->execute(array($_SESSION['id']));
+                                                                                $verifs = $reqs->rowCount();
+                                                                                if ($verifs != 0) {
+                                                                                    echo 'checked';
+                                                                                }
+                                                                                ?> />Synchronisation auto<br>
+
+                        <input type="checkbox" value="releve" name="releve" <?php
+                                                                            $reqs = $bdd->prepare("SELECT * FROM parametres WHERE iduser =? AND releve='oui' ");
+                                                                            $reqs->execute(array($_SESSION['id']));
+                                                                            $verifs = $reqs->rowCount();
+                                                                            if ($verifs != 0) {
+                                                                                echo 'checked';
+                                                                            }
+                                                                            ?> />Envoyer relev&eacute; par email<br>
+
+
+                        <input type="checkbox" value="acces" name="acces" <?php
+                                                                            $reqs = $bdd->prepare("SELECT * FROM parametres WHERE iduser =? AND acces='oui' ");
+                                                                            $reqs->execute(array($_SESSION['id']));
+                                                                            $verifs = $reqs->rowCount();
+                                                                            if ($verifs != 0) {
+                                                                                echo 'checked';
+                                                                            }
+                                                                            ?> />Acc&egrave;s restreint utilisateurs<br>
+
+                    </div>
+                    <div id="BoiteParametres2">
+                        <h2>S&eacute;curit&eacute;</h2>
+
+
+                        <input type="checkbox" value="clean" name="clean" <?php
+                                                                            $reqs = $bdd->prepare("SELECT * FROM parametres WHERE iduser =? AND historique='oui' ");
+                                                                            $reqs->execute(array($_SESSION['id']));
+                                                                            $verifs = $reqs->rowCount();
+                                                                            if ($verifs != 0) {
+                                                                                echo 'checked';
+                                                                            }
+                                                                            ?> />Nettoyer historique &agrave; chaque connexion<br>
+
+
+                        <input type="checkbox" value="partage" name="partage" <?php
+                                                                                $reqs = $bdd->prepare("SELECT * FROM parametres WHERE iduser =? AND partage='oui' ");
+                                                                                $reqs->execute(array($_SESSION['id']));
+                                                                                $verifs = $reqs->rowCount();
+                                                                                if ($verifs != 0) {
+                                                                                    echo 'checked';
+                                                                                }
+                                                                                ?> />Autoriser le partage des données<br>
+
+                    </div>
+                    <?php
+                    if (!empty($_POST["synchro"])) {
+                        $synchro = "oui";
+                    } else {
+                        $synchro = "non";
+                    }
+                    if (!empty($_POST["releve"])) {
+                        $releve = "oui";
+                    } else {
+                        $releve = "non";
+                    }
+                    if (!empty($_POST["acces"])) {
+                        $acces = "oui";
+                    } else {
+                        $acces = "non";
+                    }
+                    if (!empty($_POST["clean"])) {
+                        $clean = "oui";
+                    } else {
+                        $clean = "non";
+                    }
+                    if (!empty($_POST["partage"])) {
+                        $partage = "oui";
+                    } else {
+                        $partage = "non";
+                    }
+                    $bdd = my_pdo_connexxionWeCon();
+                    $iduser = $_SESSION["id"];
+                    $req = $bdd->prepare("SELECT * FROM parametres WHERE iduser =? ");
+                    $req->execute(array($iduser));
+                    $verif = $req->rowCount();
+                    $data = [
+                        'iduser' => $iduser,
+                        'synchro' => $synchro,
+                        'releve' => $releve,
+                        'acces' => $acces,
+                        'historique' => $clean,
+                        'partage' => $partage,
+                    ];
+                    if ($verif == 0) {
+                        $maj = $bdd->prepare("INSERT INTO parametres(iduser, synchro, releve, acces, historique, partage) VALUES(?, ?, ?, ?, ?, ?)");
+                        $maj->execute(array($iduser, $synchro, $releve, $acces, $clean, $partage));
+                    } else {
+                        $sql = "UPDATE parametres SET synchro= ? , releve= ? , acces=? , historique=? , partage=?  WHERE (iduser = ?)";
+                        $maj = $bdd->prepare($sql);
+                        $maj->execute(array($synchro, $releve, $acces, $clean, $partage, $_SESSION['id']));
+                    }
+                    ?>
+
+                    <input type="submit" id="Valider" name="validation" value="Valider" class="submit" />
+
+                </form>
             </div>
         </div>
 
@@ -245,9 +330,34 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0) {
     </body>
 
     </html>
+
 <?php
-}
-else{
+} elseif (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] != 'Client')) {
+    header("Location: index.php?action=Espace_" . $_SESSION['type']);
+} else {
     header("Location: index.php?action=Accueil");
+}
+?>
+<?php
+include("Model/php/_connexionbdd.php");
+function modifmdp()
+{
+    $usermail = $_SESSION['mail'];
+    $bdd = my_pdo_connexxionWeCon();
+    $req = $bdd->prepare("SELECT * FROM membres WHERE mail = ?");
+    $req->execute(array($usermail));
+    $req = $req->fetch();
+    $request = $bdd->prepare("UPDATE membres SET motdepasse WHERE membres.mail = $usermail");
+    $request->execute(array($_POST['newpassword']));
+}
+function modifmail()
+{
+    $usermail = $_SESSION['mail'];
+    $bdd = my_pdo_connexxionWeCon();
+    $req = $bdd->prepare("SELECT * FROM membres WHERE mail = ?");
+    $req->execute(array($usermail));
+    $req = $req->fetch();
+    $request = $bdd->prepare("UPDATE membres SET mail WHERE membres.mail = $usermail");
+    $request->execute(array($_POST('newmail')));
 }
 ?>
