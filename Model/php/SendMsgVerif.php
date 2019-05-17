@@ -12,6 +12,7 @@ $mail = htmlspecialchars($_POST["mail"]);
 $message = htmlspecialchars($_POST["message"]);
 
 include ("Model/php/_connexionbdd.php");
+include ("Model/php/mail.php");
 
 try {
     $bdd = my_pdo_connexxionWeCon();
@@ -40,8 +41,10 @@ if (isset($nom) AND isset($prenom) AND isset($mail) AND isset($message)) {
 
     }
 
-    $sendRequest = $bdd -> prepare("INSERT INTO rapport(nom, prenom, mail, message) VALUES (?, ?, ?, ?)");
-    $sendRequest->execute(array($nom, $prenom, $mail, $message));
+    $sendRequest = $bdd -> prepare("INSERT INTO rapport(nom, prenom, mail, message, Id_Personne) VALUES (?, ?, ?, ?, ?)");
+    SendMailRequest($nom, $prenom, $mail, $message);
+    $sendRequest->execute(array($nom, $prenom, $mail, $message, 0));
+
 
 }
 
