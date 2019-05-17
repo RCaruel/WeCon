@@ -2,6 +2,7 @@
 <?php
 echo "<p style='color:red;'>".$_SESSION["type"]."</p>";
 include('Model/php/tableusertech.php');
+include 'Model/php/log.php';
 if (isset($_SESSION["id"]) and $_SESSION["id"] > 0 and ($_SESSION["type"] =='Technicien')) {
     ?>
     <html>
