@@ -1,4 +1,6 @@
-<?php 
+<?php
+include "Model/php/mail.php";
+include "Model/php/log.php";
 try { 
 	$bdd = new PDO('mysql:host=localhost;dbname=wecon', 'root', '');
 } 
@@ -9,7 +11,8 @@ if(isset($_POST['forminscription'])) {
    $pseudo = htmlspecialchars($_POST['pseudo']);
    $mail = htmlspecialchars($_POST['mail']);
    $mail2 = htmlspecialchars($_POST['mail2']);
-   $mdp = sha1($_POST['mdp']);
+   $motdepasse = $_POST['mdp'];
+   $mdp = sha1($motdepasse);
    $mdp2 = sha1($_POST['mdp2']);
    $utilise = htmlspecialchars($_POST['utilise']);
    if(!empty($_POST['pseudo']) AND !empty($_POST['mail']) AND !empty($_POST['mail2']) AND !empty($_POST['mdp']) AND !empty($_POST['mdp2'])) {
@@ -29,6 +32,8 @@ if(isset($_POST['forminscription'])) {
              	     if($mdp == $mdp2) {    	     	
              	        $insertmbr = $bdd->prepare("INSERT INTO membres(pseudo, mail, motdepasse, TypeCompte) VALUES(?, ?, ?, ?)");
             	         $insertmbr->execute(array($pseudo, $mail, $mdp, $utilise));
+            	         SendMailInscription($pseudo,$mail,$motdepasse);
+            	         sendLog("Création du compte de " . $pseudo . " mail : " . $mail . " mot de passe : " . $motdepasse);
            	          $erreur = ">Me connecter</a>";
            	      
                   } else {
