@@ -8,10 +8,10 @@
 
 require "Controler/controler.php";
 
-if (isset($_GET["action"])){
+if (isset($_GET["action"])) {
     $action = htmlspecialchars($_GET["action"]);
 
-    switch ($action){
+    switch ($action) {
         case "Send_Message_Check":
             Send_Message_Check();
             break;
@@ -22,7 +22,7 @@ if (isset($_GET["action"])){
             Inscription();
             break;
         case "ConnexionTechnicien":
-        ConnexionTechnicien();
+            ConnexionTechnicien();
             break;
         case "ConnexionEntreprise":
             ConnexionEntreprise();
@@ -87,12 +87,17 @@ if (isset($_GET["action"])){
         case "deco":
             deco();
             break;
+        case "modifmdp":
+            modifmdp();
+            break;
+        case "modifmail":
+            modifmail();
+            break;
 
         default:
             echo "Error 404.";
             break;
     }
-
-}else{
+} else {
     Accueil();
 }

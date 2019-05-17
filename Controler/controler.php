@@ -152,5 +152,37 @@ function deco(){
     header("Location: index.php");
 }
 
+function modifmdp(){
+    include ('Model/php/_connexionbdd.php');
+    $mdp = $_POST['newpassword'];
+    $mdpc = sha1($mdp);
 
+    $usermail = $_SESSION['mail'];
+    $bdd = my_pdo_connexxionWeCon();
+    $req = $bdd->prepare("SELECT * FROM membres WHERE mail = ?");
+    $req -> execute(array($usermail));
+    $req = $req -> fetch();
+    $iduser = $_SESSION["id"];
+
+    $request = $bdd->prepare("UPDATE membres SET motdepasse= ?  WHERE id = $iduser");
+    $request -> execute(array($mdpc));
+    echo 'Vous avez modifier voitre mdp';
 ?>
+<meta http-equiv="refresh" content="1; url=<?php echo $_SERVER["HTTP_REFERER"]  ; ?>" />
+<?php
+}
+
+function modifmail(){
+    include ('Model/php/_connexionbdd.php');
+    $iduser = $_SESSION['id'];
+    $bdd = my_pdo_connexxionWeCon();
+    $req = $bdd -> prepare("SELECT * FROM membres WHERE id = ?");
+    $req -> execute(array($iduser));
+    $req = $req -> fetch();
+
+    $request = $bdd->prepare("UPDATE membres SET mail= ? WHERE id = $iduser");
+    $request -> execute(array($_POST['newmail']));
+    ?>
+    <meta http-equiv="refresh" content="1; url=<?php echo $_SERVER["HTTP_REFERER"]  ; ?>" />
+    <?php
+}

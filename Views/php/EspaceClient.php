@@ -1,4 +1,4 @@
-<meta http-equiv="refresh" content="300;URL=index.php?action=deco"> 
+<meta http-equiv="refresh" content="300;URL=index.php?action=deco">
 <?php
 echo "<p style='color:red;'>" . $_SESSION["type"] . "</p>";
 if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == 'Client')) {
@@ -77,7 +77,7 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
         </div>
 
         <div id="Gestiondescomptes">
-            <button onclick="document.getElementById('id01').style.display='block'" class="w3-button" id="Ajouter"><a>Ajouter un utilisateur</a></button>
+            <button onclick="document.getElementById('id01').style.display='block'" class="w3-button" id="AjouterUtilisateur"><a>Ajouter un utilisateur</a></button>
             <div id="id01" class="w3-modal">
                 <div class="w3-modal-content" style="width: 50%;">
                     <form action="index.php?action=Send_User&page=Client" method="post">
@@ -158,7 +158,7 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
                 </div>
             </div>
 
-            <button onclick="document.getElementById('id05').style.display='block'" class="w3-button" id="Ajouter" id="AjouterPiece" style="transform: translate(-20px, 0)"><a>Ajouter une Piece</a></button>
+            <button onclick="document.getElementById('id05').style.display='block'" class="w3-button" id="AjouterPiece" id="AjouterPiece" style="transform: translate(-20px, 0)"><a>Ajouter une Piece</a></button>
             <div id="id05" class="w3-modal">
                 <div class="w3-modal-content" style="width: 50%;">
                     <form action="index.php?action=Send_Piece" method="post">
@@ -212,10 +212,11 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
             <div>
                 <?php
                 $bdd = my_pdo_connexxionWeCon();
-                
+
                 ?>
+
+                <h3>Param&egrave;tres</h3>
                 <form method="POST" action="index.php?action=Espace_Client#Parametres">
-                    <h3>Param&egrave;tres</h3>
                     <div id="BoiteParametres">
                         <h2>Param&egrave;tres generaux</h2>
                         <input type="checkbox" value="synchro" name="synchro" <?php
@@ -247,6 +248,8 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
                                                                             ?> />Acc&egrave;s restreint utilisateurs<br>
 
                     </div>
+
+
                     <div id="BoiteParametres2">
                         <h2>S&eacute;curit&eacute;</h2>
 
@@ -324,6 +327,46 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
 
                 </form>
             </div>
+            <div id="Modification">
+                <div>
+                    <button onclick="document.getElementById('id06').style.display='block'" class="w3-button" id="modifmdp"><a>Modifier mot de passe</a></button>
+                    <div id="id06" class="w3-modal">
+                        <div class="w3-modal-content">
+                            <div class="w3-container">
+                                <span onclick="document.getElementById('id06').style.display='none'" class="w3-button w3-display-topright">&times;
+                                </span>
+                                <p style="margin-left: 3%; margin-bottom: 0px;">Modifier votre mot de passe</p>
+                                <div id="lineedit"></div>
+
+                                <form method="post" action=" index.php?action=modifmdp">
+                                    <label>Nouveau mot de passe</label><input type="password" id="newpassword" name="newpassword" />
+                                    <label>Confirmation mot de passe</label><input type="password" id="newpassword1" name="newpassword1" />
+                                    <input type="submit" value="Enregistrer" style="background: #2E4057; color: white; border: solid grey 1px;" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <button onclick="document.getElementById('id07').style.display='block'" class="w3-button" id="modifmail"><a>Modifier votre e-mail</a></button>
+                    <div id="id07" class="w3-modal">
+                        <div class="w3-modal-content">
+                            <div class="w3-container">
+                                <span onclick="document.getElementById('id07').style.display='none'" class="w3-button w3-display-topright">&times;
+                                </span>
+                                <p style="margin-left: 3%; margin-bottom: 0px;">Modifier votre e-mail</p>
+                                <div id="lineedit"></div>
+                                <form method="post" action=" index.php?action=modifmail">
+                                    <label>Modifier votre e-mail</label><input type="email" name="newmail" id="newmail" />
+                                    <label>Confirmer votre e-mail</label><input type="email" name="newmail1" id="newmail1" />
+                                    <input value="Enregistrer" type="submit" style="background: #2E4057; color: white; border: solid grey 1px; " />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <script src="Views/js/EspaceClient.js"></script>
@@ -338,32 +381,4 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
     header("Location: index.php?action=Accueil");
 }
 
-?>
-<?php
-include("Model/php/_connexionbdd.php");
-
-function modifmdp()
-{
-
-    $usermail = $_SESSION['mail'];
-    $bdd = my_pdo_connexxionWeCon();
-    $req = $bdd->prepare("SELECT * FROM membres WHERE mail = ?");
-    $req->execute(array($usermail));
-    $req = $req->fetch();
-
-    $request = $bdd->prepare("UPDATE membres SET motdepasse WHERE membres.mail = $usermail");
-    $request->execute(array($_POST['newpassword']));
-}
-
-function modifmail()
-{
-    $usermail = $_SESSION['mail'];
-    $bdd = my_pdo_connexxionWeCon();
-    $req = $bdd->prepare("SELECT * FROM membres WHERE mail = ?");
-    $req->execute(array($usermail));
-    $req = $req->fetch();
-
-    $request = $bdd->prepare("UPDATE membres SET mail WHERE membres.mail = $usermail");
-    $request->execute(array($_POST('newmail')));
-}
 ?>
