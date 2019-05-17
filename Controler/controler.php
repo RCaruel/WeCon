@@ -102,6 +102,7 @@ function About(){
     include "Views/html/header.html";
     require "Views/html/apropos.html";
     include "Views/html/footer.html";
+    echo "</div>";
 }
 
 function Produit(){
