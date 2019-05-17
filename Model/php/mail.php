@@ -18,15 +18,15 @@ function SendMailInscription($name, $mail, $motdepasse){
                 <h3>Bonjour monsieur ' . $name.'</h3>
             </div>
             <p align="justify">Nous vous remercions de faire confiance à notre compagnie.<br>
-             Voici vos identifiants :<br>
-             Nom : ' . $name . '<br>
-             Mail : ' . $mail . '<br>
-             Mot de passe : '. $motdepasse ."<br>
-             Vous pouvez dès maintenant vous connecter à votre espace.<br><br>
-             </p>
-             <p>Cordialement<br>WeCon</p>
-             <h6><br><br><br>Nous vous rappelons que ce mail a été envoyé automatiquement, si vous n'avez pas demandé la création d'un compte dans notre entreprise,
-             merci de contacter le support sur le site WeCon.com</h6>
+            Voici vos identifiants :<br>
+            <span style=\'font-weight: bold\'> Nom : </span>' . $name . '<br>
+            <span style=\'font-weight: bold\'> Mail : </span>' . $mail . '<br>
+            <span style=\'font-weight: bold\'> Mot de passe : </span>'. $motdepasse ."<br>
+            Vous pouvez dès maintenant vous connecter à votre espace.<br><br>
+            </p>
+            <p>Cordialement<br>WeCon</p>
+            <h6><br><br><br>Nous vous rappelons que ce mail a été envoyé automatiquement, si vous n'avez pas demandé la création d'un compte dans notre entreprise,
+            merci de contacter le support sur le site WeCon.com</h6>
         </body>
     </html>
     ";
@@ -53,13 +53,13 @@ function SendMailRequest($nom, $prenom, $mail, $message){
             <div align="center" style="text-decoration: underline;">
                 <h3>Bonjour monsieur ' .$prenom . " " . $nom."</h3>
             </div>
-            <p align='justify'>Nous avons bien reçu votre message et nous vous recontacterons dès que possible.
+            <p align='justify'>Nous avons bien reçu votre message et nous vous recontacterons dès que possible.<br>
                 <br>
-                Voici vos informations :
-                Nom : " . $nom . "
-                Prenom : " . $prenom . "
-                Mail : " . $mail . "
-                Message : " .$message. "
+                Voici vos informations :<br>
+                <span style='font-weight: bold'> Nom :</span> " . $nom . " <br>
+                <span style='font-weight: bold'> Prenom :</span> " . $prenom . "<br>
+                <span style='font-weight: bold'> Mail :</span> " . $mail . "<br>
+                <span style='font-weight: bold'> Message :</span> " .$message. "<br>
                 <br>
                 Merci de ne pas renvoyer de mails et d'attendre notre retour afin de ne pas ralentir le traitement de votre demande.
             <br><br>
