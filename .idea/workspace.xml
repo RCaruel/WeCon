@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72845f33-37dd-413e-98b1-5b7c18444e94" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Model/php/modifEspClient.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/php/paramsUser.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/php/supprMessage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controler/controler.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controler/controler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/php/log.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/php/log.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/php/tablemessagerie.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/php/tablemessagerie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/css/EspaceTech.css" beforeDir="false" afterPath="$PROJECT_DIR$/Views/css/EspaceTech.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/css/SendMsg.css" beforeDir="false" afterPath="$PROJECT_DIR$/Views/css/SendMsg.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/html/Accueil.html" beforeDir="false" afterPath="$PROJECT_DIR$/Views/html/Accueil.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/html/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/Views/html/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/php/EspaceClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/php/EspaceClient.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/php/EspaceTech.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/php/EspaceTech.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,14 +32,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="39" />
+          <entry key="css" value="55" />
           <entry key="html" value="12" />
           <entry key="php" value="4914" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="39" />
+          <entry key="CSS" value="55" />
           <entry key="HTML" value="57" />
           <entry key="PHP" value="4869" />
         </counts>
@@ -119,8 +106,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Views/css/SendMsg.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="306">
+              <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -402,12 +389,12 @@
       <workItem from="1557211304804" duration="3041000" />
       <workItem from="1557752825434" duration="11793000" />
       <workItem from="1558095960314" duration="5194000" />
-      <workItem from="1558357834827" duration="6729000" />
+      <workItem from="1558357834827" duration="7073000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258178000" />
+    <option name="totallyTimeSpent" value="258522000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="916" extended-state="6" />
@@ -812,8 +799,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Views/css/SendMsg.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="306">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
         </state>
       </provider>
     </entry>
