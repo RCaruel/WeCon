@@ -9,7 +9,7 @@ function sendLog($message){
 
 function affLog(){
     $bddLog = my_pdo_connexxionWeCon();
-    $request = $bddLog -> prepare("SELECT * FROM log");
+    $request = $bddLog -> prepare("SELECT * FROM log ORDER BY id DESC LIMIT 10");
     $request -> execute(array());
     $logs = $request->fetchAll();
     foreach ($logs as $log){

@@ -11,7 +11,7 @@ function affmessage ()
 
 
     require('_connexionbdd.php');
-    $query = "SELECT * FROM rapport ORDER BY identifiant ASC";
+    $query = "SELECT * FROM rapport ORDER BY id ASC";
 
     try {
         $bdd = my_pdo_connexxionWeCon();
@@ -43,8 +43,8 @@ function affmessage ()
             <tr>
                 <td>' . $row["Nom"] . ' </td>
                 <td>' . $row["Prenom"] . '</td>   
-                <td>' . $row["Message"].'</td>
-                <td></td>
+                <td>' . nl2br($row["Message"]).'</td>
+                <td> <a href="index.php?action=deleteMessage&id='. $row["Id"] .'">Supprimer</a> </td>
                 ';
         } // fin foreach
 

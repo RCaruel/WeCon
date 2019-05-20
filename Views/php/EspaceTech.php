@@ -1,8 +1,10 @@
 <meta http-equiv="refresh" content="300;URL=index.php?action=deco"> 
 <?php
-echo "<p style='color:red;'>".$_SESSION["type"]."</p>";
+
 include('Model/php/tableusertech.php');
 include 'Model/php/log.php';
+include 'Model/php/tablemessagerie.php';
+
 if (isset($_SESSION["id"]) and $_SESSION["id"] > 0 and ($_SESSION["type"] =='Technicien')) {
     ?>
     <html>
@@ -23,6 +25,8 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0 and ($_SESSION["type"] =='Tec
             <br>
             <div class = pseudo>
                 <?php echo $_SESSION['pseudo']; ?>
+                <br>
+                <?php echo "<p style='color:red;'>".$_SESSION["type"]."</p>";?>
             </div>
             <div class="anc"><a href="#Gestionusers"><button id="Gestionutilisateur">Gestion des utilisateurs</button></a></div>
             <div class="line"></div>
