@@ -146,6 +146,19 @@ function editCapteur(){
     modifier($_GET['ID']);
 }
 
+function faq(){
+    include "Views/html/header.html";
+    require "Views/html/faq.html";
+    include "Views/html/footer.html";
+}
+
+
+function rechercher(){
+    include "Views/html/header.html";
+    require "Views/php/resultatrecherche.php";
+    include "Views/html/footer.html";
+}
+
 function deco(){
     session_unset();
     session_destroy();
