@@ -1,5 +1,6 @@
 <?php
 include ('Model/php/_connexionbdd.php');
+if (isset($_GET["action"])) {
     function Parametre()
     {
         if (!empty($_POST["synchro"])) {
@@ -42,6 +43,5 @@ include ('Model/php/_connexionbdd.php');
         }
         
     }
-    Parametre();
-    
+}
     ?>
