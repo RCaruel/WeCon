@@ -96,11 +96,12 @@ if (isset($_GET["action"])) {
         case "FAQ":
             faq();
             break;
-        
         case "Rechercher":
             rechercher();
             break;
-
+        case "deleteMessage":
+            deleteMessage();
+            break;
         default:
             echo "Error 404.";
             break;

@@ -1,10 +1,12 @@
 <meta http-equiv="refresh" content="300;URL=index.php?action=deco">
 <?php
+
 echo "<p style='color:red;'>" . $_SESSION["type"] . "</p>";
 if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == 'Client')) {
     include "Model/php/Graph.php";
     include "Model/php/tableusertech.php";
     include "Model/php/tableCapteur.php";
+    include "Model/php/paramsUser.php";
     ?>
 
     <html>
@@ -211,8 +213,7 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
         <div id="Parametres">
             <div>
                 <?php
-                $bdd = my_pdo_connexxionWeCon();
-
+                $_SESSION['userParams'] = getUserParams();
                 ?>
 
                 <h3>Param&egrave;tres</h3>
@@ -220,29 +221,20 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
                     <div id="BoiteParametres">
                         <h2>Param&egrave;tres generaux</h2>
                         <input type="checkbox" value="synchro" name="synchro" <?php
-                                                                                $reqs = $bdd->prepare("SELECT * FROM parametres WHERE iduser =? AND synchro='oui' ");
-                                                                                $reqs->execute(array($_SESSION['id']));
-                                                                                $verifs = $reqs->rowCount();
-                                                                                if ($verifs != 0) {
+                                                                                if ($_SESSION['userParams']['synchro'] == "oui") {
                                                                                     echo 'checked';
                                                                                 }
                                                                                 ?> />Synchronisation auto<br>
 
                         <input type="checkbox" value="releve" name="releve" <?php
-                                                                            $reqs = $bdd->prepare("SELECT * FROM parametres WHERE iduser =? AND releve='oui' ");
-                                                                            $reqs->execute(array($_SESSION['id']));
-                                                                            $verifs = $reqs->rowCount();
-                                                                            if ($verifs != 0) {
+                                                                            if ($_SESSION['userParams']['releve'] == "oui") {
                                                                                 echo 'checked';
                                                                             }
                                                                             ?> />Envoyer relev&eacute; par email<br>
 
 
                         <input type="checkbox" value="acces" name="acces" <?php
-                                                                            $reqs = $bdd->prepare("SELECT * FROM parametres WHERE iduser =? AND acces='oui' ");
-                                                                            $reqs->execute(array($_SESSION['id']));
-                                                                            $verifs = $reqs->rowCount();
-                                                                            if ($verifs != 0) {
+                                                                            if ($_SESSION['userParams']['acces'] == "oui") {
                                                                                 echo 'checked';
                                                                             }
                                                                             ?> />Acc&egrave;s restreint utilisateurs<br>
@@ -255,20 +247,14 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
 
 
                         <input type="checkbox" value="clean" name="clean" <?php
-                                                                            $reqs = $bdd->prepare("SELECT * FROM parametres WHERE iduser =? AND historique='oui' ");
-                                                                            $reqs->execute(array($_SESSION['id']));
-                                                                            $verifs = $reqs->rowCount();
-                                                                            if ($verifs != 0) {
+                                                                            if ($_SESSION['userParams']['historique'] == "oui") {
                                                                                 echo 'checked';
                                                                             }
                                                                             ?> />Nettoyer historique &agrave; chaque connexion<br>
 
 
                         <input type="checkbox" value="partage" name="partage" <?php
-                                                                                $reqs = $bdd->prepare("SELECT * FROM parametres WHERE iduser =? AND partage='oui' ");
-                                                                                $reqs->execute(array($_SESSION['id']));
-                                                                                $verifs = $reqs->rowCount();
-                                                                                if ($verifs != 0) {
+                                                                                if ($_SESSION['userParams']['partage'] == "oui") {
                                                                                     echo 'checked';
                                                                                 }
                                                                                 ?> />Autoriser le partage des données<br>
@@ -300,28 +286,7 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
                     } else {
                         $partage = "non";
                     }
-                    $bdd = my_pdo_connexxionWeCon();
-                    $iduser = $_SESSION["id"];
-                    $req = $bdd->prepare("SELECT * FROM parametres WHERE iduser =? ");
-                    $req->execute(array($iduser));
-                    $verif = $req->rowCount();
-                    $data = [
-                        'iduser' => $iduser,
-                        'synchro' => $synchro,
-                        'releve' => $releve,
-                        'acces' => $acces,
-                        'historique' => $clean,
-                        'partage' => $partage,
-                    ];
-                    if ($verif == 0) {
-                        $maj = $bdd->prepare("INSERT INTO parametres(iduser, synchro, releve, acces, historique, partage) VALUES(?, ?, ?, ?, ?, ?)");
-                        $maj->execute(array($iduser, $synchro, $releve, $acces, $clean, $partage));
-                    } else {
-                        $sql = "UPDATE parametres SET synchro= ? , releve= ? , acces=? , historique=? , partage=?  WHERE (iduser = ?)";
-                        $maj = $bdd->prepare($sql);
-                        $maj->execute(array($synchro, $releve, $acces, $clean, $partage, $_SESSION['id']));
-                    }
-                    ?>
+                    validateParams($synchro, $releve, $acces, $clean, $partage); ?>
 
                     <input type="submit" id="Valider" name="validation" value="Valider" class="submit" />
 
