@@ -93,6 +93,13 @@ if (isset($_GET["action"])) {
         case "modifmail":
             modifmail();
             break;
+        case "FAQ":
+            faq();
+            break;
+        
+        case "Rechercher":
+            rechercher();
+            break;
 
         default:
             echo "Error 404.";

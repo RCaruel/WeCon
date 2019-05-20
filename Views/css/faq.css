@@ -1,0 +1,223 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:900);
+*, *:before, *:after{
+  box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+
+.titre{
+    margin-top: 40px;
+    position : relative;
+}
+
+
+
+.menuLateral {   
+    width: 350px; 
+    margin: 40px auto;
+    list-style: none;
+    padding: 5px; 
+    background: #F2F2F2;  
+}
+.ul li, .ul li a{
+    display: block;
+    text-align: center;
+}
+.ul li a {
+    margin: 1px 0; 
+    padding: 8px 20px; 
+    color: #666;  
+    background: #FFF;  
+    text-decoration: none; 
+    -webkit-transition: all .3s;  
+    -moz-transition: all .3s;   
+    transition: all .3s; 
+}
+.ul li a:hover, .ul li a:focus {
+    background: #22A9E8;  
+    color: #FFF;
+    -ms-transform: rotate(1.1); 
+        -webkit-transform: rotate(1.1);
+    transform: scale(1.1);  
+}
+
+
+.Rechercher{
+    margin-top: -60px;
+}
+
+.boutonRecherche{
+    background-color: #2E4057;   /* Couleur de fond */
+    border-style: solid;   /* Style de la bordure  */
+    border-width: 1px;   /* Epaisseur de la bordure  */
+    border-color: #2E4057;   /* Couleur de la bordure  */
+    padding: 5px 10px 5px 10px;   /* Espace entre les bords et le contenu : haut droite bas gauche  */
+    width: 8%;   /* Permet d'ajuster la largeur du bouton à 100% */
+    box-sizing: border-box;   /* Important */
+    font-family: PT sans;   /* Police du texte */
+    font-size: 13px;   /* Taille de la police du texte */
+    font-weight: normal;   /* Graisse du texte : normal = normal ; bold = gras */
+    letter-spacing: 2px;   /* Espacement des caractères */
+    margin: 10px 0 0 0;   /* Espace autour du bouton : haut droite bas gauche  */
+    text-transform: uppercase;   /* Transforme le texte en majuscules */
+    color: #ffffff;   /* Couleur du texte */
+    margin-right: 2%;
+}
+
+.boutonRecherche:hover{
+    background-color: #ffffff;   /* Couleur de fond */
+    color: #2E4057;   /* Couleur du texte */
+    cursor: pointer;   /* Apparence du curseur comme pour un lien */
+}
+
+.barreRecherche{
+    background-color: #ffffff;   /* Couleur de fond */
+    border-style: solid;   /* Style de la bordure  */
+    border-width: 1px;   /* Epaisseur de la bordure  */
+    border-color: #dddddd;   /* Couleur de la bordure  */
+    padding: 5px 10px 5px 10px;   /* Espace entre les bords et le contenu : haut droite bas gauche  */
+    width: 8%;   /* Permet d'ajuster la largeur du champ de saisie à 100% */
+    box-sizing: border-box;   /* Important */
+    font-family: Arial, Helvetica, sans-serif;   /* Police du texte */
+    font-size: 12px;   /* Taille de la police du texte */
+    font-weight: normal;   /* Graisse du texte : normal = normal ; bold = gras */
+    letter-spacing: 1px;   /* Espacement des caractères */
+}
+
+
+
+.vertical-menu {
+    width: 200px; /* Set a width if you like */
+    margin-top: 3%;
+    margin-left: 5%;
+    position: fixed;
+  }
+
+  
+  .vertical-menu a {
+    background-color: #eee; /* Grey background color */
+    color: black; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+  }
+  
+  .vertical-menu a:hover {
+    background-color: #ccc; /* Dark grey background on mouse-over */
+  }
+  
+  .vertical-menu a.active {
+    background-color: #2E4057; /* Add a green color to the "active/current" link */
+    color: white;
+  }
+
+
+
+
+
+  
+  @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5em
+}
+
+section{
+  padding: 10% 20%;
+}
+.animate{
+  transition: all .3s;
+}
+
+input[name=question]{
+    display: none;
+}
+input[name=question] + label{
+    position: relative;
+    display: block;
+    padding: 20px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background: rgba(246, 246, 246, 1);
+    color: #2E4057;
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    border-radius: 3px;
+}
+
+input[name=cat] + label{
+    position: relative;
+    display: block;
+    padding: 20px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background: #F49B3E;
+    color: #2E4057;
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    border-radius: 3px;
+    text-align: center;
+}
+
+.response{
+    position: relative;
+    background: #2E4057;
+    color: #2E4057;
+    padding: 10px 20px; 
+    -webkit-transform: translate3d(0,-40px, 0) rotate(-.5deg);
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    opacity: 0;
+    border-radius: 3px;
+}
+
+input[name=question]:checked + label{
+    background: #F6F6F6;
+    color: #5a9aa8;
+}
+input[name=question]:checked + label + .response{
+    opacity: 1;
+    visibility: visible;
+    padding: 10px 20px;
+    -webkit-transform: translate3d(0, 0, 0) rotate(0deg);
+    -webkit-filter: blur(0px);
+    margin-bottom: 20px;
+    color: white;
+}
+
+.fixed-height{
+    height: 50px;
+    overflow: hidden;
+    opacity: 1 !important;
+}
+
+
+.Questions{
+    margin-top: -7%;
+}
+
+
+.hit-the-floor {
+    margin-top: 3%;
+    color: #fff;
+    font-size: 250%;
+    font-weight: bold;
+    font-family: Helvetica;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+    }
+    
+    .hit-the-floor {
+      text-align: center;
+    }
+    
+    body {
+      background-color: #f1f1f1;
+    }
+

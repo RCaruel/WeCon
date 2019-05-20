@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "utf-8">
+    <title>Foire aux questions</title>
+    <link rel="stylesheet" type="text/css" href="Views/css/faq.css">
+
+</head>
+<body>
+
+	<div class="vertical-menu">
+		<a href="#" class="active">Catégories</a>
+		<a href="#categorie1">Motorisation de portail</a>
+		<a href="#categorie2">Visiophones et interphones vidéo</a>
+		<a href="#categorie3">Domotique et automatisation dans les maisons</a>
+		<a href="#categorie4">Chauffage de maison</a>
+	</div> 
+
+	<div class="hit-the-floor">FOIRE AUX QUESTIONS</div>
+
+
+<div class = 'Rechercher' align=right>
+		<form action = "index.php?action=Rechercher" method = "post">
+			<input class = "barreRecherche" type = "search" name = "terme">
+			<input class = "boutonRecherche" type = "submit" name = "s" value = "Rechercher" >
+		</form>
+</div>
+
+<section class = "Questions">
+		<div></div>
+		<input class="animate" type="radio" name="cat" id="c1"/>
+		<label class="animate" for="c1"><a name="categorie1">Motorisation de portail</a></label>
+
+		<input class="animate" type="radio" name="question" id="q1"/>
+		<label class="animate" for="q1">Q: Que se passe-t-il en cas de coupure de courant ?</label>
+		<p class="response animate">R: Une batterie de secours prendra le relais pour 3-4 cycles d’ouverture/fermeture.</p>
+		
+		<input class="animate" type="radio" name="question" id="q2"/>
+		<label class="animate" for="q2">Q: Quelle crémaillère dois-je choisir ? Droite ou gauche ?</label>
+		<p class="response animate">R: Cela dépend de votre installation initiale, généralement il faut alterner entre une crémaillère droite puis une gauche.</p>
+		
+		<input class="animate" type="radio" name="question" id="q3"/>
+		<label class="animate" for="q3">Q: Quelle est la différence entre une crémaillère droite et une crémaillère gauche ?</label>
+		<p class="response animate">R: Quand on regarde le portail du côté où les crémaillères sont fixées, il y a 2 pattes de fixation rapprochées, si elles sont à droite, c’est une crémaillère droite, vis-versa pour la gauche.</p>
+		
+		<input class="animate" type="radio" name="cat" id="c2"/>
+		<label class="animate" for="c2"><a name="categorie2">Visiophones et interphones vidéo</a></label>
+
+		<input class="animate" type="radio" name="question" id="q4"/>
+		<label class="animate" for="q4">Q: Peut-on avoir plusieurs platines de rue ?</label>
+		<p class="response animate">R: Les produits proposés par WeCon ne permettent pas d’avoir plusieurs platines de rue.</p>
+
+		<input class="animate" type="radio" name="question" id="q5"/>
+		<label class="animate" for="q5">Q: Peut-on avoir plusieurs moniteurs ?</label>
+		<p class="response animate">R: Certains visiophones peuvent être équipés de 2 moniteurs maximum.</p>
+
+		<input class="animate" type="radio" name="question" id="q6"/>
+		<label class="animate" for="q6">Q: Mon installation est sur 4 fils, puis-je installer un visiophone 2 fils ?</label>
+		<p class="response animate">R: Oui, prenez uniquement 2 fils sur les 4. La différence entre un 4 fils et un 2 fils, c’est l’envoi d’informations entre la platine de rue et le moniteur qui est optimisé.
+		</p>
+
+		<input class="animate" type="radio" name="cat" id="c3"/>
+		<label class="animate" for="c3"><a name="categorie3">Domotique et automatisation dans les maisons</a></label>
+		
+		<input class="animate" type="radio" name="question" id="q7"/>
+		<label class="animate" for="q7">Q: Je veux contrôler différents éléments de ma maison quand je suis hors de chez moi (exemple : je veux que mes volets/lumières s’actionnent automatiquement). Quel type de produit dois-je installer ?</label>
+		<p class="response animate">R: Les produits proposés par WeCon qui répondent parfaitement à ces besoins sont les box domotiques.</p>
+		
+		<input class="animate" type="radio" name="question" id="q8"/>
+		<label class="animate" for="q8">Q: Que puis-je piloter avec une box domotique ?</label>
+		<p class="response animate">R: Vous pouvez contrôler l’éclairage, les motorisations de volet, l’ouverture de votre portail,
+			le chauffage électrique, des prises télécommandées, une alarme (généralement intégrée).
+		De plus, vous pouvez aussi recevoir différentes informations à l’aide de détecteurs de pluie, de gaz, de mouvement ou d’ouverture.
+		
+		<br>Vous pouvez également calculer la consommation électrique ainsi qu’avoir tous les retours d’état (si une lumière est restée allumée, un volet est fermé, etc.).
+		
+		Toutes ces informations sont envoyées et disponibles sur votre smartphone pour assurer votre tranquillité lors de vos déplacements.
+		
+		Vous pouvez programmer la box pour qu’elle contrôle certains éléments, notamment l’ouverture/fermeture des volets de la maison le matin et le soir.</p>
+		
+		<input class="animate" type="radio" name="cat" id="c4"/>
+		<label class="animate" for="c4"><a name="categorie4">Chauffage de maison</a></label>
+		
+		<input class="animate" type="radio" name="question" id="q9"/>
+		<label class="animate" for="q9">Q: Qu’est-ce un chauffage électrique dit « rayonnant » ?</label>
+		<p class="response animate">R: C’est un chauffage qui dispose d’une plaque chauffée par une résistance. Il ne chauffe pas seulement l’air mais les personnes et les meubles ; ce qui donne une impression de chaleur. Idéal dans les pièces telles qu’une chambre, le bureau, la cuisine, la salle de bain. L’inconvénient majeur de ce type de chauffage, est qu’il n’a pas d’inertie lorsque l’appareil se coupe.</p>
+		
+		<input class="animate" type="radio" name="question" id="q10"/>
+		<label class="animate" for="q10">Q: Qu’est-ce un chauffage électrique dit « fluide » ?</label>
+		<p class="response animate">R: C’est un chauffage qui dispose d’une résistance électrique qui chauffe un fluide dans le radiateur. Cela permet d’absorber et de restituer rapidement la chaleur produite. Ce type de radiateur a une meilleure inertie qu’un radiateur dit « rayonnant ». Idéal dans les pièces comme le séjour ou une chambre d’enfant.</p>
+		
+		<input class="animate" type="radio" name="question" id="q11"/>
+		<label class="animate" for="q11">Q: Qu’est-ce un chauffage électrique dit « inertie sèche » ?</label>
+		<p class="response animate">R: C’est un chauffage qui dispose d’une résistance électrique qui chauffe un fluide dans le radiateur. Cela permet d’absorber et de restituer rapidement la chaleur produite. Ce type de radiateur a une meilleure inertie qu’un radiateur dit « rayonnant ». Idéal dans les pièces comme le séjour ou une chambre d’enfant.</p>
+
+		</section>
+ 
+</form>
+
+
+
+
+
+</body>
+</html>
+
+
+
