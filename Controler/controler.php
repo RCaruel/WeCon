@@ -175,6 +175,11 @@ function modifmail(){
     editMail();
 }
 
+function sendMessageTech(){
+    include "Model/php/mail.php";
+    SendMailTechnicien();
+}
+
 function deleteMessage(){
     include "Model/php/supprMessage.php";
     supprMessage();

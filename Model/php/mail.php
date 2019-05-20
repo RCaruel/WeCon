@@ -73,4 +73,37 @@ function SendMailRequest($nom, $prenom, $mail, $message){
 
     mail($mail,$sujet,$message, $header);
 }
-?>
+
+function SendMailTechnicien(){
+
+    //=====Définition du sujet.
+        $sujet = "Message d'erreur client ". $_SESSION['pseudo'].".". "id =".  $_SESSION['id'];
+    //=====Addresse mail du technicien
+        $mail = "dofen59@gmail.com";
+    //=====Date de l'envoi et message à envoyer.
+        $date = date("d-m-Y");
+        $heure = date("H:i");
+        $messageps = htmlspecialchars($_POST["messageps"]);
+    //=====Création du header de l'e-mail.
+        $header = "MIME-Version: 1.0\r\n";
+        $header.= "From: WeCon.com<hichamtamarin1@gmail.com>"."\n";
+        $header.= "Content-Type:text/html; charset = 'utf-8'"."\n";
+        $header.= "Content-Transfert-Encoding : 8bit";
+    
+        $message = '
+        <html>
+            <body>
+                <div align="center" style="text-decoration: underline;">
+                    <h3>Message envoyé le '.$date.' à '.$heure.' par l\'utilisateur '.$_SESSION['pseudo'].'</h3>
+                </div>
+                <lr>
+                <p align="justify">
+                <span> Message :</span> "'.$messageps.'
+                </p>
+            </body>
+        </html>
+        ';
+    
+        mail($mail,$sujet,$message, $header);
+    
+    }

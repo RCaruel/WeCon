@@ -102,6 +102,9 @@ if (isset($_GET["action"])) {
         case "deleteMessage":
             deleteMessage();
             break;
+        case "sendMessageTech":
+            sendMessageTech();
+            break;
         default:
             echo "Error 404.";
             break;

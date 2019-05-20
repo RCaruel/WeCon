@@ -6,6 +6,7 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
     include "Model/php/tableusertech.php";
     include "Model/php/tableCapteur.php";
     include "Model/php/paramsUser.php";
+    include "Model/php/mail.php";
     ?>
 
     <html>
@@ -26,13 +27,15 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
             <br>
             <div class=pseudo>
                 <?php echo $_SESSION['pseudo']; ?>
-                <?php echo "<p style='color:red;'>".$_SESSION["type"]."</p>";?>
+                <?php echo "<p style='color:red;'>" . $_SESSION["type"] . "</p>"; ?>
             </div>
             <div class="anc"><a href="#Tableaudebord"><button class="bouton" id="TabBord">Tableau de bord</button></a></div>
             <div class="line"></div>
             <div class="anc"><a href="#Gestiondescomptes"><button class="bouton" id="GestComptes">Gestion des comptes</button></a></div>
             <div class="line"></div>
             <div class="anc"><a href="#Gestiondescapteurs"><button class="bouton" id="GestCapt">Gestion des capteurs</button></a></div>
+            <div class="line"></div>
+            <div class="anc"><a href="#Message"><button class="bouton" id="MSG">Messagerie</button></a></div>
             <div class="line"></div>
             <div class="anc"><a href="#Parametres"><button class="bouton" id="Parametre">Param&egrave;tre</button></a></div>
             <div class="line"></div>
@@ -209,6 +212,23 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
                     ?>
                 </div>
             </div>
+        </div>
+        <div id="Message">
+            <form method="POST" action="index.php?action=sendMessageTech">
+                <td align="right">
+                    <h1  class="messageh1"><u>Message au technicien<u></h1>
+                    <label for="messageps"></label>
+                </td>
+                <div class="text">
+                    <label class="saisie" id="msg">
+                        <br>
+                        <textarea name="messageps" id="messageps" required=""></textarea>
+                    </label>
+                </div>
+                <td>
+
+                    <input type="submit" name="Envoyer" id="Envoyer" value="Envoyer" />
+                </td>
         </div>
         <div id="Parametres">
             <div>
