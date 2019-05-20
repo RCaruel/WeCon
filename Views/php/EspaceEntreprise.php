@@ -1,6 +1,6 @@
 <meta http-equiv="refresh" content="300;URL=index.php?action=deco"> 
 <?php
-echo "<p style='color:red;'>".$_SESSION["type"]."</p>";
+
 include "Model/php/Graph.php";
 
 if (isset($_SESSION["id"]) and $_SESSION["id"] > 0 and ($_SESSION["type"] =='Entreprise')) {
@@ -21,6 +21,7 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0 and ($_SESSION["type"] =='Ent
             <br>
             <div class = pseudo>
                 <?php echo $_SESSION['pseudo']; ?>
+                <?php echo "<p style='color:red;'>".$_SESSION["type"]."</p>";?>
             </div>
             <div class="anc"><a href="#Statistiques générales"><button id="StatsGen">Statistiques générales</button></a></div>
             <div class="line"></div>
@@ -30,7 +31,7 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0 and ($_SESSION["type"] =='Ent
             <div class="line"></div>
         </nav>
         <a id="Statistiques générales"></a>
-        <div class="navigation">Satistiques Générales :
+        <div class="navigation">Statistiques Générales :
             <div id="Graph_nb_clients"><?php showGraphique(
                                             123,
                                             165,
