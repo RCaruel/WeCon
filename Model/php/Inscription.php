@@ -33,7 +33,14 @@ if(isset($_POST['forminscription'])) {
              	        $insertmbr = $bdd->prepare("INSERT INTO membres(pseudo, mail, motdepasse, TypeCompte) VALUES(?, ?, ?, ?)");
             	         $insertmbr->execute(array($pseudo, $mail, $mdp, $utilise));
             	         SendMailInscription($pseudo,$mail,$motdepasse);
-            	         sendLog("Création du compte de " . $pseudo . " mail : " . $mail . " mot de passe : " . $motdepasse);
+                        sendLog("Création du compte de " . $pseudo . " mail : " . $mail . " mot de passe : " . $motdepasse);
+                        if ($utilise=="Client"){
+                        $iduser= $bdd->prepare('SELECT MAX(id) FROM membres AS idmax');
+                        $iduser->execute();
+                        $id=$iduser->fetchColumn(0);
+                        $insertmaison = $bdd->prepare("INSERT INTO maison(Carte, Id_User) VALUES(?, ?)");
+                        $insertmaison->execute(array(1, $id));
+                     }
            	          $erreur = ">Me connecter</a>";
            	      
                   } else {
