@@ -32,50 +32,19 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0 and ($_SESSION["type"] =='Ent
         </nav>
         <a id="Statistiques générales"></a>
         <div class="navigation">Statistiques Générales :
-            <div id="Graph_nb_clients"><?php showGraphique(
-                                            123,
-                                            165,
-                                            5,
-                                            61,
-                                            65,
-                                            12,
-                                            132,
+            <div id="Graph_nb_clients"><?php setGraphique("nbClients",
                                             1,
                                             "Nombre_de_Clients",
-                                            "Valeur"
-                                        ); ?></div>
-            <div id="Graph_nb_ventes"><?php showGraphique(
-                                            5,
-                                            5,
-                                            5,
-                                            5,
-                                            5,
-                                            5,
-                                            5,
+                                            "Valeur"); ?></div>
+            <div id="Graph_nb_ventes"><?php setGraphique("nbVentes",
                                             2,
                                             "Nombre_de_Ventes",
-                                            "Valeur"
-                                        ); ?></div>
-            <div id="Graph_nb_pannes"><?php showGraphique(
-                                            5,
-                                            10,
-                                            15,
-                                            20,
-                                            25,
-                                            30,
-                                            35,
+                                            "Valeur"); ?></div>
+            <div id="Graph_nb_pannes"><?php setGraphique("nbPannes",
                                             3,
                                             "Nombre_de_Pannes",
-                                            "Valeur"
-                                        ); ?></div>
-            <div id="Graph_nb_message"><?php showGraphique(
-                                            35,
-                                            30,
-                                            25,
-                                            20,
-                                            15,
-                                            10,
-                                            5,
+                                            "Valeur"); ?></div>
+            <div id="Graph_nb_message"><?php setGraphique("nbMessages",
                                             4,
                                             "Nombre_de_Messages",
                                             "Valeur"
