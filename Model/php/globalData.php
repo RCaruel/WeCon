@@ -10,7 +10,7 @@ include "Model/php/_connexionbdd.php";
 
 function increaseNbMessages(){
     $bdd = my_pdo_connexxionWeCon();
-    $dateOfToday = date("Y-m-d");
+    $dateOfToday = date("Y-m-d", time() - 86400*0);
     $req = $bdd -> prepare("SELECT * FROM globaldata WHERE jour = ?");
     $req->execute(array($dateOfToday));
     $nb = $req->rowCount();

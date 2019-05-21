@@ -9,21 +9,38 @@
 //modifier et adapter pour des valeurs en SQL.
 function showGraphique($value6, $value5, $value4, $value3, $value2, $value1, $value, $nbGraph, $nomGraph, $nomAxe){
 //On charge l'affichage du graphique
-include "Views/html/graphique.html";
-echo '<html>
-<!--  Moyen pour transmettre la valeur du graphique!-->
-<input type = "hidden" class="valuej6" value = ' . $value6 . '>
-<input type = "hidden" class="valuej5" value = ' . $value5 . '>
-<input type = "hidden" class="valuej4" value = ' . $value4 . '>
-<input type = "hidden" class="valuej3" value = ' . $value3 . '>
-<input type = "hidden" class="valuej2" value = ' . $value2 . '>
-<input type = "hidden" class="valuej1" value = ' . $value1 . '>
-<input type = "hidden" class="valuej" value = ' . $value . '>
-<input type = "hidden" class="nbGraph" value = ' . $nbGraph . '>
-<input type = "hidden" class="nomGraph" value = ' . $nomGraph . '>
-<input type = "hidden" class="nomAxe" value = ' . $nomAxe . '>
-<script src="Views/js/Graph.js"></script>
-</html>';
+    include "Views/html/graphique.html";
+    echo '<html>
+        <!--  Moyen pour transmettre la valeur du graphique!-->
+        <input type = "hidden" class="valuej6" value = ' . $value6 . '>
+        <input type = "hidden" class="valuej5" value = ' . $value5 . '>
+        <input type = "hidden" class="valuej4" value = ' . $value4 . '>
+        <input type = "hidden" class="valuej3" value = ' . $value3 . '>
+        <input type = "hidden" class="valuej2" value = ' . $value2 . '>
+        <input type = "hidden" class="valuej1" value = ' . $value1 . '>
+        <input type = "hidden" class="valuej" value = ' . $value . '>
+        <input type = "hidden" class="nbGraph" value = ' . $nbGraph . '>
+        <input type = "hidden" class="nomGraph" value = ' . $nomGraph . '>
+        <input type = "hidden" class="nomAxe" value = ' . $nomAxe . '>
+        <script src="Views/js/Graph.js"></script>
+    </html>';
+}
+
+function setGraphique($value, $nbGraph, $nomGraph, $nomAxe){
+    include "Model/php/_connexionbdd.php";
+    $bdd = my_pdo_connexxionWeCon();
+    $array = [0,0,0,0,0,0,0];
+
+    for ($i = 0; $i < 7; $i++){
+        $date = date("Y-m-d", time() - 86400*$i);
+        $req = $bdd->prepare("SELECT * FROM globaldata WHERE jour = ?");
+        $req->execute(array($date));
+        $array[$i] = $req->fetchAll()[0]["$value"];
+        if ($value == "nbMessages"){
+            $array[$i] *= 5;
+        }
+    }
+    showGraphique($array[6], $array[5], $array[4], $array[3], $array[2], $array[1], $array[0], $nbGraph, $nomGraph, $nomAxe);
 }
 
 ?>

@@ -9,6 +9,12 @@ body{
     position: absolute;
 }
 
+.titre{
+    text-align: center;
+    margin-top: -3%;
+    color: #2E4057;
+}
+
 .header{
     grid-column: 1/-1;
     grid-row: 1/10;
@@ -28,10 +34,9 @@ body{
     position: absolute;
     width: 68%;
     height: auto;
-    top: 81px;
-    left: -240px;
+    top: 180px;
+    left: 11%;
     padding: 0 20%;
-
 }
 
 .Photo > img{
@@ -41,22 +46,42 @@ body{
 }
 
 .DescriptionGenerale{
-    position: absolute;
-    left: 54%;
-    right:2%;
-    top: 137px;
-    text-align: justify;
+    border-left: 30%;
+    width: 60%;
+    text-align: center;
+    margin-top: -40%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #2E4057;
+    font-size: 1.6vw;
 }
+
+.ligne1{
+    position: absolute;
+    background: #F49B3E;
+    top:46vw;
+    width: 80vw;
+    height: 2px;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
 
 .DescriptionSpécifique{
     position: absolute;
-    left: 55%;
-    top: 265px;
+    left: 28%;
+    top: 965px;
     width: 42%;
 }
 
+.titredescription{
+    text-align: center;
+    color: #2E4057;
+}
+
 .DescriptionSpécifique > .left > p, .DescriptionSpécifique > .right > p{
-    border: 1px solid black;
+    border: 1px solid #2E4057;
     margin: 0;
     padding: 5px;
 }
@@ -76,9 +101,8 @@ body{
 .Video{
     position: absolute;
     width: 80%;
-    top: 50%;
+    top: 72%;
     left: 18%;
-
 }
 
 .line{
@@ -86,3 +110,15 @@ body{
     height: 3px;
     background-color: #2E4057;
 }
+
+.ligne2{
+    position: absolute;
+    background: #F49B3E;
+    top:75vw;
+    width: 80vw;
+    height: 2px;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
