@@ -214,6 +214,7 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
             </div>
         </div>
         <div id="Message">
+
             <form method="POST" action="index.php?action=sendMessageTech">
                 <td align="right">
                     <h1  class="messageh1"><u>Message au technicien<u></h1>
@@ -229,6 +230,7 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
 
                     <input type="submit" name="Envoyer" id="Envoyer" value="Envoyer" />
                 </td>
+            </form>
         </div>
         <div id="Parametres">
             <div>
