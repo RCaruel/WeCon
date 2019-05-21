@@ -15,6 +15,8 @@ function Send_Message(){
 
 function Send_Message_Check(){
     require "Model/php/SendMsgVerif.php";
+    include "Model/php/globalData.php";
+    increaseNbMessages();
     header("Location: index.php?action=Contact");
 }
 
