@@ -78,7 +78,7 @@ body{
 .background > h1{
     position: absolute;
     top: 25%;
-    left: 30%;
+    width: 100%;
     color: #2E4057;
     text-align: center;
 
@@ -94,8 +94,9 @@ body{
     display: inline-block;
     font-size: 15px;
     position: absolute;
+    width: 15%;
     top: 40%;
-    left: 45%;
+    left: 42.5%;
 }
 .element
 {
