@@ -178,6 +178,7 @@ function modifmail(){
 function sendMessageTech(){
     include "Model/php/mail.php";
     SendMailTechnicien();
+    header("Location: index.php?action=Espace_Technicien#Message");
 }
 
 function deleteMessage(){
