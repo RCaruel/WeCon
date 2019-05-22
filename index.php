@@ -105,6 +105,9 @@ if (isset($_GET["action"])) {
         case "sendMessageTech":
             sendMessageTech();
             break;
+        case "ValiderParametre":
+            ValiderParametre();
+            break;
         default:
             echo "Error 404.";
             break;

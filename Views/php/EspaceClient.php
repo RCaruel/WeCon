@@ -39,7 +39,7 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
             <div class="line"></div>
             <div class="anc"><a href="#Parametres"><button class="bouton" id="Parametre">Param&egrave;tre</button></a></div>
             <div class="line"></div>
-            <div class="anc"><a href="/wecon/views/php/deconnexion.php"><button class="bouton" id="Parametre">Deconnexion</button></a></div>
+            <div class="anc"><a href="index.php?action=deco"><button class="bouton" id="Parametre">Deconnexion</button></a></div>
             <div class="line"></div>
 
         </nav>
@@ -239,7 +239,7 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
                 ?>
 
                 <h3>Param&egrave;tres</h3>
-                <form method="POST" action="index.php?action=Espace_Client#Parametres">
+                <form method="POST" action="index.php?action=ValiderParametre">
                     <div id="BoiteParametres">
                         <h2>Param&egrave;tres generaux</h2>
                         <input type="checkbox" value="synchro" name="synchro" <?php
@@ -282,33 +282,7 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
                                                                                 ?> />Autoriser le partage des données<br>
 
                     </div>
-                    <?php
-                    if (!empty($_POST["synchro"])) {
-                        $synchro = "oui";
-                    } else {
-                        $synchro = "non";
-                    }
-                    if (!empty($_POST["releve"])) {
-                        $releve = "oui";
-                    } else {
-                        $releve = "non";
-                    }
-                    if (!empty($_POST["acces"])) {
-                        $acces = "oui";
-                    } else {
-                        $acces = "non";
-                    }
-                    if (!empty($_POST["clean"])) {
-                        $clean = "oui";
-                    } else {
-                        $clean = "non";
-                    }
-                    if (!empty($_POST["partage"])) {
-                        $partage = "oui";
-                    } else {
-                        $partage = "non";
-                    }
-                    validateParams($synchro, $releve, $acces, $clean, $partage); ?>
+
 
                     <input type="submit" id="Valider" name="validation" value="Valider" class="submit" />
 

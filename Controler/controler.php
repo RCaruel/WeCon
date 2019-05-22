@@ -188,3 +188,9 @@ function deleteMessage(){
     supprMessage();
     header("Location: index.php?action=Espace_Technicien");
 }
+
+function ValiderParametre(){
+    include "Model/php/paramsUser.php";
+    Parametre();
+    header("Location: index.php?action=Espace_Client#Parametres");
+}

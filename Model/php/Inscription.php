@@ -9,6 +9,8 @@ catch(Exception $e) {
 }
 if(isset($_POST['forminscription'])) {
    $pseudo = htmlspecialchars($_POST['pseudo']);
+   $nom = htmlspecialchars($_POST['nom']);
+   $prenom = htmlspecialchars($_POST['prenom']);
    $mail = htmlspecialchars($_POST['mail']);
    $mail2 = htmlspecialchars($_POST['mail2']);
    $motdepasse = $_POST['mdp'];
@@ -31,13 +33,16 @@ if(isset($_POST['forminscription'])) {
             	   if($mailexist == 0) {
              	     if($mdp == $mdp2) {    	     	
              	        $insertmbr = $bdd->prepare("INSERT INTO membres(pseudo, mail, motdepasse, TypeCompte) VALUES(?, ?, ?, ?)");
-            	         $insertmbr->execute(array($pseudo, $mail, $mdp, $utilise));
-            	         SendMailInscription($pseudo,$mail,$motdepasse);
-                        sendLog("Création du compte de " . $pseudo . " mail : " . $mail . " mot de passe : " . $motdepasse);
-                        if ($utilise=="Client"){
+                        $insertmbr->execute(array($pseudo, $mail, $mdp, $utilise));
                         $iduser= $bdd->prepare('SELECT MAX(id) FROM membres AS idmax');
                         $iduser->execute();
                         $id=$iduser->fetchColumn(0);
+                        $insertnom = $bdd->prepare("INSERT INTO nommembres(id_User, nom, prenom) VALUES(?, ?, ?)");
+            	         $insertnom->execute(array($id, $nom, $prenom));
+            	         SendMailInscription($pseudo,$mail,$motdepasse);
+                        sendLog("Création du compte de " . $pseudo . " mail : " . $mail . " mot de passe : " . $motdepasse);
+                        if ($utilise=="Client"){
+                        
                         $insertmaison = $bdd->prepare("INSERT INTO maison(Carte, Id_User) VALUES(?, ?)");
                         $insertmaison->execute(array(1, $id));
                      }
