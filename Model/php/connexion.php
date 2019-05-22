@@ -31,6 +31,11 @@ if(isset($_POST['forminscription'])) {
                 $_SESSION['pseudo'] = $userinfo['pseudo'];
                 $_SESSION['mail'] = $userinfo['mail'];
                 $_SESSION['type'] = $type;
+                $requsername = $bdd->prepare("SELECT * FROM nommembres WHERE id_User =?");
+                $requsername->execute(array($_SESSION['id']));
+                $userinfoname = $requsername->fetch();
+                $_SESSION['nom'] = $userinfoname['nom'];
+                $_SESSION['prenom'] = $userinfoname['prenom'];
                 header("Location: index.php?action=Espace_" . $type);
                 sendLog("Pseudo : " . $_SESSION['pseudo'] . ", mail : " . $_SESSION['mail'] . ", type : " . $_SESSION['type'] . " s'est bien connecté à son compte");
             } else {
