@@ -35,7 +35,12 @@ function setGraphique($value, $nbGraph, $nomGraph, $nomAxe){
         $date = date("Y-m-d", time() - 86400*$i);
         $req = $bdd->prepare("SELECT * FROM globaldata WHERE jour = ?");
         $req->execute(array($date));
-        $array[$i] = $req->fetchAll()[0]["$value"];
+        $nbrow = $req->rowCount();
+        if ($nbrow > 0){
+            $array[$i] = $req->fetchAll()[0]["$value"];
+        }else{
+            $array[$i] = 0;
+        }
         if ($value == "nbMessages"){
             $array[$i] *= 5;
         }
@@ -43,4 +48,29 @@ function setGraphique($value, $nbGraph, $nomGraph, $nomAxe){
     showGraphique($array[6], $array[5], $array[4], $array[3], $array[2], $array[1], $array[0], $nbGraph, $nomGraph, $nomAxe);
 }
 
-?>
+function setGraphiqueEspClient($value, $nbGraph, $nomGraph, $nomAxe){
+    include "Model/php/_connexionbdd.php";
+    $bdd = my_pdo_connexxionWeCon();
+    $array = [0,0,0,0,0,0,0];
+
+    for ($i = 0; $i < 7; $i++){
+        $date = date("Y-m-d", time() - 86400*$i);
+        $req = $bdd->prepare("SELECT capteur.Valeur 
+                                                FROM capteur
+                                                INNER JOIN piece
+                                                    ON capteur.Id_Piece = piece.Id
+                                                INNER JOIN maison
+                                                    ON piece.Id_Maison = maison.Id
+                                                INNER JOIN membres 
+                                                    ON maison.Id_User = membres.id
+                                                WHERE jour = ? AND membres.id = ? AND type = ?");
+        $req->execute(array($date, $_SESSION["id"], $value));
+        $nbrow = $req->rowCount();
+        if ($nbrow > 0){
+            $array[$i] = $req->fetchAll()[0]["Valeur"] * 5;
+        }else{
+            $array[$i] = 0;
+        }
+    }
+    showGraphique($array[6], $array[5], $array[4], $array[3], $array[2], $array[1], $array[0], $nbGraph, $nomGraph, $nomAxe);
+}

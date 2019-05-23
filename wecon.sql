@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  sam. 11 mai 2019 à 01:59
--- Version du serveur :  5.7.24
--- Version de PHP :  7.2.14
+-- Généré le :  jeu. 23 mai 2019 à 09:50
+-- Version du serveur :  5.7.23
+-- Version de PHP :  7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -31,11 +31,33 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `capteur`;
 CREATE TABLE IF NOT EXISTS `capteur` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(255) NOT NULL,
   `Nom` varchar(255) NOT NULL,
   `Valeur` int(11) NOT NULL,
+  `jour` date NOT NULL,
   `Id_Piece` int(11) NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `capteur`
+--
+
+INSERT INTO `capteur` (`Id`, `type`, `Nom`, `Valeur`, `jour`, `Id_Piece`) VALUES
+(1, 'luminosite', 'Nom', 7, '2019-05-23', 1),
+(2, 'luminosite', 'Nom', 1, '2019-05-22', 1),
+(3, 'luminosite', 'Nom', 23, '2019-05-21', 1),
+(4, 'luminosite', 'Nom', 28, '2019-05-20', 1),
+(5, 'luminosite', 'Nom', 22, '2019-05-19', 1),
+(6, 'luminosite', 'Nom', 4, '2019-05-18', 1),
+(7, 'luminosite', 'Nom', 1, '2019-05-17', 1),
+(8, 'temperature', 'Nom', 13, '2019-05-23', 1),
+(9, 'temperature', 'Nom', 13, '2019-05-22', 1),
+(10, 'temperature', 'Nom', 5, '2019-05-21', 1),
+(11, 'temperature', 'Nom', 26, '2019-05-20', 1),
+(12, 'temperature', 'Nom', 21, '2019-05-19', 1),
+(13, 'temperature', 'Nom', 11, '2019-05-18', 1),
+(14, 'temperature', 'Nom', 32, '2019-05-17', 1);
 
 -- --------------------------------------------------------
 
@@ -45,13 +67,29 @@ CREATE TABLE IF NOT EXISTS `capteur` (
 
 DROP TABLE IF EXISTS `globaldata`;
 CREATE TABLE IF NOT EXISTS `globaldata` (
-  `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `NombreClient` int(11) NOT NULL,
-  `NombreMessages` int(11) NOT NULL,
-  `NombrePannes` int(11) NOT NULL,
-  `NombreVentes` int(11) NOT NULL,
-  PRIMARY KEY (`Id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `jour` date NOT NULL,
+  `nbClients` int(11) NOT NULL,
+  `nbVentes` int(11) NOT NULL,
+  `nbPannes` int(11) NOT NULL,
+  `nbMessages` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `globaldata`
+--
+
+INSERT INTO `globaldata` (`id`, `jour`, `nbClients`, `nbVentes`, `nbPannes`, `nbMessages`) VALUES
+(1, '2019-05-20', 49, 2, 87, 2),
+(4, '2019-05-21', 105, 132, 20, 6),
+(5, '2019-05-19', 110, 75, 80, 1),
+(6, '2019-05-18', 118, 51, 8, 1),
+(7, '2019-05-15', 99, 132, 81, 1),
+(8, '2019-05-14', 49, 10, 110, 1),
+(9, '2019-05-17', 20, 157, 92, 1),
+(10, '2019-05-16', 131, 39, 100, 1),
+(11, '2019-05-23', 100, 48, 143, 1);
 
 -- --------------------------------------------------------
 
@@ -64,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `message` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=86 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `log`
@@ -97,7 +135,47 @@ INSERT INTO `log` (`id`, `message`) VALUES
 (42, '2019-05-11 01:49:17 || Pseudo : jacque, mail : jacque@gmail.com, type : Client s\'est bien connecté à son compte'),
 (43, '2019-05-11 02:24:09 || Pseudo : jacque, mail : jacque@gmail.com, type : Client s\'est bien connecté à son compte'),
 (44, '2019-05-11 03:13:11 || Pseudo : jacque, mail : jacque@gmail.com, type : Client s\'est bien connecté à son compte'),
-(45, '2019-05-11 03:14:52 || Pseudo : jacque, mail : jacque@gmail.com, type : Client s\'est bien connecté à son compte');
+(45, '2019-05-11 03:14:52 || Pseudo : jacque, mail : jacque@gmail.com, type : Client s\'est bien connecté à son compte'),
+(46, '2019-05-20 15:30:18 || mail : dev@WeCon.frn\'existe pas dans la bdd'),
+(47, '2019-05-20 15:30:42 || Création du compte de dev mail : dev@WeCon.fr mot de passe : dev'),
+(48, '2019-05-20 15:31:01 || Création du compte de dev mail : dev@WeCon.fr mot de passe : dev'),
+(49, '2019-05-20 15:31:14 || Création du compte de dev mail : dev@WeCon.fr mot de passe : dev'),
+(50, '2019-05-20 15:31:39 || Pseudo : dev, mail : dev@WeCon.fr, type : Technicien s\'est bien connecté à son compte'),
+(51, '2019-05-20 15:37:20 || Pseudo : dev, mail : dev@WeCon.fr, type : Client s\'est bien connecté à son compte'),
+(52, '2019-05-20 15:39:59 || Pseudo : dev, mail : dev@WeCon.fr, type : Client s\'est bien connecté à son compte'),
+(53, '2019-05-20 15:40:42 || Pseudo : dev, mail : dev@WeCon.fr, type : Client s\'est bien connecté à son compte'),
+(54, '2019-05-20 15:40:54 || Pseudo : dev, mail : dev@WeCon.fr, type : Technicien s\'est bien connecté à son compte'),
+(55, '2019-05-20 15:55:05 || Pseudo : dev, mail : dev@WeCon.fr, type : Client s\'est bien connecté à son compte'),
+(56, '2019-05-20 16:17:05 || Pseudo : dev, mail : dev@WeCon.fr, type : Client s\'est bien connecté à son compte'),
+(57, '2019-05-20 16:31:38 || Pseudo : dev, mail : dev@WeCon.fr, type : Client s\'est bien connecté à son compte'),
+(58, '2019-05-20 16:33:26 || Pseudo : dev, mail : dev@WeCon.fr, type : Client s\'est bien connecté à son compte'),
+(59, '2019-05-20 16:33:35 || Pseudo : dev, mail : dev@WeCon.fr, type : Technicien s\'est bien connecté à son compte'),
+(60, '2019-05-20 16:34:51 || Pseudo : dev, mail : dev@WeCon.fr, type : Technicien s\'est bien connecté à son compte'),
+(61, '2019-05-20 16:36:01 || Pseudo : dev, mail : dev@WeCon.fr, type : Technicien s\'est bien connecté à son compte'),
+(62, '2019-05-20 16:43:26 || Pseudo : dev, mail : dev@WeCon.fr, type : Technicien s\'est bien connecté à son compte'),
+(63, '2019-05-20 16:54:56 || Pseudo : dev, mail : dev@WeCon.fr, type : Technicien s\'est bien connecté à son compte'),
+(64, '2019-05-20 17:07:27 || Pseudo : dev, mail : dev@WeCon.fr, type : Technicien s\'est bien connecté à son compte'),
+(65, '2019-05-20 17:28:01 || Pseudo : dev, mail : dev@WeCon.fr, type : Client s\'est bien connecté à son compte'),
+(66, '2019-05-20 17:28:11 || Pseudo : dev, mail : dev@WeCon.fr, type : Entreprise s\'est bien connecté à son compte'),
+(67, '2019-05-20 17:28:28 || Pseudo : dev, mail : dev@WeCon.fr, type : Technicien s\'est bien connecté à son compte'),
+(68, '2019-05-20 17:28:37 || Pseudo : dev, mail : dev@WeCon.fr, type : Entreprise s\'est bien connecté à son compte'),
+(69, '2019-05-20 17:44:46 || Pseudo : dev, mail : dev@WeCon.fr, type : Entreprise s\'est bien connecté à son compte'),
+(70, '2019-05-20 17:48:43 || Pseudo : dev, mail : dev@WeCon.fr, type : Technicien s\'est bien connecté à son compte'),
+(71, '2019-05-21 09:11:23 || Pseudo : dev, mail : dev@WeCon.fr, type : Entreprise s\'est bien connecté à son compte'),
+(72, '2019-05-21 09:23:01 || Pseudo : dev, mail : dev@WeCon.fr, type : Entreprise s\'est bien connecté à son compte'),
+(73, '2019-05-21 09:26:57 || Pseudo : dev, mail : dev@WeCon.fr, type : Entreprise s\'est bien connecté à son compte'),
+(74, '2019-05-21 09:28:01 || Pseudo : dev, mail : dev@WeCon.fr, type : Entreprise s\'est bien connecté à son compte'),
+(75, '2019-05-21 09:39:49 || Pseudo : dev, mail : dev@WeCon.fr, type : Entreprise s\'est bien connecté à son compte'),
+(76, '2019-05-21 09:40:10 || Pseudo : dev, mail : dev@WeCon.fr, type : Entreprise s\'est bien connecté à son compte'),
+(77, '2019-05-21 09:52:27 || Pseudo : dev, mail : dev@WeCon.fr, type : Client s\'est bien connecté à son compte'),
+(78, '2019-05-21 09:52:47 || Pseudo : dev, mail : dev@WeCon.fr, type : Client s\'est bien connecté à son compte'),
+(79, '2019-05-21 10:10:45 || Pseudo : dev, mail : dev@WeCon.fr, type : Entreprise s\'est bien connecté à son compte'),
+(80, '2019-05-21 10:12:46 || Pseudo : dev, mail : dev@WeCon.fr, type : Client s\'est bien connecté à son compte'),
+(81, '2019-05-21 10:19:52 || Pseudo : dev, mail : dev@WeCon.fr, type : Client s\'est bien connecté à son compte'),
+(82, '2019-05-23 10:28:21 || Pseudo : Entreprise, mail : Entreprise@DomIsep.fr, type : Entreprise s\'est bien connecté à son compte'),
+(83, '2019-05-23 10:53:25 || Pseudo : 0130, mail : 0130@0130.fr, type : Client s\'est bien connecté à son compte'),
+(84, '2019-05-23 11:27:55 || Pseudo : dev, mail : dev@WeCon.fr, type : Client s\'est bien connecté à son compte'),
+(85, '2019-05-23 11:35:42 || Pseudo : dev, mail : dev@WeCon.fr, type : Client s\'est bien connecté à son compte');
 
 -- --------------------------------------------------------
 
@@ -109,9 +187,16 @@ DROP TABLE IF EXISTS `maison`;
 CREATE TABLE IF NOT EXISTS `maison` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Carte` int(11) NOT NULL,
-  `Id_Maison` int(11) NOT NULL,
+  `Id_User` int(11) NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `maison`
+--
+
+INSERT INTO `maison` (`Id`, `Carte`, `Id_User`) VALUES
+(1, 1, 12);
 
 -- --------------------------------------------------------
 
@@ -127,7 +212,7 @@ CREATE TABLE IF NOT EXISTS `membres` (
   `motdepasse` text NOT NULL,
   `TypeCompte` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `membres`
@@ -142,7 +227,10 @@ INSERT INTO `membres` (`id`, `pseudo`, `mail`, `motdepasse`, `TypeCompte`) VALUE
 (6, 'Client', 'Client@WeCon.fr', '64bb7ec46575d7f70fbae6ef41e516ec664cf5ec', 'Client'),
 (7, 'jacque', 'jacque@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'Client'),
 (8, 'jacque', 'jacque@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'Technicien'),
-(9, 'jacque', 'jacque@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'Entreprise');
+(9, 'jacque', 'jacque@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'Entreprise'),
+(10, 'dev', 'dev@WeCon.fr', '34c6fceca75e456f25e7e99531e2425c6c1de443', 'Technicien'),
+(11, 'dev', 'dev@WeCon.fr', '34c6fceca75e456f25e7e99531e2425c6c1de443', 'Entreprise'),
+(12, 'dev', 'dev@WeCon.fr', '34c6fceca75e456f25e7e99531e2425c6c1de443', 'Client');
 
 -- --------------------------------------------------------
 
@@ -160,14 +248,16 @@ CREATE TABLE IF NOT EXISTS `parametres` (
   `historique` varchar(255) NOT NULL,
   `partage` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `parametres`
 --
 
 INSERT INTO `parametres` (`id`, `iduser`, `synchro`, `releve`, `acces`, `historique`, `partage`) VALUES
-(1, 7, 'oui', 'oui', 'non', 'non', 'non');
+(1, 7, 'oui', 'oui', 'non', 'non', 'non'),
+(4, 9, 'non', 'non', 'non', 'non', 'non'),
+(5, 12, 'non', 'non', 'non', 'non', 'non');
 
 -- --------------------------------------------------------
 
@@ -179,10 +269,17 @@ DROP TABLE IF EXISTS `piece`;
 CREATE TABLE IF NOT EXISTS `piece` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Temperature` int(11) NOT NULL,
-  `Distantce` int(11) NOT NULL,
+  `Distance` int(11) NOT NULL,
   `Id_Maison` int(11) NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `piece`
+--
+
+INSERT INTO `piece` (`Id`, `Temperature`, `Distance`, `Id_Maison`) VALUES
+(1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -199,7 +296,37 @@ CREATE TABLE IF NOT EXISTS `rapport` (
   `Message` text NOT NULL,
   `Id_Personne` int(11) NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `rapport`
+--
+
+INSERT INTO `rapport` (`Id`, `Nom`, `Prenom`, `mail`, `Message`, `Id_Personne`) VALUES
+(5, 'Rémi', 'caruel', 'remi.caruel@yahoo.fr', 'jfojenzfjn\r\n', 0),
+(3, 'carue', 'lrezjrnjn', 'remi.caruel@yahoo.fr', 'BOjnfoezjfn\r\nfenkf\r\nzfeo\r\nfzpefp\r\n   nloefnzlfkne\r\n   ezjfnezklfn\r\nnfkzfknze\r\nenfzenf', 0),
+(4, 'Caruel', 'Rémi', 'remi.caruel@yahoo.fr', 'bononono\r\nnonon', 0),
+(6, 'Caruel', 'Rémi', 'remi.caruel@yahoo.fr', 'jjjj\r\njjjj\r\njjjj', 0),
+(7, 'Caruel', 'Rémi', 'remi.caruel@yahoo.fr', 'kkk\r\nk\r\nk\r\nk\r\nk\r\n', 0),
+(8, 'Caruel', 'Rémi', 'remi.caruel@yahoo.fr', 'kkk\r\nk\r\nk\r\nk\r\nk\r\n', 0),
+(9, 'Caruel', 'Rémi', 'remi.caruel@yahoo.fr', 'kkk\r\nk\r\nk\r\nk\r\nk\r\n', 0),
+(10, 'Caruel', 'Rémi', 'remi.caruel@yahoo.fr', 'gg\r\ng\r\ng\r\ng\r\ng\r\ng', 0),
+(11, 'Caruel', 'Rémi', 'remi.caruel@yahoo.fr', 'gg\r\ng\r\ng\r\ng\r\ng\r\ng', 0),
+(12, 'Caruel', 'Rémi', 'remi.caruel@yahoo.fr', 'ezezrzekrpezkr7\r\nerzop\r\nrkorkez\r\npokrz\r\n', 0),
+(13, 'Caruel', 'Rémi', 'remi.caruel@yahoo.fr', 'eknflzf', 0),
+(14, 'Caruel', 'Rémi', 'remi.caruel@yahoo.fr', 'eknflzf', 0),
+(15, 'ca', 'zfzez', 'rezoerz@ezznoez', 'ezarez\r\n', 0),
+(16, 'fezfkfznefj', 'enkrngerng', 'remi.car@ya.fr', 'rezrezr', 0),
+(17, 'Caruel', 'erg', 'dev@WeCon.fr', 'fezfze', 0),
+(18, 'Caruel', 'Rémi', '0130@0130.fr', 'lnvrkelv,lerknglvekrg', 0),
+(19, 'Caruel', 'Rémi', '0130@0130.fr', 'fezfezf,elzkf,', 0),
+(20, 'Caruel', 'Rémi', '0130@0130.fr', 'fezjnfzeoijfnoziekfnze', 0),
+(21, 'Caruel', 'Rémi', '0130@0130.fr', 'fzefzef', 0),
+(22, 'Caruel', 'Rémi', '0130@0130.fr', 'fezfezfze', 0),
+(23, 'Caruel', 'Rémi', '0130@0130.fr', 'Bonjour', 0),
+(24, 'Caruel', 'Rémi', '0130@0130.fr', 'ezzeaz', 0),
+(25, 'Caruel', 'Rémi', '0130@0130.fr', 'ffzfezdfz', 0),
+(26, 'Caruel', 'Caruel', '0130@0130.fr', 'fff', 0);
 
 -- --------------------------------------------------------
 
