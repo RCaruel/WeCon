@@ -50,33 +50,21 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
             </div>
 
             <div id="Luminosité">
-                <?php showGraphique(
-                    123,
-                    165,
-                    5,
-                    61,
-                    65,
-                    12,
-                    132,
+                <?php setGraphiqueEspClient("luminosite",
                     1,
                     "Luminosité",
                     "Valeur"
-                ); ?>
+                    );
+                ?>
             </div>
 
             <div id="Temperature">
-                <?php showGraphique(
-                    123,
-                    165,
-                    5,
-                    61,
-                    65,
-                    12,
-                    132,
+                <?php setGraphiqueEspClient("temperature",
                     2,
                     "Température",
                     "Valeur"
-                ); ?>
+                );
+                ?>
             </div>
 
         </div>
