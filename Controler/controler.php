@@ -178,8 +178,8 @@ function modifmail(){
 }
 
 function sendMessageTech(){
-    include "Model/php/mail.php";
-    SendMailTechnicien();
+    include "Model/php/SendMsgTech.php";
+    ajoutmessage();
     header("Location: index.php?action=Espace_Technicien#Message");
 }
 
