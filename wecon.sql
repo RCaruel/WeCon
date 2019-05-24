@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 23 mai 2019 à 09:50
--- Version du serveur :  5.7.23
--- Version de PHP :  7.2.10
+-- Généré le :  ven. 24 mai 2019 à 14:53
+-- Version du serveur :  5.7.24
+-- Version de PHP :  7.2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -89,7 +89,7 @@ INSERT INTO `globaldata` (`id`, `jour`, `nbClients`, `nbVentes`, `nbPannes`, `nb
 (8, '2019-05-14', 49, 10, 110, 1),
 (9, '2019-05-17', 20, 157, 92, 1),
 (10, '2019-05-16', 131, 39, 100, 1),
-(11, '2019-05-23', 100, 48, 143, 1);
+(11, '2019-05-23', 100, 48, 143, 2);
 
 -- --------------------------------------------------------
 
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `message` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=86 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=96 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `log`
@@ -175,7 +175,17 @@ INSERT INTO `log` (`id`, `message`) VALUES
 (82, '2019-05-23 10:28:21 || Pseudo : Entreprise, mail : Entreprise@DomIsep.fr, type : Entreprise s\'est bien connecté à son compte'),
 (83, '2019-05-23 10:53:25 || Pseudo : 0130, mail : 0130@0130.fr, type : Client s\'est bien connecté à son compte'),
 (84, '2019-05-23 11:27:55 || Pseudo : dev, mail : dev@WeCon.fr, type : Client s\'est bien connecté à son compte'),
-(85, '2019-05-23 11:35:42 || Pseudo : dev, mail : dev@WeCon.fr, type : Client s\'est bien connecté à son compte');
+(85, '2019-05-23 11:35:42 || Pseudo : dev, mail : dev@WeCon.fr, type : Client s\'est bien connecté à son compte'),
+(86, '2019-05-23 18:23:04 || Pseudo : jacque, mail : jacque@gmail.com, type : Entreprise s\'est bien connecté à son compte'),
+(87, '2019-05-23 18:23:15 || Pseudo : jacque, mail : jacque@gmail.com, type : Client s\'est bien connecté à son compte'),
+(88, '2019-05-23 18:24:11 || Pseudo : jacque, mail : jacque@gmail.com, type : Entreprise s\'est bien connecté à son compte'),
+(89, '2019-05-23 20:02:36 || Pseudo : jacque, mail : jacque@gmail.com, type : Client s\'est bien connecté à son compte'),
+(90, '2019-05-23 20:02:45 || Pseudo : jacque, mail : jacque@gmail.com, type : Entreprise s\'est bien connecté à son compte'),
+(91, '2019-05-23 20:02:50 || Pseudo : jacque, mail : jacque@gmail.com, type : Technicien s\'est bien connecté à son compte'),
+(92, '2019-05-23 20:05:45 || Pseudo : jacque, mail : jacque@gmail.com, type : Client s\'est bien connecté à son compte'),
+(93, '2019-05-23 20:08:25 || Pseudo : jacque, mail : jacque@gmail.com, type : Technicien s\'est bien connecté à son compte'),
+(94, '2019-05-23 20:11:43 || Pseudo : jacque, mail : jacque@gmail.com, type : Entreprise s\'est bien connecté à son compte'),
+(95, '2019-05-23 20:49:02 || Pseudo : jacque, mail : jacque@gmail.com, type : Technicien s\'est bien connecté à son compte');
 
 -- --------------------------------------------------------
 
@@ -231,6 +241,29 @@ INSERT INTO `membres` (`id`, `pseudo`, `mail`, `motdepasse`, `TypeCompte`) VALUE
 (10, 'dev', 'dev@WeCon.fr', '34c6fceca75e456f25e7e99531e2425c6c1de443', 'Technicien'),
 (11, 'dev', 'dev@WeCon.fr', '34c6fceca75e456f25e7e99531e2425c6c1de443', 'Entreprise'),
 (12, 'dev', 'dev@WeCon.fr', '34c6fceca75e456f25e7e99531e2425c6c1de443', 'Client');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `nommembres`
+--
+
+DROP TABLE IF EXISTS `nommembres`;
+CREATE TABLE IF NOT EXISTS `nommembres` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_User` int(11) NOT NULL,
+  `nom` varchar(255) NOT NULL,
+  `prenom` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `nommembres`
+--
+
+INSERT INTO `nommembres` (`id`, `id_User`, `nom`, `prenom`) VALUES
+(1, 11, 'Tamarin', 'Hicham'),
+(2, 12, 'lelouch', 'Giles');
 
 -- --------------------------------------------------------
 
@@ -296,22 +329,16 @@ CREATE TABLE IF NOT EXISTS `rapport` (
   `Message` text NOT NULL,
   `Id_Personne` int(11) NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `rapport`
 --
 
 INSERT INTO `rapport` (`Id`, `Nom`, `Prenom`, `mail`, `Message`, `Id_Personne`) VALUES
-(5, 'Rémi', 'caruel', 'remi.caruel@yahoo.fr', 'jfojenzfjn\r\n', 0),
-(3, 'carue', 'lrezjrnjn', 'remi.caruel@yahoo.fr', 'BOjnfoezjfn\r\nfenkf\r\nzfeo\r\nfzpefp\r\n   nloefnzlfkne\r\n   ezjfnezklfn\r\nnfkzfknze\r\nenfzenf', 0),
-(4, 'Caruel', 'Rémi', 'remi.caruel@yahoo.fr', 'bononono\r\nnonon', 0),
-(6, 'Caruel', 'Rémi', 'remi.caruel@yahoo.fr', 'jjjj\r\njjjj\r\njjjj', 0),
-(7, 'Caruel', 'Rémi', 'remi.caruel@yahoo.fr', 'kkk\r\nk\r\nk\r\nk\r\nk\r\n', 0),
-(8, 'Caruel', 'Rémi', 'remi.caruel@yahoo.fr', 'kkk\r\nk\r\nk\r\nk\r\nk\r\n', 0),
 (9, 'Caruel', 'Rémi', 'remi.caruel@yahoo.fr', 'kkk\r\nk\r\nk\r\nk\r\nk\r\n', 0),
 (10, 'Caruel', 'Rémi', 'remi.caruel@yahoo.fr', 'gg\r\ng\r\ng\r\ng\r\ng\r\ng', 0),
-(11, 'Caruel', 'Rémi', 'remi.caruel@yahoo.fr', 'gg\r\ng\r\ng\r\ng\r\ng\r\ng', 0),
+(27, 'Paul', 'Pogba', 'prune@gmail.com', 'Je voudrais savoir', 0),
 (12, 'Caruel', 'Rémi', 'remi.caruel@yahoo.fr', 'ezezrzekrpezkr7\r\nerzop\r\nrkorkez\r\npokrz\r\n', 0),
 (13, 'Caruel', 'Rémi', 'remi.caruel@yahoo.fr', 'eknflzf', 0),
 (14, 'Caruel', 'Rémi', 'remi.caruel@yahoo.fr', 'eknflzf', 0),
@@ -323,10 +350,7 @@ INSERT INTO `rapport` (`Id`, `Nom`, `Prenom`, `mail`, `Message`, `Id_Personne`) 
 (20, 'Caruel', 'Rémi', '0130@0130.fr', 'fezjnfzeoijfnoziekfnze', 0),
 (21, 'Caruel', 'Rémi', '0130@0130.fr', 'fzefzef', 0),
 (22, 'Caruel', 'Rémi', '0130@0130.fr', 'fezfezfze', 0),
-(23, 'Caruel', 'Rémi', '0130@0130.fr', 'Bonjour', 0),
-(24, 'Caruel', 'Rémi', '0130@0130.fr', 'ezzeaz', 0),
-(25, 'Caruel', 'Rémi', '0130@0130.fr', 'ffzfezdfz', 0),
-(26, 'Caruel', 'Caruel', '0130@0130.fr', 'fff', 0);
+(23, 'Caruel', 'Rémi', '0130@0130.fr', 'Bonjour', 0);
 
 -- --------------------------------------------------------
 
