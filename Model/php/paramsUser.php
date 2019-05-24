@@ -10,7 +10,7 @@ if (isset($_GET["action"])) {
 function getUserParams()
 {
     $bdd = my_pdo_connexxionWeCon();
-    $reqs = $bdd->prepare("SELECT * FROM parametres WHERE iduser =?");
+    $reqs = $bdd->prepare("SELECT * FROM parametres WHERE Id_Membres =?");
     $reqs->execute(array($_SESSION['id']));
     $userData = $reqs->fetchAll();
     return $userData[0];
@@ -45,14 +45,14 @@ function Parametre()
         }
         $bdd = my_pdo_connexxionWeCon();
         $iduser = $_SESSION["id"];
-        $req = $bdd->prepare("SELECT * FROM parametres WHERE iduser =? ");
+        $req = $bdd->prepare("SELECT * FROM parametres WHERE Id_Membres =? ");
         $req->execute(array($iduser));
         $verif = $req->rowCount();
         if ($verif == 0) {
-            $maj = $bdd->prepare("INSERT INTO parametres(iduser, synchro, releve, acces, historique, partage) VALUES(?, ?, ?, ?, ?, ?)");
+            $maj = $bdd->prepare("INSERT INTO parametres(Id_Membres, synchro, releve, acces, historique, partage) VALUES(?, ?, ?, ?, ?, ?)");
             $maj->execute(array($iduser, $synchro, $releve, $acces, $clean, $partage));
         } else {
-            $sql = "UPDATE parametres SET synchro= ? , releve= ? , acces=? , historique=? , partage=?  WHERE (iduser = ?)";
+            $sql = "UPDATE parametres SET synchro= ? , releve= ? , acces=? , historique=? , partage=?  WHERE (Id_Membres = ?)";
             $maj = $bdd->prepare($sql);
             $maj->execute(array($synchro, $releve, $acces, $clean, $partage, $_SESSION['id']));
         }

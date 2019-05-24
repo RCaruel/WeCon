@@ -27,15 +27,13 @@ $req -> execute($valuesToInsert);
 
 /**
  * Ajout d'un capteur dans la base de donnée
- *
+ **/
 $location = "capteur(type, Nom, Valeur, jour, Id_Piece)";
 $values = "(?, ?, ?, ?, ?)";
-for ($i = 0; $i < 7; $i++) {
-    $dateOfToday = date("Y-m-d", time() - 86400 * $i);
-    $valuesToInsert = array("temperature", "Nom", random_int(1, 32), $dateOfToday, 1);
+$dateOfToday = date("Y-m-d", time() - 86400 * 0);
+$valuesToInsert = array("luminosite", "Luminosité", random_int(1, 32), $dateOfToday, 1);
 
-    $bdd = my_pdo_connexxionWeCon();
-    $req = $bdd->prepare("INSERT INTO " . $location . " VALUES " . $values);
-    $req->execute($valuesToInsert);
-}
+$bdd = my_pdo_connexxionWeCon();
+$req = $bdd->prepare("INSERT INTO " . $location . " VALUES " . $values);
+$req->execute($valuesToInsert);
 //**/

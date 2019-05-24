@@ -62,7 +62,7 @@ function setGraphiqueEspClient($value, $nbGraph, $nomGraph, $nomAxe){
                                                 INNER JOIN maison
                                                     ON piece.Id_Maison = maison.Id
                                                 INNER JOIN membres 
-                                                    ON maison.Id_User = membres.id
+                                                    ON maison.Id_Membres = membres.id
                                                 WHERE jour = ? AND membres.id = ? AND type = ?");
         $req->execute(array($date, $_SESSION["id"], $value));
         $nbrow = $req->rowCount();

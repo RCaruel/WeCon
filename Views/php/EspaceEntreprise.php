@@ -55,7 +55,7 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0 and ($_SESSION["type"] =='Ent
             <?php include "Views/html/Inscription.html" ?>
         </div>
     </body>
-
+    <script src="Views/js/EspaceEntreprise.js"></script>
     </html>
 <?php
 }elseif (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] !='Entreprise')) {

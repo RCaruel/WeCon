@@ -20,8 +20,8 @@ function verif()
                 return (FALSE);
             } else {
                 $bdd = my_pdo_connexxionWeCon();
-                $req = $bdd->prepare('INSERT INTO capteur(Nom, Valeur, Id_Piece)VALUES(?,?,?)');
-                $req->execute(array($_POST['Nom'], 0, $_POST['Id_Piece']));
+                $req = $bdd->prepare('INSERT INTO capteur(type, Nom, Valeur, jour, Id_Piece)VALUES(?,?,?,?,?)');
+                $req->execute(array($_POST['type'], $_POST['Nom'], 0, date("Y-m-d"), $_POST['Id_Piece']));
                 return (TRUE);
             }
         } else {

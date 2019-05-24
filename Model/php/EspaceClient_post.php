@@ -20,8 +20,8 @@ function verif()
                 return (FALSE);
             } else {
                 $bdd = my_pdo_connexxionWeCon();
-                $req = $bdd->prepare('INSERT INTO sousmembres(identifiant, nom, prenom, mail, Id_Compte)VALUES(?,?,?,?,?)');
-                $req->execute(array($_POST['identifiant'], $_POST['nom'], $_POST['prenom'], $_POST['mail'], 0));
+                $req = $bdd->prepare('INSERT INTO sousmembres(identifiant, nom, prenom, mail, Id_Membres)VALUES(?,?,?,?,?)');
+                $req->execute(array($_POST['identifiant'], $_POST['nom'], $_POST['prenom'], $_POST['mail'], $_SESSION['id']));
                 return (TRUE);
             }
         } else {

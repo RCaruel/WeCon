@@ -12,5 +12,4 @@ function supprMessage(){
     $bdd = my_pdo_connexxionWeCon();
     $req = $bdd-> prepare("DELETE FROM rapport WHERE id = ".$idMessage);
     $req -> execute(array($idMessage));
-    echo 'done';
 }

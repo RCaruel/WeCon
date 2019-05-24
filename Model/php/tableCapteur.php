@@ -5,12 +5,18 @@ function afftableauCapteur ($edit)
 
 
     require('_connexionbdd.php');
-    $query = "SELECT * FROM Capteur ORDER BY Id ASC";
+    $jour = date("Y-m-d");
+    $query = "SELECT capteur.Id, capteur.Nom, capteur.Valeur 
+                  FROM capteur 
+                  INNER JOIN piece ON capteur.Id_Piece = piece.Id
+                  INNER JOIN maison ON piece.Id_Maison = maison.Id
+                  INNER JOIN membres ON maison.Id_Membres = membres.id
+                  WHERE jour = ? AND membres.id = ?";
 
     try {
         $bdd = my_pdo_connexxionWeCon();
         $bdd_select = $bdd->prepare($query);
-        $bdd_select->execute();
+        $bdd_select->execute(array($jour, $_SESSION['id']));
         $NbreData = $bdd_select->rowCount();    // nombre d'enregistrements (lignes)
         $rowall = $bdd_select->fetchAll();
     } catch (PDOException $e) {

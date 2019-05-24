@@ -41,7 +41,7 @@ if (isset($nom) AND isset($prenom) AND isset($mail) AND isset($message)) {
 
     }
 
-    $sendRequest = $bdd -> prepare("INSERT INTO rapport(nom, prenom, mail, message, Id_Personne) VALUES (?, ?, ?, ?, ?)");
+    $sendRequest = $bdd -> prepare("INSERT INTO rapport(nom, prenom, mail, message, Id_Membres) VALUES (?, ?, ?, ?, ?)");
     SendMailRequest($nom, $prenom, $mail, $message);
     $sendRequest->execute(array($nom, $prenom, $mail, $message, 0));
 

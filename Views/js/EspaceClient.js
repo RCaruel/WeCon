@@ -10,12 +10,6 @@ const button5 = document.getElementById("Parametre");
 console.log(button5);
 var position = 0;
 
-
-function getScrollPosition()
-{
-    return Array((document.documentElement && document.documentElement.scrollLeft) || window.pageXOffset || self.pageXOffset || document.body.scrollLeft,(document.documentElement && document.documentElement.scrollTop) || window.pageYOffset || self.pageYOffset || document.body.scrollTop);
-}
-
 button1.addEventListener("click", functionbutton1);
 button2.addEventListener("click", functionbutton2);
 button3.addEventListener("click", functionbutton3);
@@ -90,26 +84,4 @@ function functionbutton5(){
     button3.style.borderLeft = "none";
     button4.style.background = "#2E4057";
     button4.style.borderLeft = "none";
-}
-
-
-
-
-function scroll(){
-    console.log(getScrollPosition());
-
-    if (position === 0){
-        position = 1;
-        button1.click();
-    }
-
-    if (getScrollPosition()[1] >= 100 && position === 1){
-        position = 2;
-        button2.click();
-        setTimeout(1000);
-    }else if (getScrollPosition()[1] <= 800 && position === 2){
-        position = 1;
-        button1.click();
-        setTimeout(1000);
-    }
 }

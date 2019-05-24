@@ -29,24 +29,3 @@ function functionbutton2(){
     button1.style.background = "#2E4057";
     button1.style.borderLeft = "none";
 }
-
-setInterval(scroll, 100);
-
-function scroll(){
-    console.log(getScrollPosition());
-
-    if (position === 0){
-        position = 1;
-        button1.click();
-    }
-
-    if (getScrollPosition()[1] >= 100 && position === 1){
-        position = 2;
-        button2.click();
-        setTimeout(1000);
-    }else if (getScrollPosition()[1] <= 800 && position === 2){
-        position = 1;
-        button1.click();
-        setTimeout(1000);
-    }
-}

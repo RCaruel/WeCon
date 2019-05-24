@@ -7,6 +7,7 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
     include "Model/php/tableCapteur.php";
     include "Model/php/paramsUser.php";
     include "Model/php/mail.php";
+    include "Model/php/piece.php";
     ?>
 
     <html>
@@ -39,7 +40,7 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
             <div class="line"></div>
             <div class="anc"><a href="#Parametres"><button class="bouton" id="Parametre">Param&egrave;tre</button></a></div>
             <div class="line"></div>
-            <div class="anc"><a href="index.php?action=deco"><button class="bouton" id="Parametre">Deconnexion</button></a></div>
+            <div class="anc"><a href="index.php?action=deco"><button class="bouton" id="Deconnexion">Deconnexion</button></a></div>
             <div class="line"></div>
 
         </nav>
@@ -141,10 +142,12 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
                             <form action="Model/php/EspaceTech_post.php" method="post">
                                 <label for="nom">Nom:<input id="newnomCapteur" type="text" name="Nom" /></label><br>
                                 <select name="type" id="type">
-                                    <option value="Luminosité">Luminosité</option>
-                                    <option value="Température">Température</option>
+                                    <option value="luminosite">Luminosité</option>
+                                    <option value="temperature">Température</option>
                                 </select>
-                                <label for="prenom">Id_Piece:<input id="newId_Piece" type="text" name="Id_Piece" /></label><br>
+                                <select name="Id_Piece" id="type">
+                                    <?php genSelectPiece(); ?>
+                                </select><br>
                         </div>
                         <input type="submit" value="Enregistrer" style="margin: 10px;" />
                     </form>
