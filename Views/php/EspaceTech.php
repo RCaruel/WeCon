@@ -30,7 +30,9 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0 and ($_SESSION["type"] =='Tec
             </div>
             <div class="anc"><a href="#Gestionusers"><button id="Gestionutilisateur">Gestion des utilisateurs</button></a></div>
             <div class="line"></div>
-            <div class="anc"><a href="#Logs"><button id="Logs">Logs</button></a></div>
+            <div class="anc"><a href="#Log"><button id="Logs">Logs</button></a></div>
+            <div class="line"></div>
+            <div class="anc"><a href="#Message"><button id="Messagerie">Messagerie</button></a></div>
             <div class="line"></div>
             <div class="anc"><a href="index.php?action=deco"><button class="bouton" id="Deco">Deconnexion</button></a></div>
             <div class="line"></div>
@@ -38,7 +40,7 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0 and ($_SESSION["type"] =='Tec
         </nav>
 
         <div class="navigation" style="font-family: Helvetica">
-            <h4 style="margin-left: 3%; margin-top: 5px;">Gestion des utilisateurs</h4>
+            <h4 id="Gestionusers" style="margin-left: 3%; margin-top: 5px;">Gestion des utilisateurs</h4>
 
             <button onclick="document.getElementById('id01').style.display='block'" class="w3-button" id="Ajouter"><a>Ajouter un utilisateur</a></button>
             <div id="id01" class="w3-modal">
@@ -97,13 +99,18 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0 and ($_SESSION["type"] =='Tec
             </div>
         </div>
 
-        <div class = "log">
-            <?php affLog();?>
+        <div class ="navigation log">
+        <h4 id="Log">Logs</h4>
+        <div class="logscreen">
+            <?php
+             affLog();
+             ?>
+             </div>
         </div>
 
 
-        <div class="message">
-            <h4 id="Messagerie">Messagerie</h4>
+        <div class="navigation message">
+            <h4 id="Message">Messagerie</h4>
             <?php
             affmessage();
             ?>

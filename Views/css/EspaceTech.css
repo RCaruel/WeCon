@@ -60,6 +60,14 @@ h3{
     padding: 5% 0 5% 0;
 }
 
+#Messagerie{
+    background: #2E4057;
+    border: none;
+    color: white;
+    width: 100%;
+    padding: 5% 0 5% 0;
+}
+
 #Deco{
     background: #2E4057;
     border: none;
@@ -103,7 +111,7 @@ h3{
 #Ajouter{
     top: 90%;
     float: right;
-    padding: 2px 16px;
+    padding: 6px 16px;
     margin-left: 10px;
     margin-top: 10px;
     margin-right: 10px;
@@ -144,6 +152,7 @@ h3{
 #Editer{
     position: absolute;
     display: inline-block;
+    padding: 6px 16px;
     top: 4%;
     right: 20px;
     color: black;
@@ -207,4 +216,27 @@ td{
     display: inline-block;
     margin: 0px;
     top: 98%;
+}
+.log{
+    position: relative;
+    background-color: white;
+    border: 0.8px solid grey;
+    border-radius: 5px;
+    margin : 1%;
+    width: 78%;
+    height: 100vh;
+}
+.log > h4 {
+    position: absolute;
+    display: inline-block;
+    margin: 0px;
+    top: 2%;
+    left:30px;
+    text-decoration: underline black;
+    font-size:30px;
+}
+.logscreen{
+position: absolute;
+top:10%;
+left:5%;
 }
