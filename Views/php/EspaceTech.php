@@ -1,11 +1,11 @@
-<meta http-equiv="refresh" content="300;URL=index.php?action=deco"> 
+<meta http-equiv="refresh" content="300;URL=index.php?action=deco">
 <?php
 
 include('Model/php/tableusertech.php');
 include 'Model/php/log.php';
 include 'Model/php/tablemessagerie.php';
 
-if (isset($_SESSION["id"]) and $_SESSION["id"] > 0 and ($_SESSION["type"] =='Technicien')) {
+if (isset($_SESSION["id"]) and $_SESSION["id"] > 0 and ($_SESSION["type"] == 'Technicien')) {
     ?>
     <html>
 
@@ -23,10 +23,10 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0 and ($_SESSION["type"] =='Tec
         <nav>
             <a href="index.php?action=Accueil"><img src="Ressources/logoBluebg.PNG"></a>
             <br>
-            <div class = pseudo>
-                <?php echo $_SESSION['pseudo']; ?>
+            <div class=pseudo>
+                <?php echo $_SESSION['nom'] . " " . $_SESSION['prenom']; ?>
                 <br>
-                <?php echo "<p style='color:red;'>".$_SESSION["type"]."</p>";?>
+                <?php echo "<p style='color:red;'>" . $_SESSION["type"] . "</p>"; ?>
             </div>
             <div class="anc"><a href="#Gestionusers"><button id="Gestionutilisateur">Gestion des utilisateurs</button></a></div>
             <div class="line"></div>
@@ -99,13 +99,13 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0 and ($_SESSION["type"] =='Tec
             </div>
         </div>
 
-        <div class ="navigation log">
-        <h4 id="Log">Logs</h4>
-        <div class="logscreen">
-            <?php
-             affLog();
-             ?>
-             </div>
+        <div class="navigation log">
+            <h4 id="Log">Logs</h4>
+            <div class="logscreen">
+                <?php
+                affLog();
+                ?>
+            </div>
         </div>
 
 
@@ -144,10 +144,9 @@ if (isset($_SESSION["id"]) and $_SESSION["id"] > 0 and ($_SESSION["type"] =='Tec
     //	echo implode('|', $results); // Et on affiche les résultats séparés par une barre verticale |
     ?>
 <?php
-}elseif (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] !='Technicien')) {
+} elseif (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] != 'Technicien')) {
     header("Location: index.php?action=Espace_" . $_SESSION['type']);
-}
- else {
+} else {
     header("Location: index.php?action=Accueil");
 }
 ?>

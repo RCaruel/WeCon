@@ -62,10 +62,15 @@ button{
     width: 76.5%;
 }
 
-#statsPanne{
+.Inscript{
     top: 103%;
 }
-
+#Inscription > h4{
+    position: absolute;
+    text-decoration: underline;
+    left:5%;
+    font-size:30px;
+}
 #Graph_nb_clients{
     position: absolute;
     width: 45%;

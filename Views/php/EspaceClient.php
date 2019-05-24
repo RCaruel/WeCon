@@ -27,7 +27,7 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
             <a href="index.php?action=Accueil"><img src="Ressources/logoBluebg.PNG"></a>
             <br>
             <div class=pseudo>
-                <?php echo $_SESSION['pseudo']; ?>
+                <?php echo $_SESSION['nom']." ".$_SESSION['prenom']; ?>
                 <?php echo "<p style='color:red;'>" . $_SESSION["type"] . "</p>"; ?>
             </div>
             <div class="anc"><a href="#Tableaudebord"><button class="bouton" id="TabBord">Tableau de bord</button></a></div>

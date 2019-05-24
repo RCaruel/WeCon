@@ -1,6 +1,6 @@
 const button1 = document.getElementById("StatsGen");
 console.log(button1);
-const button2 = document.getElementById("StatsPanne");
+const button2 = document.getElementById("Inscript");
 console.log(button2)
 
 var position = 0;
