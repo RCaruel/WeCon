@@ -108,9 +108,8 @@ function About(){
 }
 
 function Produit(){
-    require "Views/html/Produit.html";
     include "Views/html/header.html";
-    include "Views/html/footer.html";
+    require "Views/html/Produit.html";
 }
 
 function Send_Inscription(){
