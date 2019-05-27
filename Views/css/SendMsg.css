@@ -91,6 +91,7 @@ input[type = "text"]:valid ~ label
 
 textarea{
     background: #2E4057;
+    color: white;
     border: 2px solid #2E40FF;
     border-radius: 3px;
     width: 100%;
