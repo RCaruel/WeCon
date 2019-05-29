@@ -37,3 +37,7 @@ $bdd = my_pdo_connexxionWeCon();
 $req = $bdd->prepare("INSERT INTO " . $location . " VALUES " . $values);
 $req->execute($valuesToInsert);
 //**/
+
+/**
+ * Ajout d'un nom et prenom pour un utilisateur
+ */

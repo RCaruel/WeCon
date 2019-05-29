@@ -9,7 +9,7 @@ function ajoutmessage()
     $message = $_POST['messageps'] ;
     $Id_Personne = $_SESSION['id'];
     $bdd = my_pdo_connexxionWeCon();
-    $sendTech = $bdd->prepare("INSERT INTO rapport(nom, prenom, mail, message, Id_Personne) VALUES (?, ?, ?, ?, ?)");
+    $sendTech = $bdd->prepare("INSERT INTO rapport(nom, prenom, mail, message, Id_Membres) VALUES (?, ?, ?, ?, ?)");
     $sendTech->execute(array($nom, $prenom, $mail, $message, $Id_Personne));
 }
 

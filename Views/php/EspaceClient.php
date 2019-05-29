@@ -229,7 +229,7 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
                 $_SESSION['userParams'] = getUserParams();
                 ?>
 
-                <h3>Param&egrave;tres</h3>
+                <h3 style = "border: none;">Param&egrave;tres</h3>
                 <form method="POST" action="index.php?action=ValiderParametre">
                     <div id="BoiteParametres">
                         <h2>Param&egrave;tres generaux</h2>

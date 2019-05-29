@@ -1,7 +1,7 @@
 <?php
 try
 {
-    $bdd = new PDO("mysql:host=localhost;dbname=bdr", "root", "root");
+    $bdd = new PDO("mysql:host=localhost;dbname=wecon", "root", "");
     $bdd ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 
@@ -37,7 +37,7 @@ else
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset = "utf-8" >
+    <meta charset = "UTF-8">
     <title>Les résultats de votre recherche</title>
     <link rel="stylesheet" type="text/css" href="Views/css/resultatrecherche.css">
 </head>
@@ -51,7 +51,7 @@ else
     <?php
     while($terme_trouve = $select_terme->fetch())
     {
-        echo '<div><h2 class = "question">'.$terme_trouve['question'].'</h2><p class = "reponse"> '.$terme_trouve['reponse'].'</p>';
+        echo '<div><h2 class = "question">'.utf8_encode($terme_trouve['question']).'</h2><p class = "reponse"> '.utf8_encode($terme_trouve['reponse']).'</p>';
     }
     $select_terme->closeCursor();
     ?>

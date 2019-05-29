@@ -13,7 +13,17 @@ function getUserParams()
     $reqs = $bdd->prepare("SELECT * FROM parametres WHERE Id_Membres =?");
     $reqs->execute(array($_SESSION['id']));
     $userData = $reqs->fetchAll();
-    return $userData[0];
+    try {
+        return $userData[0];
+    }catch (Exception $e){
+        $userData['synchro'] == "non";
+        $userData['releve'] == "non";
+        $userData['acces'] == "non";
+        $userData['historique'] == "non";
+        $userData['partage'] == "non";
+
+        return $userData;
+    }
 }
 
 function Parametre()
