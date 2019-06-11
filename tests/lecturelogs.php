@@ -6,7 +6,7 @@
  * Time: 09:25
  */
 
-include "Model/php/"
+include "Model/php/lecturelog_post.php";
 
 $url = "http://projets-tomcat.isep.fr:8080/appService?ACTION=GETLOG&TEAM=9999";
 
@@ -50,9 +50,9 @@ for($i=0, $size=count($data_tab); $i<$size-1; $i++){
         echo "Date de la donnée : " . $day . "-" . $month . "-" . $year . " heure : " . $hour . ":" . $min . ":" . $sec;
         echo "<br>";
         if ($c == 3) {
-            post($day."-".$month."-".$year, "luminosite", $v, Lumière,1);
+            post($day."-".$month."-".$year, "luminosite", $v, "Lumière",1);
         }else if($c == 7){
-            post($day."-".$month."-".$year, "temperature", $v, Température,1);
+            post($day."-".$month."-".$year, "temperature", $v, "Température",1);
         }
     }else if($r == 2){
         echo "Envoi de la valeur : " . $v . " pour un capteur de type : ".$c;
