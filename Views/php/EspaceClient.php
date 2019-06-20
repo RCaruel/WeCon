@@ -68,6 +68,12 @@ if (isset($_SESSION["id"]) and ($_SESSION["id"] > 0) and ($_SESSION["type"] == '
                 ?>
             </div>
 
+            <div id = "actionneur">
+                <form action = "index.php?action=Espace_Client" type="post">
+                    <input type="submit" value="Monter/Baisser le store.">
+                </form>
+            </div>
+
         </div>
 
         <div id="Gestiondescomptes">

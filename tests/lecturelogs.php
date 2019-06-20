@@ -6,9 +6,9 @@
  * Time: 09:25
  */
 
-include "Model/php/lecturelog_post.php";
+include "../Model/php/lecturelog_post.php";
 
-$url = "http://projets-tomcat.isep.fr:8080/appService?ACTION=GETLOG&TEAM=9999";
+$url = "http://projets-tomcat.isep.fr:8080/appService/?ACTION=GETLOG&TEAM=9999";
 
 $ch = curl_init($url);
 
